@@ -12,9 +12,13 @@ public class Item : MonoBehaviour
 
     public virtual void playerPickup()
     {
+        //adds to player hotbar 
+    }
+    public virtual void checkPickup()
+    {
         if (hasItem == false)
         {
-            hasItem = true;
+            playerPickup();
         }
     }
 }
