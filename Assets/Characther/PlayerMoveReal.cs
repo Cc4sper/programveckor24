@@ -19,6 +19,10 @@ public class PlayerMove : MonoBehaviour
     private float dashingPower = 24f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
+    public Weapon Weapon;
+    Vector2 moveDirection;
+    Vector2 mousePosistion;
+    public float moveSpeed = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +33,25 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Weapon.Fire();
+        }
+
+        moveDirection = new Vector2(moveX, moveY).normalized;
+        mousePosistion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+
+       
+
+        
+
+
+
         //Movement and dashing - Casper
         if (isDashing)
         {
@@ -61,7 +84,22 @@ public class PlayerMove : MonoBehaviour
             StartCoroutine(Dash2());
 
         }
+
+
+
+
     }
+
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y);
+
+        Vector2 aimDirection = mousePosistion - rb.position;
+        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = aimAngle;
+    }
+   
     //function for dashing right - Casper
     private IEnumerator Dash()
     {
