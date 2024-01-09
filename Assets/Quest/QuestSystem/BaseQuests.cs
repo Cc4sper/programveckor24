@@ -5,11 +5,21 @@ using UnityEngine;
 public class BaseQuests : MonoBehaviour
 {
     bool IsActive;
-    public void OnTriggerEnter2D(Collision2D trigger)
+    public GameObject QuestBox;
+    void Start()
+    {
+     QuestBox.SetActive(false);
+
+    }
+    public void OnTriggerEnter2D(Collider2D trigger)
     {
         if (trigger.gameObject.tag == "Player")
         {
-           
+            QuestBox.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                QuestBox.SetActive(true);
+            }
         }
     }
 }
