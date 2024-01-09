@@ -6,11 +6,16 @@ public class UsableItem : Item
 {
     public bool canUse = true;
 
-    public virtual void Useitem()
+    public virtual void CheckUseItem()
     {
         if (hasItem && canUse)
         {
-            //effect of item
+            UseItem();
         }
+    }
+
+    public virtual void UseItem()
+    {
+        //effect of item
     }
 }
