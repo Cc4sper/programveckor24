@@ -9,6 +9,7 @@ public class ConsumeItem : DepleteItem
     public override void UseItem()
     {
         //get players health + itemHeal
+        print("healed "+itemHeal);
     }
 
 }

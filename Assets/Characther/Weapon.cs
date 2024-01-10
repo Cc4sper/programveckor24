@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float fireForce = 20f;
+    
 
 
     public void Fire()
@@ -15,4 +16,6 @@ public class Weapon : MonoBehaviour
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
 
     }
+
+    
 }

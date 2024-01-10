@@ -11,23 +11,31 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] KeyCode down;
     [SerializeField] KeyCode vänster;
     [SerializeField] KeyCode höger;
+    [SerializeField] KeyCode Ability1;
     [SerializeField] public float playSpeed = 1.6f;
     [SerializeField] TrailRenderer tr;
     [SerializeField] Rigidbody2D rb;
-    private bool canDash = true;
+    /*private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 24f;
     private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
+    private float dashingCooldown = 1f;*/
     public Weapon Weapon;
     Vector2 moveDirection;
     Vector2 mousePosistion;
     public float moveSpeed = 5f;
 
+    [Header("Dash Settings")]
+    [SerializeField] float dashSpeed = 10f;
+    [SerializeField] float dashDuration = 1f;
+    [SerializeField] float dashCooldown = 1f;
+    bool isDashing;
+    bool canDash;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        canDash = true;
     }
 
     // Update is called once per frame
@@ -46,7 +54,10 @@ public class PlayerMove : MonoBehaviour
         mousePosistion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 
-       
+       if (Input.GetKeyDown(Ability1)&& canDash)
+        {
+            StartCoroutine(Dash());
+        }
 
         
 
@@ -74,16 +85,16 @@ public class PlayerMove : MonoBehaviour
             transform.position += new Vector3(0, -3, 0) * Time.deltaTime * playSpeed;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && canDash)
+       /* if (Input.GetKeyDown(KeyCode.E) && canDash)
         {
             StartCoroutine(Dash());
 
         }
-        if (Input.GetKeyDown(KeyCode.Q) && canDash)
+       if (Input.GetKeyDown(KeyCode.Q) && canDash)
         {
             StartCoroutine(Dash2());
 
-        }
+        }*/
 
 
 
@@ -93,6 +104,12 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        if (isDashing)
+        {
+            return;
+        }
+
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y);
 
         Vector2 aimDirection = mousePosistion - rb.position;
@@ -101,7 +118,7 @@ public class PlayerMove : MonoBehaviour
     }
    
     //function for dashing right - Casper
-    private IEnumerator Dash()
+  /* private IEnumerator Dash()
     {
         canDash = false;
         isDashing = true;
@@ -139,6 +156,18 @@ public class PlayerMove : MonoBehaviour
             rb.velocity = new Vector2(0f, 0f);
         }
         yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+    }*/
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        rb.velocity = new Vector2(moveDirection.x * dashSpeed, moveDirection.y * dashSpeed);
+        yield return new WaitForSeconds(dashDuration);
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
 }
