@@ -424,7 +424,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5081611740271718719, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
       propertyPath: m_Constraints
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1051849519187901979, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -482,9 +482,25 @@ PrefabInstance:
       propertyPath: dashDuration
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 7636086388137028218, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636086388137028218, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0.004837036
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636086388137028218, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.493978
+      objectReference: {fileID: 0}
     - target: {fileID: 8944890214434625839, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
       propertyPath: m_Name
       value: Square
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044827156224047070, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

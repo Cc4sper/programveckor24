@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float dashDuration = 1f;
     [SerializeField] float dashCooldown = 1f;
     bool isDashing;
-    bool canDash;
+    bool canDash = true;
 
     // Start is called before the first frame update
     void Start()
