@@ -5,6 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     //tillägg via kod
+    public int ID;
     public string title;
     public string description; 
 

@@ -7,16 +7,33 @@ public class PlayerPickup : MonoBehaviour
     public bool InRangePickup = false;
     public KeyCode pickupKey = KeyCode.E;
     public Hotbar bar;
+    public Item colItem;
+    public GameObject colObj;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //add tag to item
+        colObj = collision.gameObject;
+        print("triggered");
+        InRangePickup = true;
+        
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        InRangePickup = false;
+    }
     
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        print("triggered");
-        //add tag to item
-
-        if (Input.GetKeyDown(pickupKey)) 
+        if (Input.GetKeyDown(pickupKey) && InRangePickup)
         {
-            bar.AddItem(collision.GetComponent<Item>());
+            colItem = colObj.GetComponent<Item>();
+            Destroy(colObj);
+            print("picking up " + colItem.title);
+            bar.AddItem(colItem);
         }
     }
 }
