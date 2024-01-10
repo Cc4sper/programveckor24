@@ -126,7 +126,7 @@ public class DialogueManager : MonoBehaviour
         // NOTE: The 'currentStory.currentChoiecs.Count == 0' part was to fix a bug after the Youtube video was made
         if (canContinueToNextLine
             && currentStory.currentChoices.Count == 0
-            && InputManager.GetInstance().GetSubmitPressed())
+            && Input.GetKeyDown(KeyCode.R))
         {
             ContinueStory();
         }
@@ -210,7 +210,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in line.ToCharArray())
         {
             // if the submit button is pressed, finish up displaying the line right away
-            if (InputManager.GetInstance().GetSubmitPressed())
+            if (Input.GetKeyDown(KeyCode.R))
             {
                 dialogueText.maxVisibleCharacters = line.Length;
                 break;
