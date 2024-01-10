@@ -8,7 +8,11 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] Slider volumeSlider; //Lägger till "slider" i unity inspector  
+    [SerializeField] Slider musicVolumeSlider; //Lägger till "slider" i unity inspector
+    [SerializeField] Slider soundEffectsSlider;
+    [Header("Audio Sources")]                                     
+    [SerializeField] AudioSource musicVolume;
+    [SerializeField] AudioSource soundEffects;
 
     public void Start()
     {
@@ -24,20 +28,22 @@ public class SoundManager : MonoBehaviour
         }
     }
     public void ChangeVolume()
-    {
-        AudioListener.volume = volumeSlider.value; //Vårat in-game audio blir justerat efter "volumeSlider value" 
+
+    { 
+        musicVolume.volume = musicVolumeSlider.value; //Vårat in-game audio blir justerat efter "volumeSlider value" 
         Save();
+        soundEffects.volume = soundEffectsSlider.value;
 
     }
 
 
     public void Save() //Används för att spara spelarens preferns volym.
     {
-        PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);//Sparar spelarens personliga val av volym. Den blir sparad i "musicVolume" och efter valuen av "volumeSlider".
+        PlayerPrefs.SetFloat("musicVolume", musicVolumeSlider.value);//Sparar spelarens personliga val av volym. Den blir sparad i "musicVolume" och efter valuen av "volumeSlider".
     }
 
     public void Load() //Används for att ladda sparad volym
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume"); //Hämtar PlayerPrefs "musicVolume" som sätter valuen som blev sparad i functionen "Save".
+        musicVolumeSlider.value = PlayerPrefs.GetFloat("musicVolume"); //Hämtar PlayerPrefs "musicVolume" som sätter valuen som blev sparad i functionen "Save".
     }
 }
