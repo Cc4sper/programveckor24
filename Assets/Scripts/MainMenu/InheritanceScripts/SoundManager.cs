@@ -8,12 +8,11 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] Slider volumeSlider; //Lägger till "slider" i unity inspector
-    Text percentageText;
+    [SerializeField] Slider volumeSlider; //Lägger till "slider" i unity inspector  
 
     public void Start()
     {
-        percentageText = GetComponent<Text>();
+       
         if (!PlayerPrefs.HasKey("musicVolume"))//Om inga value har blivit sparad som "musicVolume" så händer functionen.
         {
             PlayerPrefs.SetFloat("musicVolume",1); //Sätter PlayerPref value till 1.
@@ -40,10 +39,5 @@ public class SoundManager : MonoBehaviour
     public void Load() //Används for att ladda sparad volym
     {
         volumeSlider.value = PlayerPrefs.GetFloat("musicVolume"); //Hämtar PlayerPrefs "musicVolume" som sätter valuen som blev sparad i functionen "Save".
-    }
-
-    public void TextUpdater(float value) //används för att updatera text.
-    {
-        percentageText.text = Mathf.RoundToInt(value * 100) + "%";//Updaterar text för att efterliknad value, avrundar den till närmsta heltal och tar gånger 100 för att få 1-100.
     }
 }
