@@ -12,16 +12,26 @@ public class DepleteItem : UsableItem
         //ifall spelaren har stackable item i hotbar och maxAmount < amount
         //på den stackable så går ;
         //annars:
-        if (hasItem == false && maxAmount < amount)
+        if (maxAmount > amount)
         {
+            
             playerPickup();
+        }
+        else
+        {
+            print("max amount of item");
         }
     }
     public override void playerPickup()
     {
         if(hasItem)
         {
+            print("adding amount");
             amount++;
+        }
+        else
+        {
+            hasItem = true;
         }
     }
     public override void UseItem()

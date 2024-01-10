@@ -31,9 +31,10 @@ public class PlayerPickup : MonoBehaviour
         if (Input.GetKeyDown(pickupKey) && InRangePickup)
         {
             colItem = colObj.GetComponent<Item>();
-            Destroy(colObj);
+            colObj.transform.position = new Vector2(0, 100); //temporary to make item disapear without removing it
             print("picking up " + colItem.title);
             bar.AddItem(colItem);
+            
         }
     }
 }
