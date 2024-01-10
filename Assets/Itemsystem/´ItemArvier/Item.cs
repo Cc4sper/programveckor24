@@ -5,13 +5,14 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     //tillägg via kod
-    public string name;
+    public string title;
     public string description; 
 
     public bool hasItem = false;
 
     public virtual void playerPickup()
     {
+        hasItem = true;
         //adds to player hotbar 
     }
     public virtual void checkPickup()
