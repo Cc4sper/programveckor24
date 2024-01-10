@@ -422,6 +422,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5081611740271718719, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1051849519187901979, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -466,6 +470,18 @@ PrefabInstance:
       propertyPath: Weapon
       value: 
       objectReference: {fileID: 326860686}
+    - target: {fileID: 5514596807681674233, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
+      propertyPath: Ability1
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514596807681674233, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
+      propertyPath: dashSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514596807681674233, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
+      propertyPath: dashDuration
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 8944890214434625839, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
       propertyPath: m_Name
       value: Square
