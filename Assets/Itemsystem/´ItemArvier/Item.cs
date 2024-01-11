@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Item : MonoBehaviour
     public string title;
     public string description; 
     public bool canUse = true;
+    Sprite empty;
 
     public bool hasItem = false;
 
@@ -38,9 +40,11 @@ public class Item : MonoBehaviour
         //effect of item
     }
 
-    public void RemoveItem()
+    public virtual void RemoveItem()
     {
-        //remove from hotbar visual
+        transform.parent.GetChild(0).GetComponent<Image>().color = Color.clear; //remove from hotbar visual
+        transform.parent.GetComponentInParent<HotbarCollect>().CalledDestroyItem();
         Destroy(gameObject);
+        
     }
 }
