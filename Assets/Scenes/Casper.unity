@@ -545,7 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   range: 0.5
-  maxDistance: 0
+  maxDistance: 6
 --- !u!1001 &5596802691224800618
 PrefabInstance:
   m_ObjectHideFlags: 0

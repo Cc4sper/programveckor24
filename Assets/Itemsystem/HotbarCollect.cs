@@ -111,4 +111,22 @@ public class HotbarCollect : MonoBehaviour
         }
         return result;
     }
+
+    public void CalledDestroyItem() //slots with no items are marked as empty, is called from item when being destroyed
+    {
+        Invoke("UpdateFilledSlots", 0.1f); 
+    }
+
+    private void UpdateFilledSlots()
+    {
+        for (int i = 0; i < slotAmount - 1; i++)
+        {
+            if (itemslots[i] == null)
+            {
+                filledSlot[i] = false;
+
+            }
+        }
+    }
+
 }

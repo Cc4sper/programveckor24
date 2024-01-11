@@ -44,15 +44,17 @@ public class DepleteItem : UsableItem
         }
         else
         {
-            RemoveItem();
+            base.RemoveItem();
         }
     }
 
-    public void RemoveItem()
+    public override void RemoveItem()
     {
-        //remove from hotbar and destroy
-        Destroy(gameObject);
+        base.RemoveItem();
+        transform.parent.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
     }
+
+
 }
 
     
