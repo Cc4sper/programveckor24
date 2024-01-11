@@ -10,14 +10,14 @@ public class PlayerPickup : MonoBehaviour
     public Item colItem;
     public GameObject colObj;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        //add tag to item
-        colObj = collision.gameObject;
-        print("triggered");
-        InRangePickup = true;
-        
-        
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            colObj = collision.gameObject;
+            print("triggered pickup");
+            InRangePickup = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -31,7 +31,7 @@ public class PlayerPickup : MonoBehaviour
         if (Input.GetKeyDown(pickupKey) && InRangePickup)
         {
             colItem = colObj.GetComponent<Item>();
-            colObj.transform.position = new Vector2(0, 100); //temporary to make item disapear without removing it
+            colObj.transform.position = new Vector2(0, 500); //temporary to make item disapear without removing it
             print("picking up " + colItem.title);
             bar.AddItem(colItem);
             

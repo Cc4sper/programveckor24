@@ -10,9 +10,6 @@ public class DepleteItem : UsableItem
 
     public override void TryPickup()
     {
-        //ifall spelaren har stackable item i hotbar och maxAmount < amount
-        //på den stackable så går ;
-        //annars:
         if (maxAmount > amount)
         {
             playerPickup();
@@ -22,6 +19,7 @@ public class DepleteItem : UsableItem
             print("max amount of item, you squished it in with the rest");
         }
     }
+    
     public override void playerPickup()
     {
         if(hasItem)
@@ -48,12 +46,7 @@ public class DepleteItem : UsableItem
         }
     }
 
-    public override void RemoveItem()
-    {
-        base.RemoveItem();
-        transform.parent.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
-    }
-
+    
 
 }
 

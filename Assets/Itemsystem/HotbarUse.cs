@@ -15,7 +15,7 @@ public class HotbarUse : MonoBehaviour
         if (GetComponent<HotbarCollect>().itemslots[selectedSlot] != null)
         {
             selectedItem = GetComponent<HotbarCollect>().itemslots[selectedSlot];
-            print("Tried using" + selectedItem.name);
+            print("Tried using" + selectedItem.title);
             if (selectedItem is UsableItem)
             {
                 UseItem();
