@@ -27,7 +27,7 @@ public class DepleteItem : UsableItem
         if(hasItem)
         {
             print("adding amount");
-            amount++;
+            amount++; //fixa så att man kan ta fler föremål samtidigt
         }
         else
         {

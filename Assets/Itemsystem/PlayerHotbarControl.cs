@@ -18,6 +18,7 @@ public class PlayerHotbarControl : MonoBehaviour
         KeyCode.Alpha9,
     };
     [SerializeField] KeyCode UseItemKey = KeyCode.Mouse0;
+    [SerializeField] KeyCode DropItemKey = KeyCode.Q;
 
 
 
@@ -37,10 +38,13 @@ public class PlayerHotbarControl : MonoBehaviour
         }
         if (Input.GetKeyDown(UseItemKey))
         {
-            print("x");
             Hotbar.GetComponent<HotbarUse>().TryUseItem();
         }
-        
+        if (Input.GetKeyDown(DropItemKey))
+        {
+            Hotbar.GetComponent<HotbarUse>().DropItem();
+        }
+
     }
     void updateSlotSelection()
     {

@@ -12,13 +12,13 @@ public class HotbarCollect : MonoBehaviour
 
     public int slotAmount = 0;
 
-    public GameObject slotImage;
+    private GameObject slotImage;
 
     public bool[] filledSlot;
     public Item[] itemslots;
     public GameObject[] slotObj;
 
-    
+    public Transform playerPos;
 
 
     void Start()
@@ -42,7 +42,7 @@ public class HotbarCollect : MonoBehaviour
 
     public void AddItem(Item add) //called by player when it picks up item
     {
-        print("trying to add " + add);
+        print("trying to add " + add.title);
         if (add is DepleteItem)
         {
             print("depletable item");
@@ -70,7 +70,7 @@ public class HotbarCollect : MonoBehaviour
         emptyIndex = GetEmptySlot();
         if (emptyIndex == slotAmount)
         {
-            print("full off items");
+            print("full off items, switching selected");
         }
         else
         {
@@ -124,11 +124,28 @@ public class HotbarCollect : MonoBehaviour
             if (itemslots[i] == null)
             {
                 filledSlot[i] = false;
-                itemslots[i] = null; //makes it from missing to not exsisting
+                itemslots[i] = null; //if it was missing it's now not exsisting
                 slotObj[i].transform.GetChild(0).GetComponent<Image>().color = Color.clear;
                 slotObj[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
             }
         }
+    }
+
+    public void TryDropItem(int slotIndex)
+    {
+        if (filledSlot[slotIndex] == true)//if it exsist
+        {
+            itemslots[slotIndex].transform.position = playerPos.position; //teleports to player, as if it was dropped off by player
+            itemslots[slotIndex].transform.parent = null; //detaches item as child of hotbar slot
+            itemslots[slotIndex].PlayerDrop();
+            itemslots[slotIndex] = null;
+            UpdateFilledSlots();
+        }
+        else
+        {
+            print("couldn't drop item");
+        }
+        
     }
 
 }

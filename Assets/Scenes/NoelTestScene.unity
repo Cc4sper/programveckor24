@@ -1730,10 +1730,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotAmount: 0
-  slotImage: {fileID: 0}
   filledSlot: 
   itemslots: []
   slotObj: []
+  playerPos: {fileID: 1953105247}
 --- !u!114 &818167024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1746,6 +1746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9cbae79b6e1294f8162a8511528219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedSlot: 0
 --- !u!1 &845292441
 GameObject:
   m_ObjectHideFlags: 0
@@ -2711,6 +2712,7 @@ MonoBehaviour:
   selectionSize: 0
   HotbarKeys: 310000003200000033000000340000003500000036000000370000003800000039000000
   UseItemKey: 32
+  DropItemKey: 113
 --- !u!50 &1953105250
 Rigidbody2D:
   serializedVersion: 4
