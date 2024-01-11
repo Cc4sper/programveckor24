@@ -8,6 +8,7 @@ public class Item : MonoBehaviour
     public int ID;
     public string title;
     public string description; 
+    public bool canUse = true;
 
     public bool hasItem = false;
 
@@ -16,11 +17,30 @@ public class Item : MonoBehaviour
         hasItem = true;
         //adds to player hotbar 
     }
-    public virtual void checkPickup()
+    public virtual void TryPickup()
     {
         if (hasItem == false)
         {
             playerPickup();
         }
+    }
+    
+
+    public virtual void TryUseItem()
+    {
+        if (hasItem && canUse)
+        {
+            UseItem();
+        }
+    }
+    public virtual void UseItem()
+    {
+        //effect of item
+    }
+
+    public void RemoveItem()
+    {
+        //remove from hotbar visual
+        Destroy(gameObject);
     }
 }

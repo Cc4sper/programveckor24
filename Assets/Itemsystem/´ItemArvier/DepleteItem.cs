@@ -8,7 +8,7 @@ public class DepleteItem : UsableItem
     public int amount = 1; //starts of as one
     public int maxAmount = 20; // deafualt 20
 
-    public override void checkPickup()
+    public override void TryPickup()
     {
         //ifall spelaren har stackable item i hotbar och maxAmount < amount
         //på den stackable så går ;
@@ -37,6 +37,7 @@ public class DepleteItem : UsableItem
     }
     public override void UseItem()
     {
+        base.UseItem(); //temp message
         if (amount > 1)
         {
             amount--;

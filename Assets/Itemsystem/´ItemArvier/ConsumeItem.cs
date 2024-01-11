@@ -7,8 +7,9 @@ public class ConsumeItem : DepleteItem
 {
     public int itemHeal = 1;
 
-    public override void UseItem()
+    public override void UseItem() 
     {
+        base.UseItem(); //temp message and deplets
         //get players health + itemHeal
         print("healed "+itemHeal);
     }

@@ -9,6 +9,7 @@ public class CooldownItem : UsableItem
 
     public override void UseItem()
     {
+        base.UseItem(); //temp message
         canUse = false;
         cooldown = timer;
     }

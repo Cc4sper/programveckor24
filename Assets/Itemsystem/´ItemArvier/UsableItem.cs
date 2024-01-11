@@ -4,18 +4,9 @@ using UnityEngine;
 
 public class UsableItem : Item
 {
-    public bool canUse = true;
-
-    public virtual void CheckUseItem()
+    public override void UseItem()
     {
-        if (hasItem && canUse)
-        {
-            UseItem();
-        }
+        print("used " +name);
     }
 
-    public virtual void UseItem()
-    {
-        //effect of item
-    }
 }

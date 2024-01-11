@@ -50,7 +50,7 @@ public class HotbarCollect : MonoBehaviour
             
             if (emptyIndex != slotAmount) //if there was a free spot
             {
-                itemslots[emptyIndex].checkPickup();
+                itemslots[emptyIndex].TryPickup();
                 print("stacked item");
             }
             else
@@ -80,7 +80,7 @@ public class HotbarCollect : MonoBehaviour
             slotImage.GetComponent<Image>().sprite = add.GetComponent<SpriteRenderer>().sprite;
             add.transform.parent = slotObj[emptyIndex].transform; //maybe temporary
             itemslots[emptyIndex] = add;
-            add.checkPickup();
+            add.TryPickup();
         }
     }
 

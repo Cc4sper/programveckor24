@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerHotbarControl : MonoBehaviour
 {
     [SerializeField] GameObject Hotbar;
-    int selectionSize;
-    KeyCode[] HotbarKeys =
+    public int selectionSize;
+    [SerializeField] KeyCode[] HotbarKeys =
         {KeyCode.Alpha1,
         KeyCode.Alpha2,
         KeyCode.Alpha3,
@@ -17,17 +17,30 @@ public class PlayerHotbarControl : MonoBehaviour
         KeyCode.Alpha8,
         KeyCode.Alpha9,
     };
+    [SerializeField] KeyCode UseItemKey = KeyCode.Mouse0;
+
+
 
     private void Start()
     {
-        updateSlotSelection();
+        Invoke("updateSlotSelection", 1); //wait 
+        //updateSlotSelection();
     }
     void Update()
     {
-        if (Input.GetKeyDown(HotbarKeys[0]) && selectionSize >= 0+1)
+        for (int i = 0; i < selectionSize; i++)
         {
-            Hotbar.GetComponent<HotbarUse>().SelectItem(0);
+            if (Input.GetKeyDown(HotbarKeys[i]) && selectionSize >= i + 1)
+            {
+                Hotbar.GetComponent<HotbarUse>().SelectItem(i);
+            }
         }
+        if (Input.GetKeyDown(UseItemKey))
+        {
+            print("x");
+            Hotbar.GetComponent<HotbarUse>().TryUseItem();
+        }
+        
     }
     void updateSlotSelection()
     {

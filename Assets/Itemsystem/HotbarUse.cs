@@ -1,27 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class HotbarUse : MonoBehaviour
 {
-    GameObject selectedicon;
+    
     int selectedSlot;
 
     Item selectedItem;
-    public void UseItem(int index)
+    public void TryUseItem()
     {
-        selectedItem = GetComponent<HotbarCollect>().itemslots[index];
-        if (selectedItem is UsableItem)
+        if (GetComponent<HotbarCollect>().itemslots[selectedSlot] != null)
         {
-
+            selectedItem = GetComponent<HotbarCollect>().itemslots[selectedSlot];
+            print("Tried using" + selectedItem.name);
+            if (selectedItem is UsableItem)
+            {
+                UseItem();
+            }
+        }
+        else
+        {
+            print("no item to use");
         }
     }
 
+    private void UseItem()
+    {
+        selectedItem.TryUseItem();
+    }
+        
+
     public void SelectItem(int index)
     {
+        print("selected slot "+index);
+        GetComponent<HotbarCollect>().slotObj[selectedSlot].GetComponent<Image>().color = Color.gray; //resets color of last selected
         selectedSlot = index;
-        Transform slotObj = GetComponent<HotbarCollect>().slotObj[selectedSlot].transform;
-        selectedicon.transform.parent = slotObj;
+        GetComponent<HotbarCollect>().slotObj[selectedSlot].GetComponent<Image>().color = new Color(0.3f,0.3f,0.3f,1);
+        
     }
 
 }
