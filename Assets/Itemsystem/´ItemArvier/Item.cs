@@ -42,7 +42,6 @@ public class Item : MonoBehaviour
 
     public virtual void RemoveItem()
     {
-        transform.parent.GetChild(0).GetComponent<Image>().color = Color.clear; //remove from hotbar visual
         transform.parent.GetComponentInParent<HotbarCollect>().CalledDestroyItem();
         Destroy(gameObject);
         

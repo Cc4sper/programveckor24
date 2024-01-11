@@ -75,12 +75,12 @@ public class HotbarCollect : MonoBehaviour
         else
         {
             filledSlot[emptyIndex] = true;
-            slotImage = slotObj[emptyIndex].transform.GetChild(0).gameObject;
-            slotImage.GetComponent<Image>().color = Color.white;
-            slotImage.GetComponent<Image>().sprite = add.GetComponent<SpriteRenderer>().sprite;
-            add.transform.parent = slotObj[emptyIndex].transform; //maybe temporary
-            itemslots[emptyIndex] = add;
-            add.TryPickup();
+            slotImage = slotObj[emptyIndex].transform.GetChild(0).gameObject; 
+            slotImage.GetComponent<Image>().color = Color.white; //Makes item sprite display visual
+            slotImage.GetComponent<Image>().sprite = add.GetComponent<SpriteRenderer>().sprite; //adds item sprite into hotbar
+            add.transform.parent = slotObj[emptyIndex].transform; //puts item as child of corrosponding item slot
+            itemslots[emptyIndex] = add; //adds item in item array
+            add.TryPickup(); //Pickup is called for the Item-object
         }
     }
 
@@ -124,7 +124,9 @@ public class HotbarCollect : MonoBehaviour
             if (itemslots[i] == null)
             {
                 filledSlot[i] = false;
-
+                itemslots[i] = null; //makes it from missing to not exsisting
+                slotObj[i].transform.GetChild(0).GetComponent<Image>().color = Color.clear;
+                slotObj[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
             }
         }
     }

@@ -7,7 +7,7 @@ public class UsableItem : Item
 {
     public override void UseItem()
     {
-        print("used " +name);
+        print("used " +title);
     }
 
 }
