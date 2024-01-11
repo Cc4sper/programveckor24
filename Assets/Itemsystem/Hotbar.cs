@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class Hotbar : MonoBehaviour
 {
     int emptyIndex = 0;
+
+    bool addingStackable = false;
 
     public int slotAmount = 0;
 

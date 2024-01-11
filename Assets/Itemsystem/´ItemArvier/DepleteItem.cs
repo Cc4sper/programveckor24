@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DepleteItem : UsableItem
 {
@@ -14,12 +15,11 @@ public class DepleteItem : UsableItem
         //annars:
         if (maxAmount > amount)
         {
-            
             playerPickup();
         }
         else
         {
-            print("max amount of item");
+            print("max amount of item, you squished it in with the rest");
         }
     }
     public override void playerPickup()
@@ -33,6 +33,7 @@ public class DepleteItem : UsableItem
         {
             hasItem = true;
         }
+        transform.parent.GetChild(1).GetComponent<TextMeshProUGUI>().text = "" + amount; //shows amount of item in hotbar
     }
     public override void UseItem()
     {
