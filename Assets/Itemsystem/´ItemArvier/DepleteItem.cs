@@ -31,7 +31,7 @@ public class DepleteItem : UsableItem
         {
             hasItem = true;
         }
-        transform.parent.GetChild(1).GetComponent<TextMeshProUGUI>().text = "" + amount; //shows amount of item in hotbar
+        UpdateDisplayAmount();
     }
     public override void UseItem()
     {
@@ -39,11 +39,18 @@ public class DepleteItem : UsableItem
         if (amount > 1)
         {
             amount--;
+            Destroy(transform.parent.GetChild(3).gameObject); //destroys previous stacked item in hotbar
+            UpdateDisplayAmount();
         }
         else
         {
             base.RemoveItem();
         }
+    }
+
+    public void UpdateDisplayAmount()
+    {
+        transform.parent.GetChild(1).GetComponent<TextMeshProUGUI>().text = "" + amount; //shows amount of item in hotbar
     }
 
     

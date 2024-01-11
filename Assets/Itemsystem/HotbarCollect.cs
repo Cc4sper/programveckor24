@@ -116,12 +116,12 @@ public class HotbarCollect : MonoBehaviour
         return result;
     }
 
-    public void CalledDestroyItem() //slots with no items are marked as empty, is called from item when being destroyed
+    public void CalledDestroyItem() // is called from item when being destroyed
     {
-        Invoke("UpdateFilledSlots", 0.1f); 
+        Invoke("UpdateEmptySlots", 0.1f); 
     }
 
-    private void UpdateFilledSlots()
+    private void UpdateEmptySlots()
     {
         for (int i = 0; i < slotAmount - 1; i++)
         {
@@ -147,7 +147,7 @@ public class HotbarCollect : MonoBehaviour
 
             itemslots[slotIndex].PlayerDrop();
             itemslots[slotIndex] = null; //removes item from array
-            UpdateFilledSlots();
+            UpdateEmptySlots();
         }
         else
         {
