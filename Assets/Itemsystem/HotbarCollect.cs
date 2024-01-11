@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class Hotbar : MonoBehaviour
+public class HotbarCollect : MonoBehaviour
 {
     int emptyIndex = 0;
 

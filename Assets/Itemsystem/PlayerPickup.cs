@@ -6,7 +6,7 @@ public class PlayerPickup : MonoBehaviour
 {
     public bool InRangePickup = false;
     public KeyCode pickupKey = KeyCode.E;
-    public Hotbar bar;
+    public HotbarCollect bar;
     public Item colItem;
     public GameObject colObj;
 
