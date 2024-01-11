@@ -1,18 +1,19 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
-{   
+{
     public static AudioManager Instance;
-
     public Sound[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
 
-    public void Awake()
+    private void Awake()
     {
-        if (Instance==null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -22,21 +23,19 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void Start()
+    public void Start()
     {
         PlayMusic("Theme");
+        
     }
-
-
 
     public void PlayMusic(string name)
     {
-        Sound s = Array.Find(musicSounds, x => x.Name == name);
+        Sound s = Array.Find(musicSounds, x => x.name == name);
 
-        if (s==null)
+        if (s == null)
         {
-            Debug.Log("sound not found");
+            Debug.Log("Sound not found, fuck me");
         }
         else
         {
@@ -44,13 +43,13 @@ public class AudioManager : MonoBehaviour
             musicSource.Play();
         }
     }
-    
     public void PlaySFX(string name)
     {
-        Sound s = Array.Find(sfxSounds, x => x.Name == name);
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+
         if (s == null)
         {
-            Debug.Log("sound not found");
+            Debug.Log("Sound not found, fuck me");
         }
         else
         {
@@ -58,7 +57,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void ToggleMusic()
+    public void toggleMusic()
     {
         musicSource.mute = !musicSource.mute;
     }
@@ -66,13 +65,12 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.mute = !sfxSource.mute;
     }
+
     public void MusicVolume(float volume)
     {
         musicSource.volume = volume;
-
     }
-
-    public void SfxVolume(float volume)
+    public void SFXVolume(float volume)
     {
         sfxSource.volume = volume;
     }
