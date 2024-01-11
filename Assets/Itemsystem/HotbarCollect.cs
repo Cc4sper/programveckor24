@@ -73,6 +73,8 @@ public class HotbarCollect : MonoBehaviour
         if (slotIndex == slotAmount)
         {
             print("full off items, switching selected");
+            TryDropItem(GetComponent<HotbarUse>().selectedSlot);
+            AddItemHotbar(add);
         }
         else
         {
@@ -123,7 +125,7 @@ public class HotbarCollect : MonoBehaviour
     {
         for (int i = 0; i < slotAmount - 1; i++)
         {
-            if (itemslots[i] == null)
+            if (itemslots[i] == null) //if not in item array = properly remove it
             {
                 filledSlot[i] = false;
                 itemslots[i] = null; //if it was missing it's now not exsisting
@@ -137,9 +139,6 @@ public class HotbarCollect : MonoBehaviour
     {
         if (filledSlot[slotIndex] == true)//if it exsist
         {
-            //itemslots[slotIndex].transform.position = playerPos.position; //teleports to player, as if it was dropped off by player
-            //itemslots[slotIndex].transform.parent = null; //detaches item as child of hotbar slot
-            
             while (slotObj[slotIndex].transform.childCount > 2)
             {
                 slotObj[slotIndex].transform.GetChild(2).transform.position = playerPos.position; //teleports all items in dropped slot to player
@@ -147,7 +146,7 @@ public class HotbarCollect : MonoBehaviour
             }
 
             itemslots[slotIndex].PlayerDrop();
-            itemslots[slotIndex] = null;
+            itemslots[slotIndex] = null; //removes item from array
             UpdateFilledSlots();
         }
         else
