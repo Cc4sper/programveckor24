@@ -42,30 +42,32 @@ public class Hotbar : MonoBehaviour
         print("trying to add " + add);
         if (add is DepleteItem)
         {
-            emptyIndex = GetSameItemSlot(add);
             print("depletable item");
-            if (emptyIndex == slotAmount)
+            emptyIndex = GetSameItemSlot(add);
+            
+            if (emptyIndex != slotAmount) //if there was a free spot
             {
-                print("there was no same object");
-                emptyIndex = GetEmptySlot();
+                itemslots[emptyIndex].checkPickup();
+                print("stacked item");
             }
             else
             {
-                print("stacked item");
-                add.checkPickup();
+                print("there was no same object");
+                AddItemHotbar(add);
             }
         }
         else
         {
             print("other item");
-            emptyIndex = GetEmptySlot();
+            AddItemHotbar(add);
         }
-        
-        
+    }
+    private void AddItemHotbar(Item add)
+    {
+        emptyIndex = GetEmptySlot();
         if (emptyIndex == slotAmount)
         {
             print("full off items");
-
         }
         else
         {
@@ -73,14 +75,10 @@ public class Hotbar : MonoBehaviour
             slotImage = slotObj[emptyIndex].transform.GetChild(0).gameObject;
             slotImage.GetComponent<Image>().color = Color.white;
             slotImage.GetComponent<Image>().sprite = add.GetComponent<SpriteRenderer>().sprite;
-            //add.transform.parent = slotObj[GetEmptySlot()].transform; //maybe temporary
-
+            add.transform.parent = slotObj[emptyIndex].transform; //maybe temporary
             itemslots[emptyIndex] = add;
-
             add.checkPickup();
         }
-        
-
     }
 
     int GetSameItemSlot(Item itm)
@@ -88,13 +86,10 @@ public class Hotbar : MonoBehaviour
         int result = slotAmount;
         for (int i = 0; i < filledSlot.Length; i++)
         {
-            if (itemslots[i] is DepleteItem)
+            if (itemslots[i] is DepleteItem && itm.ID == itemslots[i].ID)
             {
-                if (itm.ID == itemslots[i].ID)
-                {
-                    result = i;
-                    break;
-                }
+                result = i;
+                break;
             }
         }
         return result;
