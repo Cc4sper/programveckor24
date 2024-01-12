@@ -11,13 +11,15 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("damage"))
         {
-            int damagetaken;
+            
+            int damagetaken = 0;
             damagetaken = collision.GetComponent<GenericAttack>().damage;
             if (vulnerable)
             {
                 enemyhp -= damagetaken;
                 checkkdeath();
             }
+            print("hit enemy " + damagetaken);
         }
     }
     void checkkdeath()

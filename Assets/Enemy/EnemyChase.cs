@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyChase : MonoBehaviour
 {
     public float speed = 3;
     private Transform target;
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         {
             target = collision.transform;
 
-            Debug.Log(target);
+            print("chasing player");
             
 
         }
@@ -51,8 +51,8 @@ public class Enemy : MonoBehaviour
         {
             target = null;
 
-            Debug.Log(target);
-            
+            print("lost chase");
+
         }
     }
 

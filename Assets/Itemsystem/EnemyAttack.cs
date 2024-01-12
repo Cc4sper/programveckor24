@@ -12,28 +12,25 @@ public class EnemyAttack : MonoBehaviour
     public float cooldown;
     bool canAttack;
     float timer;
-    private void OnCollisionEnter2D(Collision2D collision)
+   
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (canAttack == true)
+        if (canAttack == true && collision.CompareTag("Player"))
         {
             print("enemy attack");
             Attack();
         }
         else
         {
-            print("cant attack");
+            print("inrange but wont attack");
         }
     }
 
     public void Attack()
     {
-        GameObject newStrike = Instantiate(attackPrefab, transform.position + transform.up * reach,Quaternion.identity);
+        timer = cooldown;
+        GameObject newStrike = Instantiate(attackPrefab, transform.position,Quaternion.identity);
         newStrike.tag = "Danger"; //marks it as not a enemy attack
-        newStrike.GetComponent<Rigidbody2D>().AddForce(transform.up * attackForce, ForceMode2D.Force);
         newStrike.GetComponent<GenericAttack>().damage = enemyDamage;
         
     }
@@ -42,6 +39,7 @@ public class EnemyAttack : MonoBehaviour
         if (timer > 0)
         {
             timer -= Time.deltaTime;
+            canAttack = false;
         }
         else if (canAttack == false)
         {
