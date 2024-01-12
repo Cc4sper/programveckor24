@@ -15,7 +15,7 @@ public class CooldownItem : UsableItem
     }
 
 
-    void Update()
+    public virtual void Update()
     {
         if (timer > 0)
         {
