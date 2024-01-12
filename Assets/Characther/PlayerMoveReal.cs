@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour
         vänster = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("CustomKey" + 1, ""));
         up= (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("CustomKey" + 2, ""));
         down = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("CustomKey" + 3, ""));
-    }
+    } 
 
     // Update is called once per frame
     void Update()
