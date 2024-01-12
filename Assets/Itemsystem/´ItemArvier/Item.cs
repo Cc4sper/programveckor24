@@ -19,9 +19,14 @@ public class Item : MonoBehaviour
         hasItem = true;
         //adds to player hotbar 
     }
+    public void PlayerDrop()
+    {
+        print("player dropped " + title);
+        hasItem = false;
+    }
     public virtual void TryPickup()
     {
-        if (hasItem == false)
+        if (hasItem == false) //if player dosen't already hold this item it is picked up
         {
             playerPickup();
         }
@@ -42,9 +47,7 @@ public class Item : MonoBehaviour
 
     public virtual void RemoveItem()
     {
-        transform.parent.GetChild(0).GetComponent<Image>().color = Color.clear; //remove from hotbar visual
         transform.parent.GetComponentInParent<HotbarCollect>().CalledDestroyItem();
         Destroy(gameObject);
-        
     }
 }

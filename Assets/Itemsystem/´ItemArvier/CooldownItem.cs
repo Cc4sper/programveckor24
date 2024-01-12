@@ -11,11 +11,11 @@ public class CooldownItem : UsableItem
     {
         base.UseItem(); //temp message
         canUse = false;
-        cooldown = timer;
+        timer = cooldown;
     }
 
 
-    void Update()
+    public virtual void Update()
     {
         if (timer > 0)
         {

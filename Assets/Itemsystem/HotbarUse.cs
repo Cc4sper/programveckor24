@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HotbarUse : MonoBehaviour
 {
     
-    int selectedSlot;
+    public int selectedSlot = 0;
 
     Item selectedItem;
     public void TryUseItem()
@@ -15,7 +15,7 @@ public class HotbarUse : MonoBehaviour
         if (GetComponent<HotbarCollect>().itemslots[selectedSlot] != null)
         {
             selectedItem = GetComponent<HotbarCollect>().itemslots[selectedSlot];
-            print("Tried using" + selectedItem.name);
+            print("Tried using" + selectedItem.title);
             if (selectedItem is UsableItem)
             {
                 UseItem();
@@ -31,15 +31,18 @@ public class HotbarUse : MonoBehaviour
     {
         selectedItem.TryUseItem();
     }
-        
+    
+    public void DropItem()
+    {
+        GetComponent<HotbarCollect>().TryDropItem(selectedSlot);
+    }
 
     public void SelectItem(int index)
     {
         print("selected slot "+index);
         GetComponent<HotbarCollect>().slotObj[selectedSlot].GetComponent<Image>().color = Color.gray; //resets color of last selected
+
         selectedSlot = index;
         GetComponent<HotbarCollect>().slotObj[selectedSlot].GetComponent<Image>().color = new Color(0.3f,0.3f,0.3f,1);
-        
     }
-
 }
