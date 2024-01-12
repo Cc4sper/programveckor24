@@ -7,8 +7,6 @@ public class EnemyAttack : MonoBehaviour
     public float delay;
     public GameObject attackPrefab;
     public int enemyDamage;
-    public float reach;
-    public float attackForce;
     public float cooldown;
     bool canAttack;
     float timer;

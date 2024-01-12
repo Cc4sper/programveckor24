@@ -33,7 +33,7 @@ public class PlayerPickup : MonoBehaviour
             colItem = colObj.GetComponent<Item>();
             colObj.transform.position = new Vector2(0, 500); //temporary to make item disapear without removing it
             print("picking up " + colItem.title);
-            bar.AddItem(colItem);
+            bar.TryAddItem(colItem);
             
         }
     }

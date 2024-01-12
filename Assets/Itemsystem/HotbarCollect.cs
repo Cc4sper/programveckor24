@@ -40,7 +40,7 @@ public class HotbarCollect : MonoBehaviour
         
     }
 
-    public void AddItem(Item add) //called by player when it picks up item
+    public void TryAddItem(Item add) //called by player when it picks up item
     {
         print("trying to add " + add.title);
         LastCollectItem = add; //saved for later use 
@@ -72,9 +72,16 @@ public class HotbarCollect : MonoBehaviour
         slotIndex = GetEmptySlot();
         if (slotIndex == slotAmount)
         {
-            print("full off items, switching selected");
-            TryDropItem(GetComponent<HotbarUse>().selectedSlot);
-            AddItemHotbar(add);
+            print("full off items, switching selected"); //dropps item of selected slots and then replaces it with the item being picked up
+            if (TryDropItem(GetComponent<HotbarUse>().selectedSlot))
+            {
+                AddItemHotbar(add);
+            }
+            else
+            {
+                print("couldn't switch items");
+            }
+
         }
         else
         {
@@ -135,23 +142,24 @@ public class HotbarCollect : MonoBehaviour
         }
     }
 
-    public void TryDropItem(int slotIndex)
+    public bool TryDropItem(int slotIndex)
     {
-        if (filledSlot[slotIndex] == true)//if it exsist
+        if (itemslots[slotIndex] == true)//if it exsist
         {
+            itemslots[slotIndex].PlayerDrop();
+            itemslots[slotIndex] = null; //removes item from array
             while (slotObj[slotIndex].transform.childCount > 2)
             {
                 slotObj[slotIndex].transform.GetChild(2).transform.position = playerPos.position; //teleports all items in dropped slot to player
                 slotObj[slotIndex].transform.GetChild(2).transform.parent = null; //detaches all item as child of hotbar slot
             }
-
-            itemslots[slotIndex].PlayerDrop();
-            itemslots[slotIndex] = null; //removes item from array
             UpdateEmptySlots();
+            return true;
         }
         else
         {
             print("couldn't drop item");
+            return false;
         }
         
     }
