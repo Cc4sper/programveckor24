@@ -106,12 +106,9 @@ MonoBehaviour:
   down: 115
   "v\xE4nster": 97
   "h\xF6ger": 100
-  Ability1: 0
-  playSpeed: 3
+  playSpeed: 1.6
   tr: {fileID: 7636086388137028218}
   rb: {fileID: -5081611740271718719}
-  Weapon: {fileID: 0}
-  moveSpeed: 5
 --- !u!96 &7636086388137028218
 TrailRenderer:
   serializedVersion: 3

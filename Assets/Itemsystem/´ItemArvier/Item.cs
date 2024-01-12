@@ -19,7 +19,7 @@ public class Item : MonoBehaviour
         hasItem = true;
         //adds to player hotbar 
     }
-    public void PlayerDrop()
+    public virtual void PlayerDrop()
     {
         print("player dropped " + title);
         hasItem = false;

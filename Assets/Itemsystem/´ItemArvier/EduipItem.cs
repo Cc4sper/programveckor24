@@ -7,6 +7,22 @@ public class EduipItem : Item
     public override void playerPickup()
     {
         base.playerPickup();
-        //effect upon player
+        //constant effect
+    }
+
+    public override void PlayerDrop()
+    {
+        LoseEffect();
+        base.PlayerDrop();
+    }
+    public override void RemoveItem()
+    {
+        LoseEffect();
+        base.RemoveItem();
+    }
+
+    public virtual void LoseEffect()
+    {
+        //lose same effect
     }
 }
