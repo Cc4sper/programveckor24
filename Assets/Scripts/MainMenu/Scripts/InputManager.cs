@@ -64,7 +64,7 @@ public class InputManager : MonoBehaviour
     private void LoadKey(int buttonIndex)
     {
         // Ladda den sparade tangen för den aktuella knappen och uppdatera dess text
-        string key = PlayerPrefs.GetString("CustomKey" + buttonIndex, "");
+        string key = PlayerPrefs.GetString("CustomKey" + buttonIndex, "");  
         buttonChangers[buttonIndex].text = key;
     }
 }

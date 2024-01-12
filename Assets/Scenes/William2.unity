@@ -1127,7 +1127,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 215173372}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 623564444}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &215173372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,18 +2108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf5d4af6ecd84c45a506925d2e7c62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonbl: {fileID: 1090558188}
-  buttonbl2: {fileID: 0}
-  buttonbl3: {fileID: 0}
-  buttonbl4: {fileID: 0}
-  buttonbl5: {fileID: 0}
-  buttonbl6: {fileID: 0}
-  Key: W
-  Key2: 
-  Key3: 
-  Key4: 
-  Key5: 
-  Key6: 
+  buttonChangers:
+  - {fileID: 1090558188}
+  - {fileID: 593231220}
+  - {fileID: 94254705}
+  - {fileID: 1429446473}
+  - {fileID: 1104741305}
 --- !u!1 &655665582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,20 +2930,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b58ee7e580f294fb34ca5271dfe38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 1.6
   boxCollider: {fileID: 873289322}
   up: 119
   down: 115
   "v\xE4nster": 97
   "h\xF6ger": 100
   Ability1: 0
-  playSpeed: 1.6
   tr: {fileID: 0}
   rb: {fileID: 873289319}
-  Weapon: {fileID: 0}
-  moveSpeed: 5
-  dashSpeed: 10
-  dashDuration: 1
-  dashCooldown: 1
 --- !u!1 &887008197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3649,7 +3650,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1056582154}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 623564444}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1056582154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7728,9 +7741,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 623564444}
-        m_TargetAssemblyTypeName: Keybind, Assembly-CSharp
-        m_MethodName: changeKey
-        m_Mode: 1
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
