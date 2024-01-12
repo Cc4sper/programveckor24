@@ -21,10 +21,15 @@ public class PlayerMove : MonoBehaviour
    
     Vector2 moveDirection;
     Vector2 mousePosistion;
-
-    
-
    
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        vänster = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("CustomKey" + 1, ""));
+    }
+
+    // Update is called once per frame
     void Update()
     {
 
