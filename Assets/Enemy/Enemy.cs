@@ -6,9 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float speed = 3;
     private Transform target;
-    public float health = 5;
-   
-
+    
 
 
 
@@ -28,12 +26,6 @@ public class Enemy : MonoBehaviour
             float step = speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, target.position, step);
            
-        }
-
-        if (health <= 0)
-        {
-            Destroy();
-
         }
 
     }

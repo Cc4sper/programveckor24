@@ -7,6 +7,7 @@ TagManager:
   - Item
   - Undefined
   - damage
+  - Danger
   layers:
   - Default
   - TransparentFX
