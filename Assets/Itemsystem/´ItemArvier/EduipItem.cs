@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EduipItem : Item
 {
+    
     public override void UseItem()
     {
         base.UseItem();
@@ -21,8 +22,8 @@ public class EduipItem : Item
         base.RemoveItem();
     }
 
-    public void LoseEffect()
+    public virtual void LoseEffect()
     {
-
+        //lose same effect
     }
 }

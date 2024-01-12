@@ -4,26 +4,17 @@ using UnityEngine;
 
 public class ArmorItem : EduipItem
 {
+    public Transform player;
     public int Armor; //extra hp onto player
     public override void UseItem()
     {
         base.UseItem();
-
+        player = transform.parent.parent.GetComponent<HotbarCollect>().playerPos;
+        player.GetComponent<PlayerHealth>().armor += Armor;
     }
 
-    public override void PlayerDrop()
+    public override void LoseEffect()
     {
-        LoseEffect();
-        base.PlayerDrop();
-    }
-    public override void RemoveItem()
-    {
-        LoseEffect();
-        base.RemoveItem();
-    }
-
-    public void LoseEffect()
-    {
-
+        player.GetComponent<PlayerHealth>().armor -= Armor;
     }
 }

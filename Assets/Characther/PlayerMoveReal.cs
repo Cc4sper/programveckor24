@@ -4,7 +4,6 @@ using UnityEngine;
 
 
 public class PlayerMove : MonoBehaviour
-
 {
     //Variables for movement and dash - Casper
 
