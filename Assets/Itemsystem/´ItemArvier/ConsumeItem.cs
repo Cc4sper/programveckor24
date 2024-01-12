@@ -10,8 +10,8 @@ public class ConsumeItem : DepleteItem
     public override void UseItem() 
     {
         base.UseItem(); //temp message and deplets
-        //get players health + itemHeal
         print("healed "+itemHeal);
+        transform.parent.GetComponentInParent<HotbarCollect>().playerPos.GetComponent<PlayerHealth>().HealHealth(itemHeal);
     }
 
 }
