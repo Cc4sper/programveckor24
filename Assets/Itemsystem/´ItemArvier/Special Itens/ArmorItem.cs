@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EduipItem : Item
+public class ArmorItem : EduipItem
 {
+    public int Armor; //extra hp onto player
     public override void UseItem()
     {
         base.UseItem();
-        //constant effect
+
     }
 
     public override void PlayerDrop()
