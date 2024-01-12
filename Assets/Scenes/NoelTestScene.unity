@@ -2171,11 +2171,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 6
-  title: 
+  title: Arm ors
   description: 
   canUse: 1
   hasItem: 0
-  Armor: 10
+  player: {fileID: 0}
+  Armor: 1
 --- !u!1 &1228509803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2971,8 +2972,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4853416075083290168, guid: d2b47792b7fae0744b9978de3095b6e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9044827158193380017}
   m_SourcePrefab: {fileID: 100100000, guid: d2b47792b7fae0744b9978de3095b6e1, type: 3}
+--- !u!1 &8944890216231482433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4853416075083290168, guid: d2b47792b7fae0744b9978de3095b6e1, type: 3}
+  m_PrefabInstance: {fileID: 3495061091968782154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9044827158193380017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8944890216231482433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e797f8ab1069523419bc67e9e08d3c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  armor: 0
+  vulnerable: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

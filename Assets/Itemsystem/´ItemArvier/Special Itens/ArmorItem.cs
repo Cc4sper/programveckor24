@@ -6,9 +6,9 @@ public class ArmorItem : EduipItem
 {
     public Transform player;
     public int Armor; //extra hp onto player
-    public override void UseItem()
+    public override void playerPickup()
     {
-        base.UseItem();
+        base.playerPickup();
         player = transform.parent.parent.GetComponent<HotbarCollect>().playerPos;
         player.GetComponent<PlayerHealth>().armor += Armor;
     }

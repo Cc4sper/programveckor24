@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class EduipItem : Item
 {
-    
-    public override void UseItem()
+    public override void playerPickup()
     {
-        base.UseItem();
+        base.playerPickup();
         //constant effect
     }
 
