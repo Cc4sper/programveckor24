@@ -1,3 +1,1 @@
-VAR pokemon_name = ""
-
-EXTERNAL playEmote(emoteName)
+VAR yes_no = ""

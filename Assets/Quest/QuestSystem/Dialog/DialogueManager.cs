@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using Ink.UnityIntegration;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Params")]
     [SerializeField] private float typingSpeed = 0.04f;
+
+    [Header("Global Ink File")]
+    [SerializeField] private InkFile globalsInkFile;
 
     [Header("Dialogue UI")]
 
@@ -40,6 +44,7 @@ public class DialogueManager : MonoBehaviour
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
+    private DialogueVariables dialogueVariables;
 
 
     private void Awake()
@@ -49,6 +54,7 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Mulitple DialogManager");
         }
         instance = this;
+        dialogueVariables = new DialogueVariables(globalsInkFile.filePath);
     }
     public static DialogueManager GetInstance()
     {
@@ -92,6 +98,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         player.GetComponent<PlayerMove>().enabled = false;
+        dialogueVariables.StartListening(currentStory);
         //reset
         displayNameText.text = "???";
         portraitAnimator.Play("default");
@@ -104,6 +111,7 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
+        dialogueVariables.StopListening(currentStory);
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -238,8 +246,17 @@ public class DialogueManager : MonoBehaviour
         }
         
     }
-
-
-
+    
+    public Ink.Runtime.Object GetVariableState(string variableName)
+    {
+        Ink.Runtime.Object variableValue = null;
+        dialogueVariables.variables.TryGetValue(variableName, out variableValue);
+        if (variableValue == null)
+        {
+            Debug.LogWarning("INk varible null:" + variableName);
+        }
+        return variableValue;
+    }
+    
 
 }
