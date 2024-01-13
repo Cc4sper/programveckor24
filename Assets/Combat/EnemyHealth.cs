@@ -17,10 +17,11 @@ public class EnemyHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("damage") && vulnerable)
-        {            
-            TakeDamage(collision.GetComponent<GenericAttack>().damage,true);
+        {
+            TakeDamage(collision.transform.GetComponent<GenericAttack>().damage, true);
         }
     }
+   
     void TakeDamage(int dmg, bool hit)
     {
         vulnerable = false;
@@ -29,10 +30,10 @@ public class EnemyHealth : MonoBehaviour
         checkkdeath();
 
         sprite.color = new Color(0.9f, 0.9f, 0.9f, 1);
-        ogSpeed = GetComponent<EnemyChase>().speed;
+        ogSpeed = transform.GetChild(1).GetComponent<EnemyChase>().speed;
         if (hit)
         {
-            GetComponent<EnemyChase>().speed = 0;
+            transform.GetChild(1).GetComponent<EnemyChase>().speed = 0;
         }
         Invoke("Recover", recoverTime);
     }
@@ -40,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
     {
         vulnerable = true;
         sprite.color = Color.white;
-        GetComponent<EnemyChase>().speed = ogSpeed;
+        transform.GetChild(1).GetComponent<EnemyChase>().speed = ogSpeed;
     }
     void checkkdeath()
     {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyChase : MonoBehaviour
 {
     public float speed = 3;
+    public Transform enemy;
     private Transform target;
     
 
@@ -12,7 +13,7 @@ public class EnemyChase : MonoBehaviour
 
     public void Start()
     {
-        
+        enemy = transform.parent.transform;
     }
 
     
@@ -24,7 +25,7 @@ public class EnemyChase : MonoBehaviour
         if (target != null)
         {
             float step = speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+            enemy.position = Vector2.MoveTowards(transform.position, target.position, step);
            
         }
 
