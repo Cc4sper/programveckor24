@@ -105,7 +105,7 @@ MonoBehaviour:
   hasItem: 0
   amount: 1
   maxAmount: 5
-  itemHeal: 10
+  itemHeal: 20
 --- !u!61 &1665977794287491231
 BoxCollider2D:
   m_ObjectHideFlags: 0

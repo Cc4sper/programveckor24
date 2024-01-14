@@ -11,7 +11,7 @@ public class HotbarUse : MonoBehaviour
     Item selectedItem;
     public void TryUseItem()
     {
-        if (GetComponent<HotbarCollect>().itemslots[selectedSlot] != null)
+        if (HasSelectedItem())
         {
             selectedItem = GetComponent<HotbarCollect>().itemslots[selectedSlot];
             print("Tried using" + selectedItem.title);
@@ -55,7 +55,7 @@ public class HotbarUse : MonoBehaviour
     
     public bool HasSelectedItem()
     {
-        if (GetComponent<HotbarCollect>().filledSlot[selectedSlot])
+        if (GetComponent<HotbarCollect>().itemslots[selectedSlot] != null)
         {
             return true;
         }

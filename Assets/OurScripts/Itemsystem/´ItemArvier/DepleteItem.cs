@@ -53,7 +53,11 @@ public class DepleteItem : UsableItem
         transform.parent.GetChild(1).GetComponent<TextMeshProUGUI>().text = "" + amount; //shows amount of item in hotbar
     }
 
-    
+    public override void PlayerDrop() // reset amount because stacked items always drop invidually
+    {
+        amount = 1; 
+        base.PlayerDrop();
+    }
 
 }
 
