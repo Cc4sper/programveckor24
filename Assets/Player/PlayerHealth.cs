@@ -7,6 +7,10 @@ public class PlayerHealth : MonoBehaviour
 {
     public float health = 100;
     float maxHealth;
+
+    [SerializeField] float respawnTime;
+    [SerializeField] GameObject screen;
+
     public int armor = 0;
     public bool vulnerable = true;
     public Image healthBar;
@@ -22,14 +26,14 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(collision.GetComponent<GenericAttack>().damage);
         }
     }
-    void checkkdeath()
+    private void checkkdeath()
     {
         if (health < 1)
         {
-            print("player died");
-            HealHealth(maxHealth);
-            transform.position = GetComponent<PlayerRespawn>().savedPos;
-           
+            DisablePlayer();
+            screen.GetComponent<DarkScreen>().ScreenFade();
+            Invoke("Respawn", respawnTime);
+            
         }
     }
     private void Update()
@@ -66,5 +70,23 @@ public class PlayerHealth : MonoBehaviour
     private void UpdateHealthBar()
     {
         healthBar.fillAmount = health / 100;
+    }
+
+    private void DisablePlayer()
+    {
+        GetComponent<PlayerMove>().enabled = false;
+        GetComponent<PlayerPickup>().enabled = false;
+    }
+
+    private void EnablePlayer()
+    {
+        GetComponent<PlayerMove>().enabled = true;
+        GetComponent<PlayerPickup>().enabled = true;
+    }
+    private void Respawn()
+    {
+        HealHealth(maxHealth);
+        EnablePlayer(); 
+        transform.position = GetComponent<PlayerRespawn>().savedPos; //respawns at respawnpoint
     }
 }
