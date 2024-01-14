@@ -7,16 +7,17 @@ public class DashItem : CooldownItem
     public float dashStrength;
     public float dashDuration;
     public bool dashState = false;
-    public Transform playerPos;
+
     public Rigidbody2D rb;
+    
     private Vector2 dir;
 
     public override void playerPickup()
     {
         base.playerPickup();
-        playerPos = transform.parent.parent.GetComponent<HotbarCollect>().playerPos;
         rb = playerPos.GetComponent<Rigidbody2D>();
     }
+
     public override void UseItem()
     {
         base.UseItem();
@@ -36,6 +37,7 @@ public class DashItem : CooldownItem
             dashState = false;
         }
     }
+
 
 
 

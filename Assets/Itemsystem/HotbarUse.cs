@@ -8,7 +8,6 @@ public class HotbarUse : MonoBehaviour
 {
     
     public int selectedSlot = 0;
-
     Item selectedItem;
     public void TryUseItem()
     {
@@ -41,8 +40,16 @@ public class HotbarUse : MonoBehaviour
     {
         print("selected slot "+index);
         GetComponent<HotbarCollect>().slotObj[selectedSlot].GetComponent<Image>().color = Color.gray; //resets color of last selected
-
+        if (GetComponent<HotbarCollect>().filledSlot[selectedSlot] == true)
+        {
+            GetComponent<HotbarCollect>().itemslots[selectedSlot].DeselectItem();
+        }
+        
         selectedSlot = index;
         GetComponent<HotbarCollect>().slotObj[selectedSlot].GetComponent<Image>().color = new Color(0.3f,0.3f,0.3f,1);
+        if (GetComponent<HotbarCollect>().filledSlot[selectedSlot] == true)
+        {
+            GetComponent<HotbarCollect>().itemslots[selectedSlot].SelectItem();
+        }
     }
 }

@@ -7,8 +7,9 @@ public class DarkScreen : MonoBehaviour
 {
     Image sprite;
     [SerializeField] float speed;
+    [SerializeField] float alpha = 0;
     bool fadeIn;
-    float alpha = 0;
+    
     private void Start()
     {
         sprite = GetComponent<Image>();

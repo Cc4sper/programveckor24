@@ -23,6 +23,7 @@ public class Item : MonoBehaviour
     {
         print("player dropped " + title);
         hasItem = false;
+        DeselectItem();
     }
     public virtual void TryPickup()
     {
@@ -31,7 +32,16 @@ public class Item : MonoBehaviour
             playerPickup();
         }
     }
-    
+
+    public virtual void SelectItem()
+    {
+        //shows what item does
+    }
+
+    public virtual void DeselectItem()
+    {
+        //reverts selected effect
+    }
 
     public virtual void TryUseItem()
     {
