@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHotbarControl : MonoBehaviour
 {
-    [SerializeField] GameObject Hotbar;
+    public GameObject Hotbar;
     public int selectionSize;
     [SerializeField] KeyCode[] HotbarKeys =
         {KeyCode.Alpha1,

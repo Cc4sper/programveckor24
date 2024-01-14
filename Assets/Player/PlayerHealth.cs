@@ -26,12 +26,13 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(collision.GetComponent<GenericAttack>().damage);
         }
     }
-    private void checkkdeath()
+    private void checkkDeath()
     {
         if (health < 1)
         {
             DisablePlayer();
             screen.GetComponent<DarkScreen>().ScreenFade();
+            GetComponent<PlayerHotbarControl>().Hotbar.GetComponent<HotbarCollect>().Invoke("DropRandomItem", respawnTime);
             Invoke("Respawn", respawnTime);
             
         }
@@ -51,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage - armor;
         UpdateHealthBar();
-        checkkdeath();
+        checkkDeath();
 
     }
 

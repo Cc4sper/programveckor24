@@ -164,4 +164,9 @@ public class HotbarCollect : MonoBehaviour
         
     }
 
+    public void DropRandomItem()
+    {
+        TryDropItem(Random.Range(0,slotAmount));
+    }
+
 }
