@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public float delay;
+    //public float delay; Maybe later??
     public GameObject attackPrefab;
     public int enemyDamage;
     public float cooldown;
@@ -17,10 +17,6 @@ public class EnemyAttack : MonoBehaviour
         {
             print("enemy attack");
             Attack();
-        }
-        else
-        {
-            print("inrange but wont attack");
         }
     }
 

@@ -130,7 +130,7 @@ public class HotbarCollect : MonoBehaviour
 
     private void UpdateEmptySlots()
     {
-        for (int i = 0; i < slotAmount - 1; i++)
+        for (int i = 0; i < slotAmount; i++)
         {
             if (itemslots[i] == null) //if not in item array = properly remove it
             {

@@ -17,22 +17,19 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Danger"))
+        if (collision.gameObject.CompareTag("Danger") && vulnerable)
         {
-            int damagetaken;
-            damagetaken = collision.GetComponent<GenericAttack>().damage;
-            if (vulnerable)
-            {
-                health -= damagetaken - armor;
-                checkkdeath();
-            }
+            TakeDamage(collision.GetComponent<GenericAttack>().damage);
         }
     }
     void checkkdeath()
     {
         if (health < 1)
         {
-            print("dead");
+            print("player died");
+            HealHealth(maxHealth);
+            transform.position = GetComponent<PlayerRespawn>().savedPos;
+           
         }
     }
     private void Update()
@@ -41,11 +38,17 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(20);
         }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            HealHealth(5);
+        }
     }
     public void TakeDamage(float damage)
     {
-        health -= damage;
-        healthBar.fillAmount = health / 100;
+        health -= damage - armor;
+        UpdateHealthBar();
+        checkkdeath();
+
     }
 
     public void HealHealth(float gain) //player heals _ health but if healing goes over max it sets health to max 
@@ -58,5 +61,10 @@ public class PlayerHealth : MonoBehaviour
         {
             health = maxHealth;
         }
+        UpdateHealthBar();
+    }
+    private void UpdateHealthBar()
+    {
+        healthBar.fillAmount = health / 100;
     }
 }

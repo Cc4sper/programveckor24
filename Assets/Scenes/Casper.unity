@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  health: 5
+  enemy: {fileID: 0}
 --- !u!61 &1398021778
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1180,9 +1180,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8944890214434625839, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7957114977562139348}
-    - targetCorrespondingSourceObject: {fileID: 8944890214434625839, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7957114977562139349}
   m_SourcePrefab: {fileID: 100100000, guid: 8cc4676dfe0264048b95096f4814f57d, type: 3}
 --- !u!1 &7957114977562139347 stripped
 GameObject:
@@ -1201,26 +1198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e797f8ab1069523419bc67e9e08d3c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 100
   armor: 0
   vulnerable: 1
-  healthBar: {fileID: 0}
---- !u!114 &7957114977562139349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7957114977562139347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e797f8ab1069523419bc67e9e08d3c90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  armor: 0
-  vulnerable: 1
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1956919916}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

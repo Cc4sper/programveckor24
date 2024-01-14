@@ -14,8 +14,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] KeyCode down;
     [SerializeField] KeyCode vänster;
     [SerializeField] KeyCode höger;
-    [SerializeField] KeyCode Ability1;
-
+    
     [SerializeField] TrailRenderer tr;
     [SerializeField] Rigidbody2D rb;
 
