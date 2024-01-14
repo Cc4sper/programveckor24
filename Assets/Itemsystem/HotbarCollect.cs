@@ -161,7 +161,17 @@ public class HotbarCollect : MonoBehaviour
             print("couldn't drop item");
             return false;
         }
-        
+    }
+
+    public bool HasWantedSelected(Item wanted)
+    {
+        int x = GetComponent<HotbarUse>().selectedSlot;
+        if (GetComponent<HotbarCollect>().filledSlot[x] && itemslots[x].ID == wanted.ID)
+        {
+            itemslots[x].RemoveItem();
+            return true;
+        }
+        return false;
     }
 
     public void DropRandomItem()

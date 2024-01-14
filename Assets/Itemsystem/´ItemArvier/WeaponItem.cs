@@ -8,7 +8,6 @@ public class WeaponItem : CooldownItem
    
     public float reach;
     public GameObject Attackprefab;
-    public Transform playerPos;
     public GameObject newAttack;
     //public GameObject newAttack;
 

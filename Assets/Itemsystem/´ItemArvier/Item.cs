@@ -17,7 +17,6 @@ public class Item : MonoBehaviour
     public virtual void playerPickup()
     {
         hasItem = true;
-        //adds to player hotbar 
     }
     public virtual void PlayerDrop()
     {
@@ -58,6 +57,7 @@ public class Item : MonoBehaviour
     public virtual void RemoveItem()
     {
         transform.parent.GetComponentInParent<HotbarCollect>().CalledDestroyItem();
+        DeselectItem();
         Destroy(gameObject);
     }
 }

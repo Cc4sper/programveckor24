@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
-    bool InteractSpawn;
+    
     public Vector2 savedPos;
-    [SerializeField] KeyCode InteractKey;
+    public KeyCode InteractKey;
+
+    bool Interact;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("CheckPoint"))
         {
-            InteractSpawn = true;
+            Interact = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("CheckPoint"))
         {
-            InteractSpawn = false;
+            Interact = false;
         }
     }
     private void Update()
     {
-        if (InteractSpawn && Input.GetKeyDown(InteractKey))
+        if (Interact && Input.GetKeyDown(InteractKey))
         {
             setSpawn();
         }

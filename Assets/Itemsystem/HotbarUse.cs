@@ -52,4 +52,13 @@ public class HotbarUse : MonoBehaviour
             GetComponent<HotbarCollect>().itemslots[selectedSlot].SelectItem();
         }
     }
+    
+    public bool HasSelectedItem()
+    {
+        if (GetComponent<HotbarCollect>().filledSlot[selectedSlot])
+        {
+            return true;
+        }
+        return false;
+    }
 }

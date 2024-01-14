@@ -24,8 +24,7 @@ public class PlayerHotbarControl : MonoBehaviour
 
     private void Start()
     {
-        Invoke("updateSlotSelection", 1); //wait 
-        //updateSlotSelection();
+        Invoke("updateSlotSelection", 1); //waits for load
     }
     void Update()
     {
@@ -49,5 +48,15 @@ public class PlayerHotbarControl : MonoBehaviour
     void updateSlotSelection()
     {
         selectionSize = Hotbar.GetComponent<HotbarCollect>().slotAmount;
+    }
+    public bool TryGiveSelected(Item wanted)
+    {
+        if (Hotbar.GetComponent<HotbarCollect>().HasWantedSelected(wanted))
+        {
+            return true;
+            print("gave "+wanted);
+        }
+        return false;
+        
     }
 }
