@@ -30,6 +30,7 @@ public class CooldownItem : UsableItem
         {
             canUse = true;
         }
+
         if (canUse == false)
         {
             visualSprite.color = new Color(1, 1, 1, 0.5f - timer / cooldown * 0.5f);
@@ -46,10 +47,10 @@ public class CooldownItem : UsableItem
         playerPos = transform.parent.parent.GetComponent<HotbarCollect>().playerPos; //gets player transform 
     }
 
-    public override void SelectItem()
+    public override void SelectItem() //visual copies players pos and rot and moves according to player and to how it is pre-set in item
     {
-        visual.parent = playerPos;
-        visual.transform.position = playerPos.position; //copies players pos and rot and moves according to how it is pre-set in item
+        visual.parent = playerPos; 
+        visual.transform.position = playerPos.position; 
         visual.rotation = playerPos.rotation;
         visual.transform.localPosition += visualPos; 
 
@@ -64,7 +65,7 @@ public class CooldownItem : UsableItem
     {
         base.UseItem(); //temp message
         canUse = false;
-        timer = cooldown;
+        timer = cooldown * playerPos.GetComponent<PlayerPickup>().CooldownScalar;
     }
 
 

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerPickup : MonoBehaviour
 {
+    public float CooldownScalar = 1;
     public bool InRangePickup = false;
     public KeyCode pickupKey = KeyCode.E;
+
     public HotbarCollect bar;
     public Item colItem;
     public GameObject colObj;
