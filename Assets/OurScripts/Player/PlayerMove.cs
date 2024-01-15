@@ -26,6 +26,12 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         tr = GetComponent<TrailRenderer>();
+        UpdateInput();
+    }
+
+    public void UpdateInput()
+    {
+
         höger = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("CustomKey" + 0, ""));
         vänster = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("CustomKey" + 1, ""));
         up = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("CustomKey" + 2, ""));
@@ -35,9 +41,24 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveX = 0;
         float moveY = Input.GetAxisRaw("Vertical");
+        if (Input.GetKey(höger))
+        {
+            moveX = 1;
+        }
+        else if (Input.GetKey(vänster))
+        {
+            moveX = -1;
+        }
+        if (Input.GetKey(up))
+        {
+            moveY = 1;
+        }else if (Input.GetKey(down))
+        {
+            moveY = -1;
+        }
+        
 
 
         moveDirection = new Vector2(moveX, moveY).normalized;
@@ -50,6 +71,7 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddForce(new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed));
+        print(moveDirection);
 
         Vector2 aimDirection = mousePosistion - rb.position;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;

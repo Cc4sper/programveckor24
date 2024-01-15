@@ -11,9 +11,11 @@ public class MiniMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject SettingsHolder;
     public GameObject miniMenu;
+    PlayerMove player;
 
     private void Start()
     {
+        player = FindObjectOfType<PlayerMove>();
         Resume();
     }
     private void Update()
@@ -24,7 +26,7 @@ public class MiniMenu : MonoBehaviour
             {
                 ActiveObject();
                 Resume();
-
+                player.UpdateInput();
             }
             else
             {

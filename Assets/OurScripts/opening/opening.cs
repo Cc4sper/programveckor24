@@ -11,6 +11,7 @@ public class opening : MonoBehaviour
     [SerializeField] float speed;
     Vector3 savedPos;
     bool reseted = true;
+    bool text = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +30,11 @@ public class opening : MonoBehaviour
         {
             print("reset time");
             timer = time;
+            text = true;
+            reseted = true;
+
         }
-        if (timer < 2)
+        if (timer < 2 && timer > 1)
         {
             sandMove();
         }
@@ -39,7 +43,7 @@ public class opening : MonoBehaviour
             print("reset sand");
             resetSan();
         }
-        if (timer < 1)
+        if (timer < 1.5f && text)
         {
             nexttext();
         }
@@ -51,13 +55,13 @@ public class opening : MonoBehaviour
     void resetSan()
     {
         reseted = false;
-        sand.transform.position -= new Vector3(1000, 0);
+        sand.transform.position -= new Vector3(1400, 0);
     }
     void nexttext()
     {
+        text = false;
         transform.GetChild(ontext).gameObject.SetActive(false);
         ontext++;
         transform.GetChild(ontext).gameObject.SetActive(true);
-        reseted = true;
     }
 }
