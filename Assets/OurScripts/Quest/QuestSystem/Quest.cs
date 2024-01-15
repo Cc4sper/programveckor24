@@ -30,7 +30,7 @@ public class Quest : MonoBehaviour
         }
         if (questActive == true)
         {
-            QuestManager.instance.AddActiveQuest(currentActiveQuest);
+           // QuestManager.instance.AddActiveQuest(currentActiveQuest);
             informationNPC.SetActive(true);
         }
 

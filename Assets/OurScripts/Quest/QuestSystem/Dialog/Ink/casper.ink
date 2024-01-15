@@ -30,9 +30,21 @@ Thanks! Good luck!
 -> END
 
 == already_yes_no ==
-Go away peasant! You've already answered {yes_no}. Please do your mission
+Go away peasant! You've already answered {yes_no}. Please do your mission!
 -> END
 == afterQuest ==
 Thank you! You get..........
 Nothing
 -> END
+-> said("nooooo")
+
+
+
+
+
+
+
+
+
+
+
