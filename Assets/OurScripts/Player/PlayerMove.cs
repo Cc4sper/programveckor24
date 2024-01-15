@@ -71,8 +71,6 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddForce(new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed));
-        print(moveDirection);
-
         Vector2 aimDirection = mousePosistion - rb.position;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = aimAngle;
