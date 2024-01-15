@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemButton : MonoBehaviour
 {
-    [SerializeField] private Item item; 
+    [SerializeField] private ItemTT item; 
 
 
 }
