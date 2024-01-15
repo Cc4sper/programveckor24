@@ -15,7 +15,7 @@ This is my game idea! <color=\#FF1E35>Clash of Casper: Casper Rider!</color> Wha
 
 No, I don't think I will. Would you like to hear my game idea again? #speaker:Casper #portrait:casper_neutral #layout:right
 + [Yes]
-    -> main
+  //  -> main
 + [No]
     
     -Give that person information. Do you <color=\#32CD32>accept</color> this quest????
