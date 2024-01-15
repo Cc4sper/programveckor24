@@ -108,7 +108,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: orangeguywalks_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 455
+        width: 140
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce9573f1a56b9c4b9b7fe0c5b147a23
+      internalID: 443981921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orangeguywalks_1
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 455
+        width: 140
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef874acf4f59be49895cb3fb99cb69a
+      internalID: -1793604669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orangeguywalks_2
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 231
+        width: 140
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0494fa17b1ceb84ca7bc52c66af8f98
+      internalID: -606762300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orangeguywalks_3
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 231
+        width: 140
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e3335273f02a6c44bcd9009b780738a
+      internalID: 1571745336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orangeguywalks_4
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 7
+        width: 140
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec5d73dc88f191f4898ac85cd9c17b25
+      internalID: -988853253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orangeguywalks_5
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 7
+        width: 140
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db0aef0542e32649926dae90ca5bcab
+      internalID: 628417088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +245,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      orangeguywalks_0: 443981921
+      orangeguywalks_1: -1793604669
+      orangeguywalks_2: -606762300
+      orangeguywalks_3: 1571745336
+      orangeguywalks_4: -988853253
+      orangeguywalks_5: 628417088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
