@@ -166,9 +166,16 @@ public class HotbarCollect : MonoBehaviour
     public bool HasWantedSelected(Item wanted)
     {
         int x = GetComponent<HotbarUse>().selectedSlot;
-        if (GetComponent<HotbarCollect>().filledSlot[x] && itemslots[x].ID == wanted.ID)
+        if (filledSlot[x] && itemslots[x].ID == wanted.ID)
         {
-            itemslots[x].RemoveItem();
+            if (itemslots[x] is DepleteItem) //depletable items are removed one at a time whiles others are completely removed
+            {
+                itemslots[x].UseItem();
+            }
+            else
+            {
+                itemslots[x].RemoveItem();
+            }
             return true;
         }
         return false;

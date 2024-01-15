@@ -7,6 +7,9 @@ public class WantItem : MonoBehaviour
     public bool saticified = false;
     bool interactGive;
     [SerializeField] Item wantedItem;
+    [SerializeField] int wantedAmount;
+    [SerializeField] bool repeat;
+    int given;
     Transform player;
     KeyCode playerKey;
 
@@ -18,12 +21,40 @@ public class WantItem : MonoBehaviour
             {
                 if (player.GetComponent<PlayerHotbarControl>().TryGiveSelected(wantedItem))
                 {
-                    saticified = true;
-                    print("got wanted item");
+                    GotWanted();
+ 
                 }
 
             }
         }
+    }
+
+    void GotWanted()
+    {
+        given++;
+        print("got wanted item "+given+"/"+wantedAmount);
+        if (given >= wantedAmount)
+        {
+            if (saticified == false)
+            {
+                Saticified();
+            }
+        }
+    }
+
+    public virtual void Saticified()
+    {
+        saticified = true;
+        if (repeat)
+        {
+            ResetWant();
+        }
+    }
+
+    void ResetWant()
+    {
+        given = 0;
+        saticified = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
