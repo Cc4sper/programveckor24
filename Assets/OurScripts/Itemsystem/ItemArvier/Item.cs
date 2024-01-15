@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Item : MonoBehaviour
 {
     //tillägg via kod
     public int ID;
     public string title;
-    public string description; 
     public bool canUse = true;
     Sprite empty;
-
     public bool hasItem = false;
+
+    
 
     public virtual void playerPickup()
     {
