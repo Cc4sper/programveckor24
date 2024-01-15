@@ -2,7 +2,7 @@ INCLUDE globals.ink
 
 { yes_no == "": Go speak to our lord casper! | {yes_no == "noe": -> bye | Who are you?!}} #speaker:Alexander #portrait:alexander #layout:left
                *[*Give Info*]
-               Ah yes... I see. Thanks for the information.
+               Ah yes... I see. Thanks for the <color=\#32CD32>information</color>.
                Bye
                -> said("noe")
                -> END

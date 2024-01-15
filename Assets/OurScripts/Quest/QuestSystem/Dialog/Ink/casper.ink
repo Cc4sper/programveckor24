@@ -18,7 +18,7 @@ No, I don't think I will. Would you like to hear my game idea again? #speaker:Ca
     -> main
 + [No]
     
-    -Give that person information. Do you accept this quest????
+    -Give that person information. Do you <color=\#32CD32>accept</color> this quest????
 + [Accept]
    -> said("yes")
 + [Decline]
