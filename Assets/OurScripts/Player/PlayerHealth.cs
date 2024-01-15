@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
             GetComponent<PlayerCamera>().cameraDeath();
             DisablePlayer();
             screen.GetComponent<DarkScreen>().ScreenFade();
-            GetComponent<PlayerHotbarControl>().Hotbar.GetComponent<HotbarCollect>().Invoke("DropRandomItem", respawnTime);
+            GetComponent<PlayerHotbarControl>().Hotbar.GetComponent<HotbarCollect>().Invoke("DropRandomItem", respawnTime * 0.9f);
             Invoke("Respawn", respawnTime);
             
         }
@@ -87,8 +87,8 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Respawn()
     {
-        HealHealth(maxHealth);
         EnablePlayer(); 
         transform.position = GetComponent<PlayerRespawn>().savedPos; //respawns at respawnpoint
+        HealHealth(maxHealth);
     }
 }

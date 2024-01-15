@@ -9,11 +9,11 @@ public class PlayerCamera : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        cam.GetComponent<Camerafollow>().Focus(true, focusScalar);
+        cam.GetComponent<Camerafollow>().Focus(true, 5);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        cam.GetComponent<Camerafollow>().Focus(false, focusScalar);
+        cam.GetComponent<Camerafollow>().Focus(false, 6);
     }
 
     public void cameraDeath()

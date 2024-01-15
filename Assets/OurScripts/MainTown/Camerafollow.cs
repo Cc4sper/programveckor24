@@ -10,6 +10,7 @@ public class Camerafollow : MonoBehaviour
     public bool camerafollow;
     bool focusing;
     bool death;
+    int activeSize;
     
     float orthoSizeOg;
 
@@ -32,22 +33,34 @@ public class Camerafollow : MonoBehaviour
         {
             camerafollowing();
         }
-        if (death && cam.orthographicSize > 0)
+        if (death && cam.orthographicSize > 0.5f)
         {
             GetComponent<Camera>().orthographicSize -= Time.deltaTime * 5;
         }
+        if (focusing && cam.orthographicSize > activeSize)
+        {
+            cam.orthographicSize -= Time.deltaTime * 5;
+        }
+        else if (death == false && cam.orthographicSize < activeSize - 0.1f)
+        {
+            focusing = false;
+            cam.orthographicSize += Time.deltaTime * 5;
+        }
+       
+        
+        
+       
  
     }
-    public void Focus(bool active, float focusScalar)
+    public void Focus(bool active, int newSize)
     {
+        activeSize = newSize;
         if (active && focusing == false)
         {
-            cam.orthographicSize /= focusScalar;
             focusing = true;
         }
         else if (active == false && focusing == true)
         {
-            cam.orthographicSize *= focusScalar;
             focusing = false;
         }
     }
@@ -67,8 +80,9 @@ public class Camerafollow : MonoBehaviour
     private void ResetCam()
     {
         camerafollow = true;
+        cam.orthographicSize = activeSize;
         death = false;
-        cam.orthographicSize = orthoSizeOg;
+        
         
     }
 }
