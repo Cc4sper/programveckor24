@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health < 1)
         {
+            GetComponent<PlayerCamera>().cameraDeath();
             DisablePlayer();
             screen.GetComponent<DarkScreen>().ScreenFade();
             GetComponent<PlayerHotbarControl>().Hotbar.GetComponent<HotbarCollect>().Invoke("DropRandomItem", respawnTime);

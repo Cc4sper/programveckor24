@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 1847436859362435465}
   - component: {fileID: 8626110033606954589}
   - component: {fileID: 6312708457340484632}
+  - component: {fileID: -955229570590990097}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -320,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20149a313464cc7478b5a11c1b6e418b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CooldownScalar: 1
   InRangePickup: 0
   pickupKey: 101
   bar: {fileID: 0}
@@ -377,3 +379,17 @@ MonoBehaviour:
   "h\xF6ger": 100
   tr: {fileID: 0}
   rb: {fileID: 0}
+--- !u!114 &-955229570590990097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4853416075083290168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5477f11d3fe7c52428ad87924fc0150a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  focusScalar: 1.2
