@@ -6,5 +6,4 @@ using Ink.Runtime;
 public class InkExternalFunctions
 {
 
-    
 }

@@ -1,6 +1,6 @@
 INCLUDE globals.ink
 
-{ yes_no == "": -> main | -> already_yes_no }
+{ yes_no == "": -> main | {yes_no == "yes": -> already_yes_no | -> afterQuest}}
 
 
 === main ===
@@ -18,16 +18,21 @@ No, I don't think I will. Would you like to hear my game idea again? #speaker:Ca
     -> main
 + [No]
     
-    -I see... Do you like your pay?
-+ [Yes]
-   -> said("Yes")
-+ [No]
-   -> said("No")
+    -Give that person information. Do you accept this quest????
++ [Accept]
+   -> said("yes")
++ [Decline]
+  Oh... come back later then...
+  -> END
 === said(yesno) ===
 ~ yes_no = yesno
-You said {yesno}!
+Thanks! Good luck!
 -> END
 
 == already_yes_no ==
-Go away peasant! You've already answered {yes_no}
+Go away peasant! You've already answered {yes_no}. Please do your mission
+-> END
+== afterQuest ==
+Thank you! You get..........
+Nothing
 -> END

@@ -1,25 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using Ink.Runtime;
+using UnityEngine.EventSystems;
+using Ink.UnityIntegration;
 
 public class BaseQuests : MonoBehaviour
 {
-    bool IsActive;
-    public GameObject QuestBox;
-    void Start()
+    private void Update()
     {
-     QuestBox.SetActive(false);
-
-    }
-    public void OnTriggerEnter2D(Collider2D trigger)
-    {
-        if (trigger.gameObject.tag == "Player")
-        {
-            QuestBox.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                QuestBox.SetActive(true);
-            }
-        }
+            
     }
 }
