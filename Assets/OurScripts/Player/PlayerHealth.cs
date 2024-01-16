@@ -30,12 +30,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health < 1)
         {
-            GetComponent<PlayerCamera>().cameraDeath();
+            
             DisablePlayer();
             screen.GetComponent<DarkScreen>().ScreenFade();
             GetComponent<PlayerHotbarControl>().Hotbar.GetComponent<HotbarCollect>().Invoke("DropRandomItem", respawnTime * 0.9f);
             Invoke("Respawn", respawnTime);
-            
+            //GetComponent<PlayerCamera>().cameraDeath();
+
         }
     }
     private void Update()
@@ -76,13 +77,13 @@ public class PlayerHealth : MonoBehaviour
 
     private void DisablePlayer()
     {
-        GetComponent<PlayerMove>().enabled = false;
+        GetComponent<PlayerMove>().DisableMove(false);
         GetComponent<PlayerPickup>().enabled = false;
     }
 
     private void EnablePlayer()
     {
-        GetComponent<PlayerMove>().enabled = true;
+        GetComponent<PlayerMove>().DisableMove(true);
         GetComponent<PlayerPickup>().enabled = true;
     }
     private void Respawn()
