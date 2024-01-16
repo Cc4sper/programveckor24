@@ -3637,7 +3637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: -15}
+  m_AnchoredPosition: {x: 0, y: -15}
   m_SizeDelta: {x: -300, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &608043146
@@ -4978,6 +4978,7 @@ GameObject:
   - component: {fileID: 716943423}
   - component: {fileID: 716943422}
   - component: {fileID: 716943421}
+  - component: {fileID: 716943424}
   m_Layer: 0
   m_Name: playerSprite
   m_TagString: Untagged
@@ -5065,6 +5066,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &716943424
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716943420}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa2e04f5aa3789945beccac0dbe0fd0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &719013336
 GameObject:
   m_ObjectHideFlags: 0
@@ -17433,7 +17455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSounds:
   - name: Theme
-    clip: {fileID: 8300000, guid: c12d43b8c0873e04d97f8922e2365748, type: 3}
+    clip: {fileID: 8300000, guid: 763cf3b1f4fb24a40817a52c2d84c812, type: 3}
   sfxSounds:
   - name: Jump
     clip: {fileID: 8300000, guid: fc94065b918c45b49a565943e3f0b443, type: 3}
