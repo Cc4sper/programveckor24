@@ -12,10 +12,18 @@ public class QuestManager : MonoBehaviour
 
     private void Awake()
     {
-        
+        if (instance != null && !this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
     }
 
     public List<Quest> allActiveQuests;
+    public List<Quest> allCompletedQuests;
 
     [Header("QuestMenu")]
     public GameObject questMenu;
@@ -55,7 +63,7 @@ public class QuestManager : MonoBehaviour
             questPrefab.transform.SetParent(questMenuContent);
             questPrefab.transform.localScale = Vector2.one;
             QuestRow qRow = questPrefab.GetComponent<QuestRow>();
-            qRow.questName.text = activeQuest.questName;
+         //   qRow.questName.text = activeQuest.questName;
 
             qRow.isActive = true;
             qRow.isTracking = true;
