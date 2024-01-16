@@ -19,7 +19,7 @@ public class PlayerCamera : MonoBehaviour
     {
         if (!collision.CompareTag("Trigger"))
         {
-            cam.GetComponent<Camerafollow>().Focus(true, 5);
+            cam.GetComponent<Camerafollow>().Focus(false, 7);
         }
     }
 

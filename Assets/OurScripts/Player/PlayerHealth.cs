@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     float maxHealth;
 
     [SerializeField] float respawnTime;
-    [SerializeField] GameObject screen;
+    public GameObject screen;
 
     public int armor = 0;
     public bool vulnerable = true;
