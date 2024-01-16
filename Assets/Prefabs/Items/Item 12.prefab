@@ -231,6 +231,6 @@ MonoBehaviour:
   ID: 12
   title: Chip
   canUse: 0
-  hasItem: 0
+  hasItem: 1
   amount: 1
   maxAmount: 20

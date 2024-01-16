@@ -32,11 +32,13 @@ public class QuestNPC : MonoBehaviour
         if (answerText.text == "Accept" && buttonPressed == true)
         {
             questActive = true;
+            ReceiveRewardAndCompleteQuest();
             buttonPressed = false;
+            Instantiate(colObj);
+
         }
         if (questActive == true)
         {
-            ReceiveRewardAndCompleteQuest();
             // QuestManager.instance.AddActiveQuest(currentActiveQuest);
             informationNPC.SetActive(true);
         }
@@ -65,9 +67,11 @@ public class QuestNPC : MonoBehaviour
     }
 
     private void ReceiveRewardAndCompleteQuest()
-    {        
-            colItem = colObj.GetComponent<Item>();
-            bar.TryAddItem(colItem);      
+    {
+        colItem = colObj.GetComponent<Item>();
+        colObj.transform.position = new Vector2(0, 500); //temporary to make item disapear without removing it
+        print("Got " + colItem.title + " from NPC");
+        bar.TryAddItem(colItem);      
     }
     
     /*
