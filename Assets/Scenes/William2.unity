@@ -431,7 +431,6 @@ GameObject:
   - component: {fileID: 77742187}
   - component: {fileID: 77742186}
   - component: {fileID: 77742185}
-  - component: {fileID: 77742188}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -513,21 +512,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &77742188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77742184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00913dd8c6cfe9a4798a897d1d48de48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 1758126483}
-  SettingsHolder: {fileID: 623564441}
-  miniMenu: {fileID: 1874181141}
 --- !u!1 &99134899
 GameObject:
   m_ObjectHideFlags: 0
@@ -6738,6 +6722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1758126485}
+  - component: {fileID: 1758126486}
   m_Layer: 0
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -6766,6 +6751,21 @@ RectTransform:
   m_AnchoredPosition: {x: -8.187588, y: -3.1700168}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1758126486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758126483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00913dd8c6cfe9a4798a897d1d48de48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 1874181141}
+  SettingsHolder: {fileID: 623564441}
+  miniMenu: {fileID: 1874181141}
 --- !u!1 &1758357903
 GameObject:
   m_ObjectHideFlags: 0
