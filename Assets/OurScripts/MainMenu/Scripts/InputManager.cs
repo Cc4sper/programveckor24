@@ -58,10 +58,6 @@ public class InputManager : MonoBehaviour
     {
         // Spara den valda tangen för knappen i spelarens inställningar
         PlayerPrefs.SetString("CustomKey" + buttonIndex, key);
-        if (buttonIndex == 0)
-        {
-            print("sparar höger input som " + key);
-        }
         PlayerPrefs.Save();
     }
 
