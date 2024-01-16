@@ -50,8 +50,7 @@ public class opening : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             timer = 2.1f;
-            text = true;
-            reseted = true;
+            //text = true;
         }
     }
     void sandMove()
@@ -61,7 +60,7 @@ public class opening : MonoBehaviour
     void resetSan()
     {
         reseted = false;
-        sand.transform.position -= new Vector3(1400, 0);
+        sand.transform.position -= new Vector3(1725, 0);
     }
     void nexttext()
     {
