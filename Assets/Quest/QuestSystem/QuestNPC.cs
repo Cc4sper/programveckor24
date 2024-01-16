@@ -14,18 +14,23 @@ public class QuestNPC : MonoBehaviour
     bool questActive = false;
     [SerializeField] private GameObject informationNPC;
     [SerializeField] private GameObject endConversation;
+    [SerializeField] private Item requeireItem;
     public string questName;
     public Quest currentActiveQuest = null;
     public List<Quest> quests;
     public int activeQuestIndex = 0;
     public int currentDialog;
+    private Item[] inv;
+    [SerializeField] private bool ee = false;
+
+
     [SerializeField] Item[] reward;
 
     void Start()
     {
+        inv = FindObjectOfType<HotbarCollect>().itemslots;
         informationNPC.SetActive(false);
         endConversation.SetActive(false);
-        GameObject firstRequiredItem = currentActiveQuest.info.firstRequirmentItem;
     }
 
     void Update()
@@ -41,7 +46,7 @@ public class QuestNPC : MonoBehaviour
         if (questActive == true)
         {
             QuestManager.instance.AddActiveQuest(currentActiveQuest);
-            informationNPC.SetActive(true);
+            informationNPC.SetActive(true); 
         }
         /*
         if (AreQuestRequirmentsComplete())
@@ -53,9 +58,12 @@ public class QuestNPC : MonoBehaviour
         */
 
 
-        if ()
+        foreach (Item x in inv)
         {
-
+            if (x.Equals (requeireItem))
+            {
+                GotAllItems();
+            }
         }
     }
     private void AcceptedQuest()
@@ -96,6 +104,7 @@ public class QuestNPC : MonoBehaviour
     private void GotAllItems()
     {
         endConversation.SetActive(true);
+        ee = true;
     }
     
    
