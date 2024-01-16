@@ -47,6 +47,12 @@ public class opening : MonoBehaviour
         {
             nexttext();
         }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            timer = 2.1f;
+            text = true;
+            reseted = true;
+        }
     }
     void sandMove()
     {
