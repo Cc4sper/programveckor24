@@ -17,6 +17,7 @@ public class MiniMenu : MonoBehaviour
     {
         player = FindObjectOfType<PlayerMove>();
         Resume();
+        
     }
     private void Update()
     {
