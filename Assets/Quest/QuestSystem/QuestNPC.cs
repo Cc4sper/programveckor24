@@ -32,9 +32,10 @@ public class QuestNPC : MonoBehaviour
         if (answerText.text == "Accept" && buttonPressed == true)
         {
             questActive = true;
+            Instantiate(colObj);
             ReceiveRewardAndCompleteQuest();
             buttonPressed = false;
-            Instantiate(colObj);
+            
 
         }
         if (questActive == true)
@@ -69,7 +70,7 @@ public class QuestNPC : MonoBehaviour
     private void ReceiveRewardAndCompleteQuest()
     {
         colItem = colObj.GetComponent<Item>();
-        colObj.transform.position = new Vector2(0, 500); //temporary to make item disapear without removing it
+      //colObj.transform.position = new Vector2(0, 500); //temporary to make item disapear without removing it
         print("Got " + colItem.title + " from NPC");
         bar.TryAddItem(colItem);      
     }

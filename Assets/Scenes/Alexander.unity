@@ -1001,14 +1001,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00320c66de0ec51428a85f5472ed86fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answerText: {fileID: 0}
+  answerText: {fileID: 1694569714}
   buttonPressed: 0
-  informationNPC: {fileID: 0}
+  informationNPC: {fileID: 465751998}
   questName: Oh no
   currentActiveQuest: {fileID: 0}
   quests: []
   activeQuestIndex: 0
   currentDialog: 0
+  colItem: {fileID: 116296498837584612, guid: c1fd536697f1135458f136064f216517, type: 3}
+  colObj: {fileID: 6757262083714321349, guid: c1fd536697f1135458f136064f216517, type: 3}
+  bar: {fileID: 1559549594}
 --- !u!1 &263943131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,6 +1678,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6895789837778997224, guid: 5aa0cf49d109af947bb1fba7a6859b29, type: 3}
   m_PrefabInstance: {fileID: 442024118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &465751998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1002767874814238445, guid: b4f1537ae2f9ec446b7abcf8e2887c2d, type: 3}
+  m_PrefabInstance: {fileID: 8106693013863869650}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &506241176
 PrefabInstance:
@@ -4556,6 +4564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7899105728508264945, guid: 04b716558a19ef549ab995eab8338afa, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8576930583451657674, guid: 04b716558a19ef549ab995eab8338afa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.2
@@ -4616,35 +4628,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 164589240846788074, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 164589240846788074, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 164589240846788074, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 164589240846788074, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 737925912797962738, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 737925912797962738, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_SizeDelta.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353234764121448155, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3198312204114417861, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3198312204114417861, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 3308485171370288914, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4712,11 +4728,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7220832912287213223, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7220832912287213223, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7220832912287213223, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchorMin.y
@@ -4724,11 +4740,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080832291999094386, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8080832291999094386, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8613140330611462945, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_SizeDelta.y
@@ -8875,8 +8891,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Quest, Assembly-CSharp
+      - m_Target: {fileID: 260734365}
+        m_TargetAssemblyTypeName: QuestNPC, Assembly-CSharp
         m_MethodName: Button
         m_Mode: 1
         m_Arguments:
