@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d718dee70ef4e274cbe1b54bd30be305, type: 3}
   m_Name: Quest 1
   m_EditorClassIdentifier: 
+  rewardItem1: 
+  rewardItem2: 
+  firstRequirmentItem: 
+  firstRequirementAmount: 0
+  secondRequirmentItem: 
+  secondRequirementAmount: 0

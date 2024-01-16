@@ -14,6 +14,8 @@ public class Quest : MonoBehaviour
     public bool accepted;
     public bool isCompleted;
 
+    public bool hasNoRequirements;
+
     [Header("Quest Info")]
     public QuestInfo info;
 
