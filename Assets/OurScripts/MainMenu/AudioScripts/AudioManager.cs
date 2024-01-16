@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
     public void Start()
     {
         PlayMusic("Theme");
-        
+        PlayMusic("Jump");
     }
 
     public void PlayMusic(string name)
@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void toggleMusic()
+    public void ToggleMusic()
     {
         musicSource.mute = !musicSource.mute;
     }

@@ -1,5 +1,7 @@
+using Ink.Runtime;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,10 +13,11 @@ public class UIController : MonoBehaviour
     {  
          _musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
          _sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1);
+        
     }
     public void ToggleMusic() 
     {
-        AudioManager.Instance.toggleMusic();//Sätter på/av music
+        AudioManager.Instance.ToggleMusic();//Sätter på/av music
     }
     public void ToggleSFX()
     {

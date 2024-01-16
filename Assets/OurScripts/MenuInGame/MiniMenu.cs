@@ -17,6 +17,7 @@ public class MiniMenu : MonoBehaviour
     {
         player = FindObjectOfType<PlayerMove>();
         Resume();
+        
     }
     private void Update()
     {
@@ -27,6 +28,11 @@ public class MiniMenu : MonoBehaviour
                 ActiveObject();
                 Resume();
                 player.UpdateInput();
+                if (miniMenu.activeInHierarchy == true || SettingsHolder.activeInHierarchy==true)
+                {
+                    miniMenu.SetActive(false);
+                    SettingsHolder.SetActive(false);
+                }
             }
             else
             {
