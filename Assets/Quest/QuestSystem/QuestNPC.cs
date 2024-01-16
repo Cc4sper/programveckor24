@@ -19,7 +19,6 @@ public class QuestNPC : MonoBehaviour
     public Quest currentActiveQuest = null;
     public List<Quest> quests;
     public int activeQuestIndex = 0;
-    public int currentDialog;
     private Item[] inv;
     [SerializeField] private bool ee = false;
 
