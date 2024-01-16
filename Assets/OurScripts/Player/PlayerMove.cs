@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     //Variables for movement and dash - Casper
 
     public float moveSpeed = 1.6f;
+    float savedSpeed;
 
     [SerializeField] BoxCollider2D boxCollider;
     [SerializeField] KeyCode up;
@@ -66,7 +67,18 @@ public class PlayerMove : MonoBehaviour
 
 
     }
-
+    public void DisableMove(bool state)
+    {
+        if (!state)
+        {
+            savedSpeed = moveSpeed;
+            moveSpeed = 0;
+        }
+        else
+        {
+            moveSpeed = savedSpeed;
+        }
+    }
 
     private void FixedUpdate()
     {

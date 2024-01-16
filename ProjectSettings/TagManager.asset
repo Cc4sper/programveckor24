@@ -9,6 +9,7 @@ TagManager:
   - damage
   - Danger
   - CheckPoint
+  - Trigger
   layers:
   - Default
   - TransparentFX
