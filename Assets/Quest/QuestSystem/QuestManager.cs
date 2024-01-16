@@ -63,7 +63,7 @@ public class QuestManager : MonoBehaviour
             questPrefab.transform.SetParent(questMenuContent);
             questPrefab.transform.localScale = Vector2.one;
             QuestRow qRow = questPrefab.GetComponent<QuestRow>();
-         //   qRow.questName.text = activeQuest.questName;
+            //qRow.questName.text = activeQuest.questName;
 
             qRow.isActive = true;
             qRow.isTracking = true;

@@ -13,18 +13,19 @@ public class QuestNPC : MonoBehaviour
     [SerializeField] bool buttonPressed = false;
     bool questActive = false;
     [SerializeField] private GameObject informationNPC;
+    [SerializeField] private GameObject endConversation;
     public string questName;
     public Quest currentActiveQuest = null;
     public List<Quest> quests;
     public int activeQuestIndex = 0;
     public int currentDialog;
-    public Item colItem;
-    public GameObject colObj;
-    public HotbarCollect bar;
+    [SerializeField] Item[] reward;
+
     void Start()
     {
         informationNPC.SetActive(false);
-
+        endConversation.SetActive(false);
+        GameObject firstRequiredItem = currentActiveQuest.info.firstRequirmentItem;
     }
 
     void Update()
@@ -32,7 +33,6 @@ public class QuestNPC : MonoBehaviour
         if (answerText.text == "Accept" && buttonPressed == true)
         {
             questActive = true;
-            Instantiate(colObj);
             ReceiveRewardAndCompleteQuest();
             buttonPressed = false;
             
@@ -40,7 +40,7 @@ public class QuestNPC : MonoBehaviour
         }
         if (questActive == true)
         {
-            // QuestManager.instance.AddActiveQuest(currentActiveQuest);
+            QuestManager.instance.AddActiveQuest(currentActiveQuest);
             informationNPC.SetActive(true);
         }
         /*
@@ -52,6 +52,11 @@ public class QuestNPC : MonoBehaviour
         }
         */
 
+
+        if ()
+        {
+
+        }
     }
     private void AcceptedQuest()
     {
@@ -69,57 +74,31 @@ public class QuestNPC : MonoBehaviour
 
     private void ReceiveRewardAndCompleteQuest()
     {
-        colItem = colObj.GetComponent<Item>();
-      //colObj.transform.position = new Vector2(0, 500); //temporary to make item disapear without removing it
-        print("Got " + colItem.title + " from NPC");
-        bar.TryAddItem(colItem);      
+
+        
+            print("dropping loot");
+
+            for (int i = 0; i < reward.Length; i++)
+            {
+                float x = Random.Range(-5, 5) / 10f;
+                float y = Random.Range(-5, 5) / 10f;
+                print(x + " " + y);
+                Vector2 dropPoint = transform.position += new Vector3(x, y);
+                Instantiate(reward[i], dropPoint, Quaternion.identity);
+            }
+        }
+    
+    private void GiveItems()
+    {
+
     }
     
-    /*
-    private bool AreQuestRequirmentsComplete()
+    private void GotAllItems()
     {
-        print("Checking Requiremnts");
-        // First Item Requirment
-        
-        string firstRequiredItem = currentActiveQuest.info.firstRequirmentItem;
-        int firstRequiredAmount = currentActiveQuest.info.firstRequirementAmount;
-
-        var firstItemCounter = 0;
-
-        foreach (string item in HotbarCollect.instance)
-        {
-            if (item == firstRequiredItem)
-            {
-                firstItemCounter++;
-            }
-        }
-
-        // Second Item Requirment -- If we dont have a second item, just set it to 0
-
-        string secondRequiredItem = currentActiveQuest.info.secondRequirmentItem;
-        int secondRequiredAmount = currentActiveQuest.info.secondRequirementAmount;
-
-        var secondItemCounter = 0;
-
-        foreach (string item in InventorySystem.Instance.itemList)
-        {
-            if (item == secondRequiredItem)
-            {
-                secondItemCounter++;
-            }
-        }
-
-        if (firstItemCounter >= firstRequiredAmount && secondItemCounter >= secondRequiredAmount)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        endConversation.SetActive(true);
     }
-
-   */
+    
+   
     public void Button()
     {
         if (answerText.text == "Accept")

@@ -13,13 +13,10 @@ public class QuestInfo : ScriptableObject
 {
 
     [Header("Rewards")]
-    public string rewardItem1;
-    public string rewardItem2;
+    public GameObject rewardItem1;
+    public GameObject rewardItem2;
 
     [Header("Requirements")]
-    public string firstRequirmentItem;
-    public int firstRequirementAmount;
-
-    public string secondRequirmentItem;
-    public int secondRequirementAmount;
+    public GameObject firstRequirmentItem;
+    public GameObject secondRequirmentItem;
 }
