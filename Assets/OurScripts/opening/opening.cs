@@ -60,7 +60,7 @@ public class opening : MonoBehaviour
     void resetSan()
     {
         reseted = false;
-        sand.transform.position -= new Vector3(1725, 0);
+        sand.transform.position -= new Vector3(1730, 0);
     }
     void nexttext()
     {
