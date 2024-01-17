@@ -8,8 +8,10 @@ using Ink.UnityIntegration;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class Quest : MonoBehaviour
+public class Quest
 {
+
+    public string questName;
     [Header("Bools")]
     public bool accepted;
     public bool isCompleted;
