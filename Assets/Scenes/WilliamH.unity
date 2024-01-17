@@ -1390,7 +1390,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1947953263}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2234,7 +2234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &526857387
 Transform:
   m_ObjectHideFlags: 0
@@ -2244,7 +2244,7 @@ Transform:
   m_GameObject: {fileID: 526857386}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -442.91272, y: 363.73157, z: -7.3715496}
+  m_LocalPosition: {x: -394, y: 363.73157, z: -7.3715496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2664,7 +2664,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1040, y: -605}
+  m_AnchoredPosition: {x: 1056, y: -605}
   m_SizeDelta: {x: 10, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &749715307
@@ -6841,7 +6841,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1947953263}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -7611,7 +7611,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1947953263}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -7997,8 +7997,16 @@ MonoBehaviour:
   - name: Theme
     clip: {fileID: 8300000, guid: 763cf3b1f4fb24a40817a52c2d84c812, type: 3}
   sfxSounds:
-  - name: Jump
-    clip: {fileID: 8300000, guid: b6c392f30bd780e4ab3797660fcc374b, type: 3}
+  - name: 
+    clip: {fileID: 0}
+  - name: SandGun
+    clip: {fileID: 8300000, guid: bbf0e741700ff0c408773f987fe234fb, type: 3}
+  - name: MerfGun
+    clip: {fileID: 8300000, guid: 8b6d6622e19a95b41b7c89c911bad539, type: 3}
+  - name: Sword
+    clip: {fileID: 8300000, guid: 14909748c5038544896771a8e10a0c12, type: 3}
+  - name: Club
+    clip: {fileID: 8300000, guid: 5727095532370ad42879baff9d4ca001, type: 3}
   musicSource: {fileID: 1746864481}
   sfxSource: {fileID: 819840988}
 --- !u!4 &1720803431
@@ -9119,7 +9127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1907156045
 RectTransform:
   m_ObjectHideFlags: 0
