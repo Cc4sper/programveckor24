@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BigTeleprt : MonoBehaviour
 {
-    [SerializeField] GameObject worldLoad;
-    [SerializeField] Transform loadWorld;
+    [SerializeField] bool SideScrollarTransition;
     Transform teleportPoint;
-    GameObject colidedObj;
+    Transform player;
+    
     private void Start()
     {
         teleportPoint = transform.GetChild(0);
@@ -16,16 +16,24 @@ public class BigTeleprt : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            colidedObj = collision.gameObject;
+            player = collision.transform.parent;
             //Instantiate(worldLoad, loadWorld.position - transform.position, Quaternion.identity);
  
-            collision.transform.parent.GetComponent<PlayerHealth>().screen.GetComponent<DarkScreen>().ScreenFade();
+            player.GetComponent<PlayerHealth>().screen.GetComponent<DarkScreen>().ScreenFade();
             Invoke("Teleport", 0.9f);
+            if (SideScrollarTransition)
+            {
+                player.GetComponent<PlayerCamera>().ActivateSideScrollar();
+            }
+            else
+            {
+                player.GetComponent<PlayerCamera>().InactivateSideScrollar();
+            }
         }
     }
 
     private void Teleport()
     {
-        colidedObj.transform.parent.position = teleportPoint.transform.position;
+        player.position = teleportPoint.transform.position;
     }
 }

@@ -8,11 +8,14 @@ public class DarkScreen : MonoBehaviour
     Image sprite;
     [SerializeField] float speed;
     [SerializeField] float alpha = 0;
+    [SerializeField] float stayDark;
+    float stayTimer;
     bool fadeIn;
     
     private void Start()
     {
         sprite = GetComponent<Image>();
+        
     }
     void Update()
     {
@@ -25,13 +28,18 @@ public class DarkScreen : MonoBehaviour
             else
             {
                 fadeIn = false;
+                stayTimer = stayDark;
             }
+        }
+        else if (stayTimer > 0)
+        {
+            print("stay");
+            stayTimer -= Time.deltaTime;
         }
         else if (alpha > 0)
         {
             ChangeAlpha(-speed);
         }
-        
     }
 
     void ChangeAlpha(float x)

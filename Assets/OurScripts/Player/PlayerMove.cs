@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
 
     public float moveSpeed = 1.6f;
     float savedSpeed;
+    public bool sideScrollar;
 
     public Animator animator;
 
@@ -57,12 +58,12 @@ public class PlayerMove : MonoBehaviour
         {
             moveX = -1;
         }
-        if (Input.GetKey(up))
+        if (Input.GetKey(up) && sideScrollar == false)
         {
             moveY = 1;
 
         }
-        else if (Input.GetKey(down))
+        else if (Input.GetKey(down) && sideScrollar == false)
         {
             moveY = -1;
         }
@@ -78,6 +79,7 @@ public class PlayerMove : MonoBehaviour
         {
             animator.SetBool("IsWalking", false);
         }
+        
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosistion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 

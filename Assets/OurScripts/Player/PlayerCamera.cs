@@ -6,6 +6,7 @@ public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] Camera cam;
     [SerializeField] float focusScalar;
+    bool sideScrollar;
     
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -28,8 +29,25 @@ public class PlayerCamera : MonoBehaviour
         }
         else
         {
-            cam.GetComponent<Camerafollow>().Focus(false, 7);
+            int defSize = 7;
+            if (sideScrollar)
+            {
+                defSize = 10;
+            }
+            cam.GetComponent<Camerafollow>().Focus(false, defSize);
         }
+    }
+    public void ActivateSideScrollar()
+    {
+        sideScrollar = true;
+        cam.GetComponent<Camerafollow>().height = 6;
+        GetComponent<PlayerMove>().sideScrollar = true;
+    }
+    public void InactivateSideScrollar()
+    {
+        sideScrollar = false;
+        cam.GetComponent<Camerafollow>().height = 0;
+        GetComponent<PlayerMove>().sideScrollar = false;
     }
 
     public void cameraDeath()

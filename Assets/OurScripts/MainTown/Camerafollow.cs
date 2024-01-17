@@ -6,11 +6,12 @@ public class Camerafollow : MonoBehaviour
 {
 
     public float FollowSpeed = 2f;
+    public float height;
     public Transform target;
     public bool camerafollow;
     bool focusing;
     bool death;
-    int activeSize;
+    public int activeSize;
     
     float orthoSizeOg;
 
@@ -71,9 +72,10 @@ public class Camerafollow : MonoBehaviour
         
     }
 
+
     public void camerafollowing()
     {
-        Vector3 newPos = new Vector3(target.position.x, target.position.y, -10f);
+        Vector3 newPos = new Vector3(target.position.x, target.position.y + height, -10f);
         transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
     }
 
