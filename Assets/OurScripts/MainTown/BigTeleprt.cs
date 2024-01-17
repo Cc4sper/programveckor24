@@ -17,7 +17,7 @@ public class BigTeleprt : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             colidedObj = collision.gameObject;
-            Instantiate(worldLoad, loadWorld.position - transform.position, Quaternion.identity);
+            //Instantiate(worldLoad, loadWorld.position - transform.position, Quaternion.identity);
  
             collision.transform.parent.GetComponent<PlayerHealth>().screen.GetComponent<DarkScreen>().ScreenFade();
             Invoke("Teleport", 0.9f);
