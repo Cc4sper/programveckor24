@@ -17283,10 +17283,20 @@ MonoBehaviour:
   - name: MerfGun
     clip: {fileID: 8300000, guid: 8b6d6622e19a95b41b7c89c911bad539, type: 3}
   - name: Club
-    clip: {fileID: 8300000, guid: 5727095532370ad42879baff9d4ca001, type: 3}
+    clip: {fileID: 8300000, guid: 83265b40b22da0040bd8613126bc33d2, type: 3}
   - name: Sword
     clip: {fileID: 8300000, guid: 14909748c5038544896771a8e10a0c12, type: 3}
-  - name: 
+  - name: SlowTime
+    clip: {fileID: 8300000, guid: 6a666163a70b5a147aef41e2769fa434, type: 3}
+  - name: NormTime
+    clip: {fileID: 0}
+  - name: Apple
+    clip: {fileID: 8300000, guid: ae6218390e8bffa40b5d8b931bfd6bee, type: 3}
+  - name: Water
+    clip: {fileID: 8300000, guid: 882d0cb78ad93ed41b9e4daa64240a94, type: 3}
+  - name: Biscuit
+    clip: {fileID: 8300000, guid: 5b92d8f26e6a84646b2e202dd24a7a25, type: 3}
+  - name: GroundSlam
     clip: {fileID: 0}
   musicSource: {fileID: 1482079324}
   sfxSource: {fileID: 251094395}
