@@ -11,6 +11,7 @@ public class TimeItem : DurationItem
         Time.timeScale = 0.25f;
         playerPos.GetComponent<PlayerMove>().moveSpeed *= 4;
         playerPos.GetComponent<PlayerPickup>().CooldownScalar /= 8f;
+        AudioManager.Instance.PlaySFX("SlowTime");
     }
 
     public override void RevertState()
@@ -18,5 +19,6 @@ public class TimeItem : DurationItem
         Time.timeScale = 1;
         playerPos.GetComponent<PlayerMove>().moveSpeed /= 4f;
         playerPos.GetComponent<PlayerPickup>().CooldownScalar *= 8f;
+        AudioManager.Instance.PlaySFX("NormTime");
     }
 }

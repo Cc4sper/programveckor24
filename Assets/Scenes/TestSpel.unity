@@ -15532,10 +15532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c969c6942615d234ca21fd187a8aacfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accepted: 0
-  isCompleted: 0
-  hasNoRequirements: 0
-  info: {fileID: 0}
 --- !u!1 &1899016498
 GameObject:
   m_ObjectHideFlags: 0
@@ -17280,16 +17276,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSounds:
   - name: Theme
-    clip: {fileID: 8300000, guid: c12d43b8c0873e04d97f8922e2365748, type: 3}
+    clip: {fileID: 8300000, guid: 763cf3b1f4fb24a40817a52c2d84c812, type: 3}
   sfxSounds:
   - name: SandGun
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: bbf0e741700ff0c408773f987fe234fb, type: 3}
   - name: MerfGun
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 8b6d6622e19a95b41b7c89c911bad539, type: 3}
   - name: Club
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 5727095532370ad42879baff9d4ca001, type: 3}
   - name: Sword
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 14909748c5038544896771a8e10a0c12, type: 3}
   - name: 
     clip: {fileID: 0}
   musicSource: {fileID: 1482079324}
@@ -17521,7 +17517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2096163699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18226,5 +18222,5 @@ SceneRoots:
   - {fileID: 643692967}
   - {fileID: 614033056}
   - {fileID: 975536398}
-  - {fileID: 2088878077}
   - {fileID: 775151988}
+  - {fileID: 2088878077}
