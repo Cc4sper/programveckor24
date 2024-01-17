@@ -9,15 +9,16 @@ using UnityEngine.UI;
 
 public class QuestNPC : MonoBehaviour
 {
+
+
     [SerializeField] private TextMeshProUGUI answerText;
     [SerializeField] bool buttonPressed = false;
     bool questActive = false;
     [SerializeField] private GameObject informationNPC;
     [SerializeField] private GameObject endConversation;
     [SerializeField] private Item requeireItem;
-    public string questName;
     public Quest currentActiveQuest = null;
-    public List<Quest> quests;
+    public List <Quest> quests;
     public int activeQuestIndex = 0;
     private Item[] inv;
     [SerializeField] private bool ee = false;
@@ -34,17 +35,15 @@ public class QuestNPC : MonoBehaviour
 
     void Update()
     {
-        if (answerText.text == "Accept" && buttonPressed == true)
+        if (buttonPressed == true)
         {
             questActive = true;
-            ReceiveRewardAndCompleteQuest();
+            AcceptedQuest();
             buttonPressed = false;
-            
 
         }
         if (questActive == true)
         {
-            QuestManager.instance.AddActiveQuest(currentActiveQuest);
             informationNPC.SetActive(true); 
         }
         /*
@@ -55,7 +54,10 @@ public class QuestNPC : MonoBehaviour
 
         }
         */
-
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            ReceiveRewardAndCompleteQuest();
+        }
 
         foreach (Item x in inv)
         {
@@ -67,6 +69,8 @@ public class QuestNPC : MonoBehaviour
     }
     private void AcceptedQuest()
     {
+        currentActiveQuest = quests[activeQuestIndex]; // 0 at start
+        QuestManager.instance.AddActiveQuest(currentActiveQuest);
         currentActiveQuest.accepted = true;
 
         if (currentActiveQuest.hasNoRequirements)
@@ -81,7 +85,7 @@ public class QuestNPC : MonoBehaviour
 
     private void ReceiveRewardAndCompleteQuest()
     {
-
+        QuestManager.instance.MarkQuestComplete(currentActiveQuest);
         
             print("dropping loot");
 
@@ -114,15 +118,7 @@ public class QuestNPC : MonoBehaviour
             buttonPressed = true;
         }
     }
-    /*
-
-    /*
-    private void AcceptedQuest()
-    {
-        currentActiveQuest.accepted = true;
-        currentActiveQuest.declined = false;
+    
 
 
-    }
-    */
 }
