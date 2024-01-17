@@ -1003,15 +1003,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   answerText: {fileID: 1694569714}
   buttonPressed: 0
-  informationNPC: {fileID: 465751998}
+  informationNPC: {fileID: 0}
+  endConversation: {fileID: 465751998}
+  requeireItem: {fileID: 1320841552}
   questName: Oh no
   currentActiveQuest: {fileID: 0}
   quests: []
   activeQuestIndex: 0
-  currentDialog: 0
-  colItem: {fileID: 116296498837584612, guid: c1fd536697f1135458f136064f216517, type: 3}
-  colObj: {fileID: 6757262083714321349, guid: c1fd536697f1135458f136064f216517, type: 3}
-  bar: {fileID: 1559549594}
+  ee: 0
+  reward: []
 --- !u!1 &263943131
 GameObject:
   m_ObjectHideFlags: 0
@@ -4011,6 +4011,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be56beeb66e2dbf49825289789062f74, type: 3}
+--- !u!114 &1320841552 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2936391736886311610, guid: 34e920736c773b640b2b27c260e008ba, type: 3}
+  m_PrefabInstance: {fileID: 1110279451}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9414196e8364b6f44b46544964d143ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1448242857
 PrefabInstance:
   m_ObjectHideFlags: 0
