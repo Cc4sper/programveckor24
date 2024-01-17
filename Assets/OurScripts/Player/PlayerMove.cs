@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     public float moveSpeed = 1.6f;
     float savedSpeed;
 
-    private Animator animator;
+    public Animator animator;
 
 
     [SerializeField] BoxCollider2D boxCollider;
@@ -29,7 +29,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        animator = transform.GetChild(0).GetComponent<Animator>();
         tr = GetComponent<TrailRenderer>();
         UpdateInput();
     }
