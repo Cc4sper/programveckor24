@@ -12,6 +12,8 @@ public class Quest
 {
 
     public string questName;
+    public string questDescription;
+    public string questRequirements;
     [Header("Bools")]
     public bool accepted;
     public bool isCompleted;
