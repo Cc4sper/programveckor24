@@ -40,8 +40,44 @@ public class QuestManager : MonoBehaviour
     public Transform questMenuContent;
 
     [Header("QuestTracker")]
-    public GameObject questTrackerContent;
+    public Transform questTrackerContent;
+    public GameObject trackerRowPrefab;
+    public List<Quest> allTrackedQuest;
 
+    public void TrackQuest(Quest quest)
+    {
+        allTrackedQuest.Add(quest);
+      //  RefreshTrackerList();
+    }
+    public void UnTrackQuest(Quest quest)
+    {
+        allTrackedQuest.Remove(quest);
+      //  RefreshTrackerList();
+
+    }
+    
+    private void RefreshTrackerList()
+    {
+        foreach (Transform child in questTrackerContent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Quest trackedQuest in allTrackedQuest)
+        {
+            GameObject trackerPrefab = Instantiate(trackerRowPrefab);
+            trackerPrefab.transform.SetParent(questTrackerContent);
+            trackerPrefab.transform.localScale = Vector2.one;
+            QuestTracked tRow = trackerPrefab.GetComponent<QuestTracked>();
+            tRow.questName.text = trackedQuest.questName;
+            tRow.requirements.text = trackedQuest.questRequirements;
+            tRow.description.text = trackedQuest.questDescription;
+
+            
+
+
+        }
+    }
+    
     private void Update()
     {
         if (Input.GetKeyDown(questTab) && isQuestMenuOpen == false)
@@ -58,11 +94,13 @@ public class QuestManager : MonoBehaviour
     public void AddActiveQuest(Quest quest)
     {
         allActiveQuests.Add(quest);
+      //  TrackQuest(quest);
         RefreshQuestList();
     }
     public void MarkQuestComplete(Quest quest)
     {
         allActiveQuests.Remove(quest);
+       // UnTrackQuest(quest);
         RefreshQuestList();
     }
     
@@ -83,6 +121,8 @@ public class QuestManager : MonoBehaviour
 
             qRow.isActive = true;
             qRow.isTracking = true;
+
+            
 
             
         }
