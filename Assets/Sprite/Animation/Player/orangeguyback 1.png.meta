@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9107f762f90598a44875b64bb72382ff
+guid: 81bd14c5981a98648ad39baa3a7ef8b5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: orangeguyside1_0
+      name: orangeguyback 1_0
       rect:
         serializedVersion: 2
         x: 42
         y: 462
         width: 140
-        height: 196
+        height: 203
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccdc9b944696c174b96f88a3f98ce6e7
-      internalID: -1924099208
+      spriteID: dcc1cd450f7a90c4ab2def1218dd97ab
+      internalID: -1567905934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orangeguyside1_1
+      name: orangeguyback 1_1
       rect:
         serializedVersion: 2
         x: 266
-        y: 462
+        y: 455
         width: 140
-        height: 196
+        height: 203
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,41 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8496c1a95e1c5044aa1d41ca56f47fb7
-      internalID: -1141945342
+      spriteID: e7d407ee38d2dec428e701d11a724a08
+      internalID: -1737484954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orangeguyside1_2
-      rect:
-        serializedVersion: 2
-        x: 490
-        y: 462
-        width: 140
-        height: 189
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e73142367ebf84045bc1cf50ba5599d3
-      internalID: -1886369805
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orangeguyside1_3
+      name: orangeguyback 1_2
       rect:
         serializedVersion: 2
         x: 42
-        y: 238
+        y: 224
         width: 140
-        height: 196
+        height: 203
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,62 +166,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0311b8b4abfbd8b4fb5092232749dcb7
-      internalID: 1780611115
+      spriteID: ff27030362623ab40891ca1ce0dc8e3f
+      internalID: 1884105107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orangeguyside1_4
+      name: orangeguyback 1_3
       rect:
         serializedVersion: 2
         x: 266
-        y: 238
+        y: 245
         width: 140
-        height: 196
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        height: 203
+      alignment: 9
+      pivot: {x: 0.52096426, y: 0.42770913}
+      border: {x: 0, y: 1, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edd1544db131698468eed4399b421fd1
-      internalID: 597981322
+      spriteID: d84e6a42cbf732b45a1a73816667bf54
+      internalID: -862451006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orangeguyside1_5
-      rect:
-        serializedVersion: 2
-        x: 490
-        y: 238
-        width: 140
-        height: 196
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb4481ca47af8504c95989fb28bb2d04
-      internalID: 753171929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orangeguyside1_6
+      name: orangeguyback 1_4
       rect:
         serializedVersion: 2
         x: 42
-        y: 14
+        y: 7
         width: 140
-        height: 189
+        height: 203
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,8 +208,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3db9b08ac2cb5574a9296292e08bed82
-      internalID: -991791089
+      spriteID: a6a65d8876122794f99f41e0ef675d75
+      internalID: -192534984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orangeguyback 1_5
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 140
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68291b7433154c546b700d01eab47df5
+      internalID: -890530291
       vertices: []
       indices: 
       edges: []
@@ -267,13 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      orangeguyside1_0: -1924099208
-      orangeguyside1_1: -1141945342
-      orangeguyside1_2: -1886369805
-      orangeguyside1_3: 1780611115
-      orangeguyside1_4: 597981322
-      orangeguyside1_5: 753171929
-      orangeguyside1_6: -991791089
+      orangeguyback 1_0: -1567905934
+      orangeguyback 1_1: -1737484954
+      orangeguyback 1_2: 1884105107
+      orangeguyback 1_3: -862451006
+      orangeguyback 1_4: -192534984
+      orangeguyback 1_5: -890530291
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
