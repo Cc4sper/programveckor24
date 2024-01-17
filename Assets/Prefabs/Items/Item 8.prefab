@@ -149,14 +149,14 @@ MonoBehaviour:
   title: Succulent stick
   canUse: 1
   hasItem: 0
-  cooldown: 1
+  cooldown: 1.5
   timer: 0
   playerPos: {fileID: 0}
   visual: {fileID: 0}
   visualSprite: {fileID: 0}
   visualPos: {x: 0, y: 0, z: 0}
-  baseDamage: 10
-  reach: 1
+  baseDamage: 15
+  reach: 0.6
   Attackprefab: {fileID: 8281125305711873018, guid: 6a414ecc216aa584bbdae82621bc3fb9, type: 3}
   newAttack: {fileID: 0}
   meleeForce: 100

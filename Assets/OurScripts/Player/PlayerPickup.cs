@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerPickup : MonoBehaviour
 {
     public float CooldownScalar = 1;
+    public int strength = 0;
     public bool InRangePickup = false;
     public KeyCode pickupKey = KeyCode.E;
 

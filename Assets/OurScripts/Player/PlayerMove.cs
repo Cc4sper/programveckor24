@@ -9,12 +9,15 @@ public class PlayerMove : MonoBehaviour
     public float moveSpeed = 1.6f;
     float savedSpeed;
 
+    private Animator animator;
+
+
     [SerializeField] BoxCollider2D boxCollider;
     [SerializeField] KeyCode up;
     [SerializeField] KeyCode down;
     [SerializeField] KeyCode vänster;
     [SerializeField] KeyCode höger;
-    
+
     [SerializeField] TrailRenderer tr;
     [SerializeField] Rigidbody2D rb;
 
@@ -26,6 +29,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         tr = GetComponent<TrailRenderer>();
         UpdateInput();
     }
@@ -43,7 +47,8 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         float moveX = 0;
-        float moveY = Input.GetAxisRaw("Vertical");
+        float moveY = 0;
+
         if (Input.GetKey(höger))
         {
             moveX = 1;
@@ -55,16 +60,26 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(up))
         {
             moveY = 1;
-        }else if (Input.GetKey(down))
+
+        }
+        else if (Input.GetKey(down))
         {
             moveY = -1;
         }
-        
+        if (moveX != 0 || moveY != 0)
 
+        {
+            animator.SetFloat("x", moveX);
+            animator.SetFloat("y", moveY);
 
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosistion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
 
     }
     public void DisableMove(bool state)
