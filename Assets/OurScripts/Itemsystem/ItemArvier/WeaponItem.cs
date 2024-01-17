@@ -19,7 +19,7 @@ public class WeaponItem : CooldownItem
     public override void UseItem()
     {
         newAttack = Instantiate(Attackprefab, playerPos.position + (playerPos.up * reach), playerPos.rotation);
-        newAttack.GetComponent<GenericAttack>().damage = baseDamage;
+        newAttack.GetComponent<GenericAttack>().damage = baseDamage + playerPos.GetComponent<PlayerPickup>().strength;
         base.UseItem(); //holds cooldown effect
 
     }

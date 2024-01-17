@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5726890908441587154}
   - component: {fileID: 8823234719372622270}
   - component: {fileID: 5583300860458698573}
-  - component: {fileID: 7256601313226240403}
+  - component: {fileID: -8433302098553806558}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Sand Projectile
   m_TagString: damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.85098046, g: 0.8235295, b: 0.5686275, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -163,17 +163,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  holdTime: 2
---- !u!114 &7256601313226240403
+  holdTime: 1
+--- !u!114 &-8433302098553806558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5409005943177611223}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28f883e2a71ebd6468f46df0c61cc620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeSpeed: 0
+  fadeSpeed: 0.6
