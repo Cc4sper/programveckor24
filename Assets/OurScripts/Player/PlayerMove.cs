@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
 
     public float moveSpeed = 1.6f;
     float savedSpeed;
+    public bool slowed;
     public bool sideScrollar;
 
     public Animator animator;
@@ -80,11 +81,12 @@ public class PlayerMove : MonoBehaviour
             animator.SetBool("IsWalking", false);
         }
         
+        
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosistion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
     }
-    public void DisableMove(bool state)
+    public void DisableMove(bool state) //kan göras bättre (exploit)
     {
         if (state)
         {
@@ -94,6 +96,18 @@ public class PlayerMove : MonoBehaviour
         else
         {
             moveSpeed = savedSpeed;
+        }
+    }
+
+    public void Slowed(bool state)
+    {
+        if (state) //slow effect halves players movement
+        {
+            moveSpeed /= 2;
+        }
+        else
+        {
+            moveSpeed *= 2;
         }
     }
 

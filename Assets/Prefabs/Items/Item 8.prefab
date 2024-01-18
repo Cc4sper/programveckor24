@@ -157,8 +157,10 @@ MonoBehaviour:
   visualPos: {x: 0, y: 0, z: 0}
   baseDamage: 15
   reach: 0.6
+  weight: 0.6
   Attackprefab: {fileID: 8281125305711873018, guid: 6a414ecc216aa584bbdae82621bc3fb9, type: 3}
   newAttack: {fileID: 0}
+  slowedPlayer: 0
   meleeForce: 100
 --- !u!1001 &882454918664571555
 PrefabInstance:
