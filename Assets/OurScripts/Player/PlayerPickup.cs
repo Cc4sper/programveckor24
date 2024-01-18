@@ -7,7 +7,7 @@ public class PlayerPickup : MonoBehaviour
     public float CooldownScalar = 1;
     public int strength = 0;
     public bool InRangePickup = false;
-    public KeyCode pickupKey = KeyCode.E;
+    public KeyCode interactKey = KeyCode.E;
 
     public HotbarCollect bar;
     public Item colItem;
@@ -31,7 +31,7 @@ public class PlayerPickup : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(pickupKey) && InRangePickup)
+        if (Input.GetKeyDown(interactKey) && InRangePickup)
         {
             colItem = colObj.GetComponent<Item>();
             colObj.transform.position = new Vector2(0, 500); //temporary to make item disapear without removing it

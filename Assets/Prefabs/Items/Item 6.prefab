@@ -150,6 +150,7 @@ MonoBehaviour:
   hasItem: 0
   player: {fileID: 0}
   Armor: -3
+  strengthIncrease: 5
 --- !u!1001 &3089721903368382425
 PrefabInstance:
   m_ObjectHideFlags: 0

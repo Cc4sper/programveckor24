@@ -10,7 +10,7 @@ public class PlayerCamera : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Trigger") || collision.CompareTag("damage"))
+        if (collision.CompareTag("Trigger") || collision.CompareTag("damage") || collision.CompareTag("CheckPoint"))
         {
             
         }
@@ -23,7 +23,7 @@ public class PlayerCamera : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Trigger") || collision.CompareTag("damage"))
+        if (collision.CompareTag("Trigger") || collision.CompareTag("damage") || collision.CompareTag("CheckPoint"))
         {
            
         }
@@ -41,6 +41,7 @@ public class PlayerCamera : MonoBehaviour
     {
         sideScrollar = true;
         cam.GetComponent<Camerafollow>().height = 6;
+        GetComponent<PlayerHealth>().safe = true;
         GetComponent<PlayerMove>().sideScrollar = true;
     }
     public void InactivateSideScrollar()
@@ -48,6 +49,7 @@ public class PlayerCamera : MonoBehaviour
         sideScrollar = false;
         cam.GetComponent<Camerafollow>().height = 0;
         GetComponent<PlayerMove>().sideScrollar = false;
+        GetComponent<PlayerHealth>().safe = false;
     }
 
     public void cameraDeath()

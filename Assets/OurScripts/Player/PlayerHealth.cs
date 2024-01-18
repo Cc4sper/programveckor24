@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     public int armor = 0;
     public bool vulnerable = true;
+    public bool safe = false;
     public Image healthBar;
     private void Start() 
     {
@@ -41,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.V))
+        if(Input.GetKeyDown(KeyCode.V)) //temporary
         {
             TakeDamage(20);
         }
@@ -49,6 +50,22 @@ public class PlayerHealth : MonoBehaviour
         {
             HealHealth(5);
         }
+        if (safe)
+        {
+            if (health < maxHealth)
+            {
+                HealHealth(Time.deltaTime*2);
+            }
+            if (vulnerable == true)
+            {
+                vulnerable = false;
+            }
+        }
+        else if (vulnerable == false)
+        {
+            vulnerable = true;
+        }
+        
     }
     public void TakeDamage(float damage)
     {

@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class StrongArmor : ArmorItem
 {
+    public int strengthIncrease;
     public override void playerPickup()
     {
         base.playerPickup();
-        player.GetComponent<PlayerPickup>().strength += 5;
+        player.GetComponent<PlayerPickup>().strength += strengthIncrease;
     }
 
     public override void LoseEffect()
     {
         base.LoseEffect();
-        player.GetComponent<PlayerPickup>().strength -= 5;
+        player.GetComponent<PlayerPickup>().strength -= strengthIncrease;
     }
 }

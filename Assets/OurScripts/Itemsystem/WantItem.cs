@@ -63,8 +63,9 @@ public class WantItem : MonoBehaviour
         {
             if (playerKey == KeyCode.None)
             {
-                playerKey = collision.GetComponent<PlayerRespawn>().InteractKey;
-                player = collision.transform;
+                player = collision.transform.parent;
+                playerKey = player.GetComponent<PlayerPickup>().interactKey;
+                
             }
             interactGive = true;
         }
