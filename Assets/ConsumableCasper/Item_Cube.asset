@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1e01857be1df14a855c47181c7d914, type: 3}
+  m_Name: Item_Cube
+  m_EditorClassIdentifier: 
+  name: Rune Cube
+  sellPrice: 0
+  rarity: {fileID: 11400000, guid: 5faf05b8526c53b4e8f15ae28714c240, type: 2}
+  UseText: 'Use: Deal 30 damage around you.'

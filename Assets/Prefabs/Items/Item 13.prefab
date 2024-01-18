@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8197054736142371119}
   - component: {fileID: 102109649480561765}
   - component: {fileID: 1629510917550450182}
+  - component: {fileID: 6817981762179575707}
   m_Layer: 0
   m_Name: Item 13
   m_TagString: Item
@@ -155,8 +156,23 @@ MonoBehaviour:
   visual: {fileID: 0}
   visualSprite: {fileID: 0}
   visualPos: {x: 0, y: 0, z: 0}
+  visualRot: {x: 0, y: 0, z: 0}
   activeState: 0
   duration: 1
+--- !u!114 &6817981762179575707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298202556107408840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151d4a629fd70bb43af5f6c754cb9ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: d7424c36e03e92e4aa1e380f4e0f6e87, type: 2}
+  toolTipPopUp: {fileID: 0}
 --- !u!1001 &1705185388916794020
 PrefabInstance:
   m_ObjectHideFlags: 0

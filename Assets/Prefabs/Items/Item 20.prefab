@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6120057587561832071}
   - component: {fileID: 4119849813963027146}
   - component: {fileID: 6019740717604908057}
+  - component: {fileID: 1310969332088923331}
   m_Layer: 0
   m_Name: Item 20
   m_TagString: Item
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8392840191789590729}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.4, y: 0.45, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -151,6 +152,20 @@ MonoBehaviour:
   player: {fileID: 0}
   Armor: 0
   strengthIncrease: 999
+--- !u!114 &1310969332088923331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8392840191789590729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151d4a629fd70bb43af5f6c754cb9ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: f6ace6677a8c4944a81ebd0e6b943e52, type: 2}
+  toolTipPopUp: {fileID: 0}
 --- !u!1001 &8285724437165385749
 PrefabInstance:
   m_ObjectHideFlags: 0

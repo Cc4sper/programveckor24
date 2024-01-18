@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Succulent Stick
   sellPrice: 5
   rarity: {fileID: 11400000, guid: 293a5374688e32f4bb1057eb487f3d66, type: 2}
-  UseText: 'Use: Deals 15 damage.'
+  UseText: 'Use: Deals 15 damage with long cooldown.'

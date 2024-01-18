@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3943759833907030202}
   - component: {fileID: 7605535429069055564}
   - component: {fileID: 2774109094168039240}
+  - component: {fileID: -3184310299287594897}
   m_Layer: 0
   m_Name: Item 15
   m_TagString: Item
@@ -160,6 +161,20 @@ MonoBehaviour:
   dashDuration: 0.15
   dashState: 0
   rb: {fileID: 0}
+--- !u!114 &-3184310299287594897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416139145160945630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151d4a629fd70bb43af5f6c754cb9ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: bdd2aaa07c73c0f44883e63465ca0bec, type: 2}
+  toolTipPopUp: {fileID: 0}
 --- !u!1001 &2931728732035903963
 PrefabInstance:
   m_ObjectHideFlags: 0

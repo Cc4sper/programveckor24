@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Sand Gun
   sellPrice: 5
   rarity: {fileID: 11400000, guid: 46ec9ef9113ad474e89a33a7ed52f96b, type: 2}
-  UseText: 'Use: Deals 1 damage.'
+  UseText: 'Use: Shoots 1 damage.'
