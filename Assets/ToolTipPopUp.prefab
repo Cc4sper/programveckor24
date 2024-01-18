@@ -94,6 +94,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3837708867301888400, guid: dbf478995fece864b81e89684345f4e2, type: 3}
+      propertyPath: m_text
+      value: '<size=14><color=#AB00A4>Succulent Stick</color></size>
+
+        Epic
+
+        <color=green>Use:
+        Deals 15 damage.</color>
+
+        Sell Price: 5 Ryal'
+      objectReference: {fileID: 0}
     - target: {fileID: 7366327787038325957, guid: dbf478995fece864b81e89684345f4e2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
