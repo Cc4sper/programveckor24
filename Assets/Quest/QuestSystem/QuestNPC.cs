@@ -19,25 +19,29 @@ public class QuestNPC : MonoBehaviour
     [SerializeField] private Item requeireItem;
     public Quest currentActiveQuest = null;
     public Quest currentTrackedQuest = null;
-    public List <Quest> quests;
+    [SerializeField] private List <Quest> quests;
     public int activeQuestIndex = 0;
     public int trackedQuestIndex = 0;
-    private Item[] inv;
-    [SerializeField] private bool ee = false;
-
-
+    [SerializeField] private Item[] inv;
+    [SerializeField] private bool gotAllItems = false;
+    Transform player;
     [SerializeField] Item[] reward;
-
+    [SerializeField] Item raward;
+    [SerializeField] bool playerInRange;
+    [SerializeField] Item hasItem;
     void Start()
     {
-        inv = FindObjectOfType<HotbarCollect>().itemslots;
+        inv = GetComponent<HotbarCollect>().itemslots;
+        inv = new Item[GetComponent<HotbarCollect>().slotAmount];
+        hasItem = GetComponent<HotbarCollect>().LastCollectItem;
         informationNPC.SetActive(false);
         endConversation.SetActive(false);
     }
 
     void Update()
     {
-        if (buttonPressed == true)
+       
+        if (buttonPressed == true && playerInRange == true)
         {
             questActive = true;
             AcceptedQuest();
@@ -50,7 +54,7 @@ public class QuestNPC : MonoBehaviour
         }
         /*
         if (AreQuestRequirmentsComplete())
-        {
+        {   
             SubmitItems();
             ReceiveRewardAndCompleteQuest();
 
@@ -67,6 +71,25 @@ public class QuestNPC : MonoBehaviour
             {
                 GotAllItems();
             }
+        }
+        if (gotAllItems == true && playerInRange == true)
+        {
+            GiveItems();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            playerInRange = false;
         }
     }
     private void AcceptedQuest()
@@ -104,13 +127,18 @@ public class QuestNPC : MonoBehaviour
     
     private void GiveItems()
     {
+        
+        if (player.GetComponent<PlayerHotbarControl>().TryGiveSelected(raward))
+        {
 
+        }
     }
     
     private void GotAllItems()
     {
+        
         endConversation.SetActive(true);
-        ee = true;
+        gotAllItems = true;
     }
     
    

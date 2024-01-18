@@ -47,12 +47,12 @@ public class QuestManager : MonoBehaviour
     public void TrackQuest(Quest quest)
     {
         allTrackedQuest.Add(quest);
-      //  RefreshTrackerList();
+        RefreshTrackerList();
     }
     public void UnTrackQuest(Quest quest)
     {
         allTrackedQuest.Remove(quest);
-      //  RefreshTrackerList();
+        RefreshTrackerList();
 
     }
     
@@ -67,7 +67,7 @@ public class QuestManager : MonoBehaviour
             GameObject trackerPrefab = Instantiate(trackerRowPrefab);
             trackerPrefab.transform.SetParent(questTrackerContent);
             trackerPrefab.transform.localScale = Vector2.one;
-            QuestTracked tRow = trackerPrefab.GetComponent<QuestTracked>();
+            QuestTracked tRow = trackerPrefab.GetComponent<QuestTracked>();            
             tRow.questName.text = trackedQuest.questName;
             tRow.requirements.text = trackedQuest.questRequirements;
             tRow.description.text = trackedQuest.questDescription;
@@ -94,13 +94,13 @@ public class QuestManager : MonoBehaviour
     public void AddActiveQuest(Quest quest)
     {
         allActiveQuests.Add(quest);
-      //  TrackQuest(quest);
+        TrackQuest(quest);
         RefreshQuestList();
     }
     public void MarkQuestComplete(Quest quest)
     {
         allActiveQuests.Remove(quest);
-       // UnTrackQuest(quest);
+        UnTrackQuest(quest);
         RefreshQuestList();
     }
     
