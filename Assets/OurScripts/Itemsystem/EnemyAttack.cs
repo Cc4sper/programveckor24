@@ -8,8 +8,8 @@ public class EnemyAttack : MonoBehaviour
     public GameObject attackPrefab;
     public int enemyDamage;
     public float cooldown;
-    bool canAttack;
-    float timer;
+    public bool canAttack;
+    public float timer;
    
     private void OnTriggerStay2D(Collider2D collision)
     {

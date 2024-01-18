@@ -39,6 +39,7 @@ public class EnemyChase : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            transform.parent.GetComponent<RandomMovement>().enabled = false;
             target = collision.transform;
 
             print("chasing player");
@@ -50,6 +51,7 @@ public class EnemyChase : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            transform.parent.GetComponent<RandomMovement>().enabled = true;
             target = null;
 
             print("lost chase");
