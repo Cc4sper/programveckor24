@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
-    [SerializeField] Camera cam;
+    public Camera cam;
     [SerializeField] float focusScalar;
     bool sideScrollar;
     

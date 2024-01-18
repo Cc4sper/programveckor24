@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1232944135100098393}
   - component: {fileID: 6669716517120772795}
   - component: {fileID: 6378344941280815752}
+  - component: {fileID: 3283128022606477809}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -165,9 +166,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057dcca08fd620548a17b0018f5c44c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   enemyhp: 20
   recoverTime: 0.5
+  timer: 0
   vulnerable: 1
+  chaser: 0
+  ogSpeed: 0
 --- !u!114 &6669716517120772795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +202,28 @@ MonoBehaviour:
   speed: 0.5
   range: 2
   maxDistance: 2
+  animator: {fileID: 0}
+--- !u!95 &3283128022606477809
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420454694916898438}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8ccf15feea462524fac53a602cc93965, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4567467630453521689
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   enemy: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!50 &4904668252018861822
 Rigidbody2D:
   serializedVersion: 4

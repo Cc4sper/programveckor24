@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    SpriteRenderer sprite;
-    [SerializeField] int enemyhp;
-    [SerializeField] float recoverTime;
-    float timer;
+    public SpriteRenderer sprite;
+    public int enemyhp;
+    public float recoverTime;
+    public float timer;
     public bool vulnerable = true;
-    private float ogSpeed;
+    public bool chaser;
+    public float ogSpeed;
+    
 
-    private void Start()
+    public void Start()
     {
-        ogSpeed = transform.GetChild(1).GetComponent<EnemyChase>().speed;
+        if (chaser)
+        {
+            ogSpeed = transform.GetChild(1).GetComponent<EnemyChase>().speed;
+        }
         sprite = GetComponent<SpriteRenderer>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("damage") && vulnerable)
         {
@@ -24,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
    
-    void TakeDamage(int dmg, bool hit)
+    public void TakeDamage(int dmg, bool hit)
     {
         vulnerable = false;
         print("hit enemy " + dmg);
@@ -33,13 +38,13 @@ public class EnemyHealth : MonoBehaviour
 
         sprite.color = new Color(0.9f, 0.9f, 0.9f, 1);
         
-        if (hit)
+        if (hit && chaser)
         {
             transform.GetChild(1).GetComponent<EnemyChase>().speed = 0;
         }
         timer = recoverTime;
     }
-    private void Update()
+    public virtual void Update()
     {
         if (timer > 0)
         {
@@ -50,13 +55,16 @@ public class EnemyHealth : MonoBehaviour
             Recover();
         }
     }
-    void Recover()
+    public void Recover()
     {
         vulnerable = true;
         sprite.color = Color.white;
-        transform.GetChild(1).GetComponent<EnemyChase>().speed = ogSpeed;
+        if (chaser)
+        {
+            transform.GetChild(1).GetComponent<EnemyChase>().speed = ogSpeed;
+        }
     }
-    void checkkdeath()
+    public void checkkdeath()
     {
         if (enemyhp < 1)
         {
