@@ -7,12 +7,13 @@ public class EnemyChase : MonoBehaviour
     public float speed = 3;
     public Transform enemy;
     private Transform target;
-    
+    public Animator animator;
 
 
 
     public void Start()
     {
+        animator = GetComponent<Animator>();
         enemy = transform.parent.transform;
     }
 
@@ -26,7 +27,9 @@ public class EnemyChase : MonoBehaviour
         {
             float step = speed * Time.deltaTime;
             enemy.position = Vector2.MoveTowards(transform.position, target.position, step);
-           
+            animator.SetFloat("x", enemy.position.x);
+            animator.SetFloat("y", enemy.position.y);
+
         }
 
     }

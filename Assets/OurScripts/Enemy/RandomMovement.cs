@@ -9,13 +9,17 @@ public class RandomMovement : MonoBehaviour
    [SerializeField] float range;
    [SerializeField] float maxDistance;
 
+    public Animator animator;
     Vector2 waypoint;
     Vector3 OgPos;
+
+    Vector3 lastPos;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         OgPos = transform.position;
         SetNewDestination();
     }
@@ -23,10 +27,14 @@ public class RandomMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    
+        lastPos = transform.position;
         transform.position = Vector2.MoveTowards(transform.position, waypoint, speed * Time.deltaTime);
         if (Vector2.Distance(transform.position, waypoint) < range)
         {
             SetNewDestination();
+            animator.SetFloat("x", waypoint.x);
+            animator.SetFloat("y", waypoint.y);
         }
     }
 

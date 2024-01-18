@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/WilliamH.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: fc37745126575164b9e567def22a08d7
   - enabled: 1
     path: Assets/Scenes/TestSpel.unity

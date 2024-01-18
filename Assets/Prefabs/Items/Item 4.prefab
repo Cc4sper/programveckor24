@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4107769735223638973}
   - component: {fileID: 8105251611672935925}
   - component: {fileID: 868772400533191370}
+  - component: {fileID: 6016366990241194662}
   m_Layer: 0
   m_Name: Item 4
   m_TagString: Item
@@ -150,6 +151,20 @@ MonoBehaviour:
   hasItem: 0
   player: {fileID: 0}
   Armor: 5
+--- !u!114 &6016366990241194662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604114445789283161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151d4a629fd70bb43af5f6c754cb9ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: f8cce7b7da7716e45a7a777f1ed5b6cf, type: 2}
+  toolTipPopUp: {fileID: 3329176197595654404, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
 --- !u!1001 &968244634623886659
 PrefabInstance:
   m_ObjectHideFlags: 0

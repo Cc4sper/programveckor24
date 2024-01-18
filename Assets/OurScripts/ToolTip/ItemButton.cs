@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 
 public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private ItemTT item;
-    [SerializeField] private ToolTipPopUp toolTipPopUp;
+    [SerializeField] public ItemTT item;
+    [SerializeField] public ToolTipPopUp toolTipPopUp;
 
 
     private void OnMouseEnter()
