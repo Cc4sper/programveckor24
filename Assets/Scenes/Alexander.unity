@@ -1061,18 +1061,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   answerText: {fileID: 1694569714}
   buttonPressed: 0
-  talkNPC: {fileID: 0}
+  talkNPC: {fileID: 1016064944}
   endConversation: {fileID: 465751998}
   requeireItem: {fileID: 1320841552}
   currentActiveQuest:
-    questName: CASPR
-    questDescription: CESP
-    questRequirements: ... :(
+    questName: Apricon Hunt
+    questDescription: Find some food for your fellow rebels. Information say that
+      they have been spotted north west of town.
+    questRequirements: Find apricons
     accepted: 0
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 0}
   haveReward: 0
+  talkQuest: 0
+  talkquestBye: 
   activateButton: {fileID: 1653672511}
   activeQuestIndex: 0
   trackedQuestIndex: 0
@@ -4647,13 +4650,16 @@ MonoBehaviour:
   requeireItem: {fileID: 1320841552}
   currentActiveQuest:
     questName: Reunion
-    questDescription: 'Your friends are being held up in a camp east of the town. '
+    questDescription: 'Your fellow rebels are being held up in a camp east of the
+      town. '
     questRequirements: Save your fellow rebels.
     accepted: 0
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 0}
   haveReward: 0
+  talkQuest: 1
+  talkquestBye: Go back safe.
   activateButton: {fileID: 1653672511}
   activeQuestIndex: 0
   trackedQuestIndex: 0
@@ -9570,7 +9576,7 @@ PrefabInstance:
     - target: {fileID: 3085555799650163728, guid: b4f1537ae2f9ec446b7abcf8e2887c2d, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 20fd2202d588535429d6fe3ef80b1276, type: 3}
+      objectReference: {fileID: 4900000, guid: 11afa4b1223ac9544806deb6d8b47efe, type: 3}
     - target: {fileID: 5323846023886959899, guid: b4f1537ae2f9ec446b7abcf8e2887c2d, type: 3}
       propertyPath: m_Name
       value: NPC (1)

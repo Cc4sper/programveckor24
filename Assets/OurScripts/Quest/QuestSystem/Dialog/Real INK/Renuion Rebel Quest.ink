@@ -9,4 +9,4 @@ Where are we going to go? They have the safehouse location.
 +[The village east of here.]
 -Ok, we'll meet you there.
 
-+[Bye]
++[Go back safe.]

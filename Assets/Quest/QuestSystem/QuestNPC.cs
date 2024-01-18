@@ -21,6 +21,8 @@ public class QuestNPC : MonoBehaviour
     [SerializeField] private Quest currentActiveQuest = null;
     [SerializeField] bool haveReward;
     [SerializeField] bool talkQuest;
+    [SerializeField] bool gatherQuest;
+    [SerializeField] string talkquestBye;
     private Quest currentTrackedQuest = null;
     public Button activateButton;    //public List <Quest> quests;
     public int activeQuestIndex = 0;
@@ -42,6 +44,10 @@ public class QuestNPC : MonoBehaviour
                 questActive = true;
                 AcceptedQuest();
 
+            }
+            if (talkQuest && answerText.text == talkquestBye)
+            {
+                ReceiveRewardAndCompleteQuest();    
             }
 
         });
@@ -73,13 +79,7 @@ public class QuestNPC : MonoBehaviour
             ReceiveRewardAndCompleteQuest();
         }
 
-        if (talkQuest)
-        {
-            if (true)
-            {
-
-            }
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -88,10 +88,7 @@ public class QuestNPC : MonoBehaviour
         {
             playerInRange = true;
         }
-        if (collider.gameObject == talkNPC)
-        {
-            ReceiveRewardAndCompleteQuest();
-        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collider)
