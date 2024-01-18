@@ -12,6 +12,7 @@ public class CooldownItem : UsableItem
     public Transform visual;
     public SpriteRenderer visualSprite;
     public Vector3 visualPos;
+    public Vector3 visualRot;
 
 
     public virtual void Start()
@@ -19,6 +20,7 @@ public class CooldownItem : UsableItem
         visual = transform.GetChild(0);
         visualSprite = visual.GetComponent<SpriteRenderer>();
         visualPos = visual.transform.position - transform.position;
+        visualRot = visual.transform.eulerAngles - transform.eulerAngles;
     }
     public virtual void Update()
     {
@@ -52,7 +54,8 @@ public class CooldownItem : UsableItem
         visual.parent = playerPos; 
         visual.transform.position = playerPos.position; 
         visual.rotation = playerPos.rotation;
-        visual.transform.localPosition += visualPos; 
+        visual.transform.localPosition += visualPos;
+        visual.transform.localEulerAngles += visualRot;
 
         visual.gameObject.SetActive(true);
     }
