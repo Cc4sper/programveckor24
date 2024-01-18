@@ -15,6 +15,7 @@ public class QuestNPC : MonoBehaviour
     [SerializeField] private TextMeshProUGUI answerText;
     [SerializeField] bool buttonPressed = false;
     bool questActive = false;
+    [SerializeField] private GameObject firstConversation;
     [SerializeField] private GameObject talkNPC;
     [SerializeField] private GameObject endConversation;
     [SerializeField] private Item requeireItem;
@@ -37,6 +38,11 @@ public class QuestNPC : MonoBehaviour
 
     void Start()
     {
+        if (gatherQuest)
+        {
+            endConversation.SetActive(false);
+        }
+        
         activateButton.onClick.AddListener(() =>
         {
             if (answerText.text == "Accept" || answerText.text == "Bye" && playerInRange)
@@ -49,12 +55,15 @@ public class QuestNPC : MonoBehaviour
             {
                 ReceiveRewardAndCompleteQuest();    
             }
+            if (gatherQuest && answerText.text == talkquestBye)
+            {
+                ReceiveRewardAndCompleteQuest();
+            }
 
         });
-
-        inv = FindObjectOfType<HotbarCollect>().itemslots;
+        inv = GetComponent<HotbarCollect>().itemslots;
         talkNPC.SetActive(false);
-        endConversation.SetActive(false);
+        
     }
     
     void Update()
@@ -75,8 +84,7 @@ public class QuestNPC : MonoBehaviour
         */
         if (Input.GetKeyDown(KeyCode.U))
         {
-            QuestManager.instance.MarkQuestComplete(currentActiveQuest);
-            ReceiveRewardAndCompleteQuest();
+            CompletedObjective();
         }
 
         
@@ -100,6 +108,7 @@ public class QuestNPC : MonoBehaviour
     }
     private void AcceptedQuest()
     {
+        firstConversation.SetActive(false);
         //currentActiveQuest = quests[activeQuestIndex]; // 0 at start
         //currentTrackedQuest = quests[activeQuestIndex]; // 0 at start
         QuestManager.instance.AddActiveQuest(currentActiveQuest);
