@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4999298418002737641}
   - component: {fileID: 7829467252628372747}
   - component: {fileID: 2936391736886311610}
+  - component: {fileID: 6311879703210586057}
   m_Layer: 0
   m_Name: Item 8
   m_TagString: Item
@@ -162,6 +163,20 @@ MonoBehaviour:
   newAttack: {fileID: 0}
   slowedPlayer: 0
   meleeForce: 100
+--- !u!114 &6311879703210586057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7617593180027989229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151d4a629fd70bb43af5f6c754cb9ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: f731d419c11467f4e8ffd86e20e7f54d, type: 2}
+  toolTipPopUp: {fileID: 3329176197595654404, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
 --- !u!1001 &882454918664571555
 PrefabInstance:
   m_ObjectHideFlags: 0

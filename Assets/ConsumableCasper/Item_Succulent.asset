@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a060d87713cf552438f2b929b025d555, type: 3}
-  m_Name: Rarity_Epic
+  m_Script: {fileID: 11500000, guid: ad1e01857be1df14a855c47181c7d914, type: 3}
+  m_Name: Item_Succulent
   m_EditorClassIdentifier: 
-  name: Epic
-  rarity: {r: 0.6698113, g: 0, b: 0.64453536, a: 0}
+  name: Succulent Stick
+  sellPrice: 5
+  rarity: {fileID: 11400000, guid: 293a5374688e32f4bb1057eb487f3d66, type: 2}
+  UseText: 'Use: Deals 15 damage.'

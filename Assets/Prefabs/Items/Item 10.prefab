@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 320366435605088328}
   - component: {fileID: 8954750776811514791}
   - component: {fileID: 3835785435099581728}
+  - component: {fileID: 7410903071747410214}
   m_Layer: 0
   m_Name: Item 10
   m_TagString: Item
@@ -162,6 +163,20 @@ MonoBehaviour:
   newAttack: {fileID: 0}
   slowedPlayer: 0
   ProjectileSpeed: 5
+--- !u!114 &7410903071747410214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497448994368636619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151d4a629fd70bb43af5f6c754cb9ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: c20ea9afaacdfc647ad49f1713695ee3, type: 2}
+  toolTipPopUp: {fileID: 0}
 --- !u!1001 &4213738587347406075
 PrefabInstance:
   m_ObjectHideFlags: 0

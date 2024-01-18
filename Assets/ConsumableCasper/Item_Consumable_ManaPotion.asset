@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Mana Potion
   sellPrice: 7
   rarity: {fileID: 11400000, guid: 293a5374688e32f4bb1057eb487f3d66, type: 2}
-  UseText: Regenerates mana.
+  UseText: 'Use: Regenerates mana.'
