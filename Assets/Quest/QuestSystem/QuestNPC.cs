@@ -15,10 +15,12 @@ public class QuestNPC : MonoBehaviour
     [SerializeField] private TextMeshProUGUI answerText;
     [SerializeField] bool buttonPressed = false;
     bool questActive = false;
-    [SerializeField] private GameObject informationNPC;
+    [SerializeField] private GameObject talkNPC;
     [SerializeField] private GameObject endConversation;
     [SerializeField] private Item requeireItem;
     [SerializeField] private Quest currentActiveQuest = null;
+    [SerializeField] bool haveReward;
+    [SerializeField] bool talkQuest;
     private Quest currentTrackedQuest = null;
     public Button activateButton;    //public List <Quest> quests;
     public int activeQuestIndex = 0;
@@ -35,7 +37,7 @@ public class QuestNPC : MonoBehaviour
     {
         activateButton.onClick.AddListener(() =>
         {
-            if (answerText.text == "Accept" && playerInRange)
+            if (answerText.text == "Accept" || answerText.text == "Bye" && playerInRange)
             {
                 questActive = true;
                 AcceptedQuest();
@@ -45,7 +47,7 @@ public class QuestNPC : MonoBehaviour
         });
 
         inv = FindObjectOfType<HotbarCollect>().itemslots;
-        informationNPC.SetActive(false);
+        talkNPC.SetActive(false);
         endConversation.SetActive(false);
     }
     
@@ -55,7 +57,7 @@ public class QuestNPC : MonoBehaviour
        
         if (questActive == true)
         {
-            informationNPC.SetActive(true); 
+            talkNPC.SetActive(true); 
         }
         /*
         if (AreQuestRequirmentsComplete())
@@ -67,14 +69,15 @@ public class QuestNPC : MonoBehaviour
         */
         if (Input.GetKeyDown(KeyCode.U))
         {
+            QuestManager.instance.MarkQuestComplete(currentActiveQuest);
             ReceiveRewardAndCompleteQuest();
         }
 
-        foreach (Item x in inv)
+        if (talkQuest)
         {
-            if (x.Equals (requeireItem))
+            if (true)
             {
-                GotAllItems();
+
             }
         }
     }
@@ -84,6 +87,10 @@ public class QuestNPC : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             playerInRange = true;
+        }
+        if (collider.gameObject == talkNPC)
+        {
+            ReceiveRewardAndCompleteQuest();
         }
     }
 
@@ -107,14 +114,17 @@ public class QuestNPC : MonoBehaviour
         }
         else
         {
-
+            if (talkQuest)
+            {
+                talkNPC.SetActive(true);
+            }
         }
     }
 
     private void ReceiveRewardAndCompleteQuest()
     {
-        QuestManager.instance.MarkQuestComplete(currentActiveQuest);
-        
+        if (haveReward)
+        {
             print("dropping loot");
 
             for (int i = 0; i < reward.Length; i++)
@@ -126,13 +136,17 @@ public class QuestNPC : MonoBehaviour
                 Instantiate(reward[i], dropPoint, Quaternion.identity);
             }
         }
+        QuestManager.instance.MarkQuestComplete(currentActiveQuest);
+        
+            
+    }
     
     private void GiveItems()
     {
 
     }
     
-    private void GotAllItems()
+    private void CompletedObjective()
     {
         endConversation.SetActive(true);
         ee = true;
