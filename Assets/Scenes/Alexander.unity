@@ -1151,6 +1151,15 @@ MonoBehaviour:
   currentActiveQuest:
     questName: 0
     questDescription: 
+    questRequirements: 
+    accepted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 0}
+  currentTrackedQuest:
+    questName: 
+    questDescription: 
+    questRequirements: 
     accepted: 0
     isCompleted: 0
     hasNoRequirements: 0
@@ -1158,11 +1167,13 @@ MonoBehaviour:
   quests:
   - questName: Caspers info
     questDescription: Help Casper give the info!
+    questRequirements: 1 funny
     accepted: 0
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: 693d1869970d5404faab44bb89c55ad7, type: 2}
   activeQuestIndex: 0
+  trackedQuestIndex: 0
   ee: 0
   reward: []
 --- !u!1 &263943131
@@ -1183,7 +1194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &263943132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5156,18 +5167,29 @@ MonoBehaviour:
   currentActiveQuest:
     questName: 0
     questDescription: 
+    questRequirements: 
+    accepted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 0}
+  currentTrackedQuest:
+    questName: 
+    questDescription: 
+    questRequirements: 
     accepted: 0
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 0}
   quests:
   - questName: TEETAAAA
-    questDescription: 
+    questDescription: Ded
+    questRequirements: DEAD
     accepted: 0
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: d8f883838b9b0594aa8c9af356c4b7c0, type: 2}
   activeQuestIndex: 0
+  trackedQuestIndex: 0
   ee: 0
   reward: []
 --- !u!1 &1543901149
@@ -5724,6 +5746,10 @@ PrefabInstance:
     - target: {fileID: 8613140330611462945, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613140330611462945, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000018656254
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
