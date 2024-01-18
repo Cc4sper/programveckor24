@@ -10,11 +10,13 @@ public class RandomMovement : MonoBehaviour
    [SerializeField] float maxDistance;
 
     Vector2 waypoint;
+    Vector3 OgPos;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        OgPos = transform.position;
         SetNewDestination();
     }
 
@@ -30,6 +32,6 @@ public class RandomMovement : MonoBehaviour
 
     void SetNewDestination()
     {
-        waypoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance));
+        waypoint = new Vector2(OgPos.x + Random.Range(-maxDistance, maxDistance), OgPos.y + Random.Range(-maxDistance, maxDistance));
     }
 }

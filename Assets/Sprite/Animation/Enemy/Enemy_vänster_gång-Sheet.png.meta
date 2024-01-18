@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "Enemy_v\xE4nster_g\xE5ng-Sheet_0"
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f34133bab45bb4993f2bbce2ee178a
+      internalID: 653085166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Enemy_v\xE4nster_g\xE5ng-Sheet_1"
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385ee324ec167c544aaeda73b62c7be6
+      internalID: 1623379926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Enemy_v\xE4nster_g\xE5ng-Sheet_2"
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f70b156e74e9c468f6773ba3bd9138
+      internalID: 1965503934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Enemy_v\xE4nster_g\xE5ng-Sheet_3"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca16a7fd8ce07044389a2cfca7199be6
+      internalID: 706727361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Enemy_v\xE4nster_g\xE5ng-Sheet_0": 653085166
+      "Enemy_v\xE4nster_g\xE5ng-Sheet_1": 1623379926
+      "Enemy_v\xE4nster_g\xE5ng-Sheet_2": 1965503934
+      "Enemy_v\xE4nster_g\xE5ng-Sheet_3": 706727361
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

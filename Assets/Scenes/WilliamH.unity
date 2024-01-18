@@ -7997,15 +7997,25 @@ MonoBehaviour:
   - name: Theme
     clip: {fileID: 8300000, guid: 763cf3b1f4fb24a40817a52c2d84c812, type: 3}
   sfxSounds:
-  - name: 
-    clip: {fileID: 0}
-  - name: SandGun
-    clip: {fileID: 8300000, guid: bbf0e741700ff0c408773f987fe234fb, type: 3}
-  - name: MerfGun
-    clip: {fileID: 8300000, guid: 8b6d6622e19a95b41b7c89c911bad539, type: 3}
-  - name: Sword
-    clip: {fileID: 8300000, guid: 14909748c5038544896771a8e10a0c12, type: 3}
+  - name: Apple
+    clip: {fileID: 8300000, guid: ae6218390e8bffa40b5d8b931bfd6bee, type: 3}
+  - name: Water
+    clip: {fileID: 8300000, guid: e72b5c02833da0d4986e396097ee8568, type: 3}
+  - name: Biscuit
+    clip: {fileID: 8300000, guid: 5b92d8f26e6a84646b2e202dd24a7a25, type: 3}
   - name: Club
+    clip: {fileID: 8300000, guid: 00e958f220b2fa04e8c00d6ac3407ba6, type: 3}
+  - name: Sword
+    clip: {fileID: 8300000, guid: 4a8c7f782a5ab734fb0c1d2ee17b2150, type: 3}
+  - name: GroundSlam
+    clip: {fileID: 8300000, guid: 5727095532370ad42879baff9d4ca001, type: 3}
+  - name: MerfGun
+    clip: {fileID: 8300000, guid: e35f8d1113624ce4898a31363aa9a46e, type: 3}
+  - name: SandGun
+    clip: {fileID: 8300000, guid: 44ee8e1b47fa4e04099c9e8f6308c655, type: 3}
+  - name: SlowTime
+    clip: {fileID: 8300000, guid: 3804a5f012046244784745f8a7d1f5dc, type: 3}
+  - name: NormTime
     clip: {fileID: 8300000, guid: 5727095532370ad42879baff9d4ca001, type: 3}
   musicSource: {fileID: 1746864481}
   sfxSource: {fileID: 819840988}

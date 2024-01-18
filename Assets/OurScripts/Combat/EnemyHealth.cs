@@ -7,11 +7,13 @@ public class EnemyHealth : MonoBehaviour
     SpriteRenderer sprite;
     [SerializeField] int enemyhp;
     [SerializeField] float recoverTime;
+    float timer;
     public bool vulnerable = true;
     private float ogSpeed;
 
     private void Start()
     {
+        ogSpeed = transform.GetChild(1).GetComponent<EnemyChase>().speed;
         sprite = GetComponent<SpriteRenderer>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,12 +32,23 @@ public class EnemyHealth : MonoBehaviour
         checkkdeath();
 
         sprite.color = new Color(0.9f, 0.9f, 0.9f, 1);
-        ogSpeed = transform.GetChild(1).GetComponent<EnemyChase>().speed;
+        
         if (hit)
         {
             transform.GetChild(1).GetComponent<EnemyChase>().speed = 0;
         }
-        Invoke("Recover", recoverTime);
+        timer = recoverTime;
+    }
+    private void Update()
+    {
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            Recover();
+        }
     }
     void Recover()
     {
