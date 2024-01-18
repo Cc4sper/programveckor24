@@ -1065,34 +1065,18 @@ MonoBehaviour:
   endConversation: {fileID: 465751998}
   requeireItem: {fileID: 1320841552}
   currentActiveQuest:
-    questName: 0
-    questDescription: 
-    questRequirements: 
+    questName: CASPR
+    questDescription: CESP
+    questRequirements: ... :(
     accepted: 0
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 0}
-  currentTrackedQuest:
-    questName: 
-    questDescription: 
-    questRequirements: 
-    accepted: 0
-    isCompleted: 0
-    hasNoRequirements: 0
-    info: {fileID: 0}
-  quests:
-  - questName: Cansper
-    questDescription: Real
-    questRequirements: OMG
-    accepted: 0
-    isCompleted: 0
-    hasNoRequirements: 0
-    info: {fileID: 0}
+  activateButton: {fileID: 1653672511}
   activeQuestIndex: 0
   trackedQuestIndex: 0
   ee: 0
   reward: []
-  playerInRange: 0
 --- !u!61 &260734366
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1999,7 +1983,6 @@ MonoBehaviour:
   wantedItem: {fileID: 116296498837584612, guid: c1fd536697f1135458f136064f216517, type: 3}
   wantedAmount: 1
   repeat: 0
-  playerKey: 111
 --- !u!61 &540479812
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2933,7 +2916,6 @@ MonoBehaviour:
   wantedItem: {fileID: 6839145700488693013, guid: c1fd536697f1135458f136064f216517, type: 3}
   wantedAmount: 0
   repeat: 0
-  playerKey: 0
 --- !u!212 &761084378
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4663,34 +4645,19 @@ MonoBehaviour:
   endConversation: {fileID: 1016064944}
   requeireItem: {fileID: 1320841552}
   currentActiveQuest:
-    questName: 0
-    questDescription: 
-    questRequirements: 
+    questName: Something strange
+    questDescription: A man has asked you to find the hidden "nugget" He says that
+      it's somewhere in the snow region.
+    questRequirements: 1 Nugget
     accepted: 0
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 0}
-  currentTrackedQuest:
-    questName: 
-    questDescription: 
-    questRequirements: 
-    accepted: 0
-    isCompleted: 0
-    hasNoRequirements: 0
-    info: {fileID: 0}
-  quests:
-  - questName: TEst
-    questDescription: Aaaa
-    questRequirements: please
-    accepted: 0
-    isCompleted: 0
-    hasNoRequirements: 0
-    info: {fileID: 0}
+  activateButton: {fileID: 1653672511}
   activeQuestIndex: 0
   trackedQuestIndex: 0
   ee: 0
   reward: []
-  playerInRange: 0
 --- !u!61 &1503430367
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5223,18 +5190,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2993294063851156970, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2993294063851156970, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 367
-      objectReference: {fileID: 0}
-    - target: {fileID: 2993294063851156970, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 165
-      objectReference: {fileID: 0}
     - target: {fileID: 3198312204114417861, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5242,6 +5197,22 @@ PrefabInstance:
     - target: {fileID: 3198312204114417861, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3295260586211384441, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 3295260586211384441, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00095749
+      objectReference: {fileID: 0}
+    - target: {fileID: 3907951081522124974, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 3907951081522124974, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4399479552081960830, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_Name
@@ -5292,16 +5263,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5211708152776057122, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5211708152776057122, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00000023841858
+      value: -0.00001335144
       objectReference: {fileID: 0}
     - target: {fileID: 5211708152776057122, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000006377697
+      value: 0.00000667572
       objectReference: {fileID: 0}
     - target: {fileID: 6120929350534071992, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5343,9 +5310,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8080832291999094386, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613140330611462945, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8613140330611462945, guid: 89919370ebf9903478aa05aecde736e3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00010011721
+      value: -0.0002502898
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9489,18 +9464,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 260734365}
-        m_TargetAssemblyTypeName: QuestNPC, Assembly-CSharp
-        m_MethodName: Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1653672512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11011,8 +10974,8 @@ SceneRoots:
   - {fileID: 8106693013863869650}
   - {fileID: 263943135}
   - {fileID: 128008591}
-  - {fileID: 1676701251}
   - {fileID: 1701575513}
+  - {fileID: 1676701251}
   - {fileID: 768384457}
   - {fileID: 673410586}
   - {fileID: 1727194960}

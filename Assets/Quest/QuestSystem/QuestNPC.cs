@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using Ink.UnityIntegration;
 using UnityEngine.UI;
 
+
 public class QuestNPC : MonoBehaviour
 {
 
@@ -17,44 +18,48 @@ public class QuestNPC : MonoBehaviour
     [SerializeField] private GameObject informationNPC;
     [SerializeField] private GameObject endConversation;
     [SerializeField] private Item requeireItem;
-    public Quest currentActiveQuest = null;
-    public Quest currentTrackedQuest = null;
-    [SerializeField] private List <Quest> quests;
+    [SerializeField] private Quest currentActiveQuest = null;
+    private Quest currentTrackedQuest = null;
+    public Button activateButton;    //public List <Quest> quests;
     public int activeQuestIndex = 0;
     public int trackedQuestIndex = 0;
-    [SerializeField] private Item[] inv;
-    [SerializeField] private bool gotAllItems = false;
-    Transform player;
+    private Item[] inv;
+    bool playerInRange = false;
+
+    [SerializeField] private bool ee = false;
+
+
     [SerializeField] Item[] reward;
-    [SerializeField] Item raward;
-    [SerializeField] bool playerInRange;
-    [SerializeField] Item hasItem;
+
     void Start()
     {
-        inv = GetComponent<HotbarCollect>().itemslots;
-        inv = new Item[GetComponent<HotbarCollect>().slotAmount];
-        hasItem = GetComponent<HotbarCollect>().LastCollectItem;
+        activateButton.onClick.AddListener(() =>
+        {
+            if (answerText.text == "Accept" && playerInRange)
+            {
+                questActive = true;
+                AcceptedQuest();
+
+            }
+
+        });
+
+        inv = FindObjectOfType<HotbarCollect>().itemslots;
         informationNPC.SetActive(false);
         endConversation.SetActive(false);
     }
-
+    
     void Update()
     {
-       
-        if (buttonPressed == true && playerInRange == true)
-        {
-            questActive = true;
-            AcceptedQuest();
-            buttonPressed = false;
 
-        }
+       
         if (questActive == true)
         {
             informationNPC.SetActive(true); 
         }
         /*
         if (AreQuestRequirmentsComplete())
-        {   
+        {
             SubmitItems();
             ReceiveRewardAndCompleteQuest();
 
@@ -72,11 +77,8 @@ public class QuestNPC : MonoBehaviour
                 GotAllItems();
             }
         }
-        if (gotAllItems == true && playerInRange == true)
-        {
-            GiveItems();
-        }
     }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
@@ -94,8 +96,8 @@ public class QuestNPC : MonoBehaviour
     }
     private void AcceptedQuest()
     {
-        currentActiveQuest = quests[activeQuestIndex]; // 0 at start
-        currentTrackedQuest = quests[activeQuestIndex]; // 0 at start
+        //currentActiveQuest = quests[activeQuestIndex]; // 0 at start
+        //currentTrackedQuest = quests[activeQuestIndex]; // 0 at start
         QuestManager.instance.AddActiveQuest(currentActiveQuest);
         currentActiveQuest.accepted = true;
 
@@ -127,28 +129,17 @@ public class QuestNPC : MonoBehaviour
     
     private void GiveItems()
     {
-        
-        if (player.GetComponent<PlayerHotbarControl>().TryGiveSelected(raward))
-        {
 
-        }
     }
     
     private void GotAllItems()
     {
-        
         endConversation.SetActive(true);
-        gotAllItems = true;
+        ee = true;
     }
     
    
-    public void Button()
-    {
-        if (answerText.text == "Accept")
-        {
-            buttonPressed = true;
-        }
-    }
+    
     
 
 

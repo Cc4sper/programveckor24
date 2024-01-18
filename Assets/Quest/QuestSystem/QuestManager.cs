@@ -116,6 +116,9 @@ public class QuestManager : MonoBehaviour
             questPrefab.transform.SetParent(questMenuContent);
             questPrefab.transform.localScale = Vector2.one;
             QuestRow qRow = questPrefab.GetComponent<QuestRow>();
+
+            qRow.thisQuest = activeQuest;
+
             qRow.questName.text = activeQuest.questName;
 
 
