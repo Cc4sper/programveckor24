@@ -20,6 +20,7 @@ public class BigTeleprt : MonoBehaviour
             //Instantiate(worldLoad, loadWorld.position - transform.position, Quaternion.identity);
  
             player.GetComponent<PlayerHealth>().screen.GetComponent<DarkScreen>().ScreenFade();
+            player.GetComponent<PlayerMove>().DisableMove(true);
             Invoke("Teleport", 0.9f);
             if (SideScrollarTransition)
             {
@@ -35,5 +36,6 @@ public class BigTeleprt : MonoBehaviour
     private void Teleport()
     {
         player.position = teleportPoint.transform.position;
+        player.GetComponent<PlayerMove>().DisableMove(false);
     }
 }

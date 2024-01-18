@@ -40,12 +40,12 @@ public class Camerafollow : MonoBehaviour
         }
         if (focusing && cam.orthographicSize > activeSize)
         {
-            cam.orthographicSize -= Time.deltaTime * 5;
+            cam.orthographicSize -= Time.deltaTime * 10;
         }
         else if (death == false && cam.orthographicSize < activeSize - 0.1f)
         {
             focusing = false;
-            cam.orthographicSize += Time.deltaTime * 5;
+            cam.orthographicSize += Time.deltaTime * 10;
         }
        
         

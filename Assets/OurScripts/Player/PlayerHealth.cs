@@ -77,13 +77,13 @@ public class PlayerHealth : MonoBehaviour
 
     private void DisablePlayer()
     {
-        GetComponent<PlayerMove>().DisableMove(false);
+        GetComponent<PlayerMove>().DisableMove(true);
         GetComponent<PlayerPickup>().enabled = false;
     }
 
     private void EnablePlayer()
     {
-        GetComponent<PlayerMove>().DisableMove(true);
+        GetComponent<PlayerMove>().DisableMove(false);
         GetComponent<PlayerPickup>().enabled = true;
     }
     private void Respawn()

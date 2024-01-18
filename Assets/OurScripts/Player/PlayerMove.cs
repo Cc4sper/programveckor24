@@ -86,7 +86,7 @@ public class PlayerMove : MonoBehaviour
     }
     public void DisableMove(bool state)
     {
-        if (!state)
+        if (state)
         {
             savedSpeed = moveSpeed;
             moveSpeed = 0;
