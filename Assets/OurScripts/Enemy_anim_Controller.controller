@@ -58,7 +58,7 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
 --- !u!206 &3763757495842294867
 BlendTree:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

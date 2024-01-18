@@ -11,6 +11,10 @@ public class AllMenuInheritance : MonoBehaviour
     {
         SceneManager.LoadScene("TestSpel");
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     public void QuitGame()
     {
         Application.Quit();
