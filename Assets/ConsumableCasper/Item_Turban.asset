@@ -16,3 +16,4 @@ MonoBehaviour:
   sellPrice: 0
   rarity: {fileID: 11400000, guid: 293a5374688e32f4bb1057eb487f3d66, type: 2}
   UseText: 'Equip:  Users attacks deal 5 extra damage but takes 3 extra damage.'
+  flavorText: '"Former owner: Karl Noel"'

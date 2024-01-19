@@ -16,3 +16,4 @@ MonoBehaviour:
   sellPrice: 0
   rarity: {fileID: 11400000, guid: 293a5374688e32f4bb1057eb487f3d66, type: 2}
   UseText: 'Use: Heals user 50 health'
+  flavorText: '"90% air"'

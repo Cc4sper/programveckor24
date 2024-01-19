@@ -16,3 +16,4 @@ MonoBehaviour:
   sellPrice: 0
   rarity: {fileID: 11400000, guid: 5faf05b8526c53b4e8f15ae28714c240, type: 2}
   UseText: 'Use: Regenerates 5 health.'
+  flavorText: '"500ML"'

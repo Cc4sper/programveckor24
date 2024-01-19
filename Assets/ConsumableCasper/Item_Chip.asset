@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item_Chip
   m_EditorClassIdentifier: 
   name: Susseinicon Chip
-  sellPrice: 1
+  sellPrice: 0
   rarity: {fileID: 11400000, guid: 46ec9ef9113ad474e89a33a7ed52f96b, type: 2}
   UseText: 
   flavorText: '"M.S. engraved on the back."'
