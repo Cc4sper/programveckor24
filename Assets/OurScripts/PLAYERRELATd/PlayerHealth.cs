@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public bool vulnerable = true;
     public bool safe = false;
     public Image healthBar;
+    float respawnTimer;
     private void Start() 
     {
         maxHealth = health; //player allways starts with maxhealth
@@ -37,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
             source.GetComponent<music>().Repeat();
             screen.GetComponent<DarkScreen>().ScreenFade();
             GetComponent<PlayerHotbarControl>().Hotbar.GetComponent<HotbarCollect>().Invoke("DropRandomItem", respawnTime * 0.9f);
-            Invoke("Respawn", respawnTime);
+            respawnTimer = respawnTime;
             //GetComponent<PlayerCamera>().cameraDeath();
 
         }
@@ -69,7 +70,15 @@ public class PlayerHealth : MonoBehaviour
         {
             vulnerable = true;
         }
-        
+        if (respawnTimer > 0)
+        {
+            respawnTimer -= Time.deltaTime;
+        }
+        else if (respawnTimer != 0)
+        {
+            respawnTimer = 0;
+            Respawn();
+        }
     }
     public void TakeDamage(float damage)
     {

@@ -157,7 +157,7 @@ MonoBehaviour:
   visualSprite: {fileID: 0}
   visualPos: {x: 0, y: 0, z: 0}
   visualRot: {x: 0, y: 0, z: 0}
-  dashStrength: 40
+  dashStrength: 100
   dashDuration: 0.15
   dashState: 0
   rb: {fileID: 0}

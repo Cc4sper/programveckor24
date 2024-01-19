@@ -249,7 +249,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -422,7 +422,7 @@ MonoBehaviour:
   CooldownScalar: 1
   strength: 0
   InRangePickup: 0
-  pickupKey: 101
+  interactKey: 101
   bar: {fileID: 0}
   colItem: {fileID: 0}
   colObj: {fileID: 0}
@@ -440,9 +440,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   respawnTime: 1
+  source: {fileID: 0}
   screen: {fileID: 0}
   armor: 0
   vulnerable: 1
+  safe: 0
   healthBar: {fileID: 0}
 --- !u!114 &7349690953421117337
 MonoBehaviour:
@@ -457,7 +459,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   savedPos: {x: 0, y: 0}
-  InteractKey: 102
 --- !u!114 &9173192657643429326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,7 +471,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f5b0bc19cdaef47b9cebd2506dddfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 10
+  slowed: 0
+  sideScrollar: 0
+  animator: {fileID: 0}
   boxCollider: {fileID: 0}
   up: 119
   down: 115
