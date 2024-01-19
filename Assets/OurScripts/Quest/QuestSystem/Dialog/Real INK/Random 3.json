@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[[["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^I have heard storys about a thing that says nish.","\n","ev","str","^What?","/str","/ev",{"*":"0.c-0","flg":4},"ev","str","^If you say so...","/str","/ev",{"*":"0.c-1","flg":4},{"c-0":["\n","^A creature of ancient times.","\n","^Very scary...","\n",{"->":"0.g-0"},{"#f":5}],"c-1":["\n",{"->":"0.g-0"},{"#f":5}],"g-0":["done",{"#f":5}]}],"done",{"#f":1}],"listDefs":{}}
