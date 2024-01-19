@@ -15,4 +15,5 @@ MonoBehaviour:
   name: Data Disk
   sellPrice: 0
   rarity: {fileID: 11400000, guid: e1b92338543958a43a6d66d5e784f118, type: 2}
-  UseText: '"Now You have become Death, the destroyer of worlds"'
+  UseText: 
+  flavorText: '"Now You have become Death, the destroyer of worlds"'

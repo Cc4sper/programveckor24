@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Water Bottle
   sellPrice: 0
-  rarity: {fileID: 11400000, guid: 46ec9ef9113ad474e89a33a7ed52f96b, type: 2}
+  rarity: {fileID: 11400000, guid: 5faf05b8526c53b4e8f15ae28714c240, type: 2}
   UseText: 'Use: Regenerates 5 health.'
