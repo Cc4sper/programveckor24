@@ -1,4 +1,4 @@
-Wake up!
+Oh, you're finally awake!
 You tried to cross the border?
 + [Yes]
 I found you next to the wall. I thought you were dead!
