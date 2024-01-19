@@ -54,7 +54,6 @@ public class PlayerHotbarControl : MonoBehaviour
         if (Hotbar.GetComponent<HotbarCollect>().HasWantedSelected(wanted))
         {
             return true;
-            print("gave "+wanted);
         }
         return false;
         
