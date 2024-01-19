@@ -15,4 +15,5 @@ MonoBehaviour:
   name: ???
   sellPrice: 0
   rarity: {fileID: 11400000, guid: e35c79304e4fce4478d165d1128da99f, type: 2}
-  UseText: '"He dosen''t say nish"'
+  UseText: 
+  flavorText: '"He dosen''t say nish"'

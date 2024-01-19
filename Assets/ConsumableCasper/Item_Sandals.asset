@@ -16,3 +16,4 @@ MonoBehaviour:
   sellPrice: 0
   rarity: {fileID: 11400000, guid: e1b92338543958a43a6d66d5e784f118, type: 2}
   UseText: 'Use: Gain a short burst of speed.'
+  flavorText: '"Former owner: Speedy Gonzales'

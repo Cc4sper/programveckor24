@@ -7882,6 +7882,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5167159690300186437, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
+      propertyPath: m_text
+      value: '<size=14><color=#FFFFFF>Susseinicon Chip</color></size>
+
+        Common
+
+        <color=yellow>"M.S.
+        engraved on the back."</color>'
+      objectReference: {fileID: 0}
     - target: {fileID: 5730191374484303329, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -7904,7 +7913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5844094144938753556, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 59.5447
+      value: 55.7587
       objectReference: {fileID: 0}
     - target: {fileID: 5844094144938753556, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -7912,11 +7921,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5844094144938753556, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10.5996
+      value: -9.3376
       objectReference: {fileID: 0}
     - target: {fileID: 6048513061271035392, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
       propertyPath: m_Name
       value: ToolTipPopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434181038421723598, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
+      propertyPath: m_VerticalFit
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6729029189339594855, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
       propertyPath: m_IsActive
@@ -7972,7 +7985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6945631970969857700, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 43.24
       objectReference: {fileID: 0}
     - target: {fileID: 6945631970969857700, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -7980,7 +7993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6945631970969857700, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -41.620003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
