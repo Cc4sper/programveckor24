@@ -12,7 +12,9 @@ public class UIController : MonoBehaviour
     public void Start()
     {  
          _musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
-         _sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1);
+        _sfxSlider.value= PlayerPrefs.GetFloat("SFXVolume", 1);
+        Debug.Log(_sfxSlider.value);
+        
         
     }
     public void ToggleMusic() 

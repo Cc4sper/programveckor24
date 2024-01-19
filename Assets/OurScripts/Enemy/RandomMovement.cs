@@ -33,8 +33,7 @@ public class RandomMovement : MonoBehaviour
         if (Vector2.Distance(transform.position, waypoint) < range)
         {
             SetNewDestination();
-            animator.SetFloat("x", waypoint.x);
-            animator.SetFloat("y", waypoint.y);
+
         }
     }
 

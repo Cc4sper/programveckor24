@@ -27,8 +27,6 @@ public class EnemyChase : MonoBehaviour
         {
             float step = speed * Time.deltaTime;
             enemy.position = Vector2.MoveTowards(transform.position, target.position, step);
-            animator.SetFloat("x", enemy.position.x);
-            animator.SetFloat("y", enemy.position.y);
 
         }
 
