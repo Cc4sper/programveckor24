@@ -44,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Update()
     {
+        /*
         if(Input.GetKeyDown(KeyCode.V)) //temporary
         {
             TakeDamage(20);
@@ -52,6 +53,7 @@ public class PlayerHealth : MonoBehaviour
         {
             HealHealth(5);
         }
+        */
         if (safe)
         {
             if (health < maxHealth)

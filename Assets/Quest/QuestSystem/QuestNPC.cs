@@ -10,14 +10,18 @@ using UnityEngine.UI;
 
 public class QuestNPC : MonoBehaviour
 {
-
-
+    public bool saticified = false;
+    bool interactGive;
+    [SerializeField] Item wantedItem;
+    [SerializeField] int wantedAmount;
+    [SerializeField] Transform player;
     [SerializeField] private TextMeshProUGUI answerText;
     [SerializeField] bool buttonPressed = false;
     bool questActive = false;
     [SerializeField] private GameObject firstConversation;
     [SerializeField] private GameObject talkNPC;
     [SerializeField] private GameObject endConversation;
+    [SerializeField] GameObject nextQuest;
     [SerializeField] private Item requeireItem;
     [SerializeField] private Quest currentActiveQuest = null;
     [SerializeField] bool haveReward;
@@ -25,11 +29,12 @@ public class QuestNPC : MonoBehaviour
     [SerializeField] bool gatherQuest;
     [SerializeField] string talkquestBye;
     private Quest currentTrackedQuest = null;
-    public Button activateButton;    //public List <Quest> quests;
+    public Button activateButton;    
     public int activeQuestIndex = 0;
     public int trackedQuestIndex = 0;
     private Item[] inv;
     bool playerInRange = false;
+    int given;
 
     [SerializeField] private bool ee = false;
 
@@ -38,11 +43,18 @@ public class QuestNPC : MonoBehaviour
 
     void Start()
     {
+        nextQuest.SetActive(false);
+
         if (gatherQuest)
         {
             endConversation.SetActive(false);
         }
-        
+        if (talkQuest)
+        {
+            talkNPC.SetActive(false);
+
+        }
+
         activateButton.onClick.AddListener(() =>
         {
             if (answerText.text == "Accept" || answerText.text == "Bye" && playerInRange)
@@ -59,13 +71,16 @@ public class QuestNPC : MonoBehaviour
             {
                 ReceiveRewardAndCompleteQuest();
             }
+            if (gatherQuest && answerText.text == "Here you go!")
+            {
+                ReceiveRewardAndCompleteQuest();
+            }
 
         });
         inv = GetComponent<HotbarCollect>().itemslots;
-        talkNPC.SetActive(false);
-        
+
     }
-    
+
     void Update()
     {
 
@@ -108,11 +123,11 @@ public class QuestNPC : MonoBehaviour
     }
     private void AcceptedQuest()
     {
-        firstConversation.SetActive(false);
         //currentActiveQuest = quests[activeQuestIndex]; // 0 at start
         //currentTrackedQuest = quests[activeQuestIndex]; // 0 at start
         QuestManager.instance.AddActiveQuest(currentActiveQuest);
         currentActiveQuest.accepted = true;
+        firstConversation.SetActive(false);
 
         if (currentActiveQuest.hasNoRequirements)
         {
@@ -129,6 +144,8 @@ public class QuestNPC : MonoBehaviour
 
     private void ReceiveRewardAndCompleteQuest()
     {
+        endConversation.SetActive(false);
+        nextQuest.SetActive(true);
         if (haveReward)
         {
             print("dropping loot");
@@ -144,18 +161,16 @@ public class QuestNPC : MonoBehaviour
         }
         QuestManager.instance.MarkQuestComplete(currentActiveQuest);
         
-            
-    }
-    
-    private void GiveItems()
-    {
 
     }
     
+
+
+
+
     private void CompletedObjective()
     {
         endConversation.SetActive(true);
-        ee = true;
     }
     
    
