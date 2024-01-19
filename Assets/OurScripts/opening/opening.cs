@@ -1,20 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class opening : MonoBehaviour
 {
     [SerializeField] float time;
     [SerializeField] GameObject sand;
-    int ontext = 0;
-    float timer;
+    
+    
     [SerializeField] float speed;
+
+    public int max;
+    SceneManager manager;
+    public int ontext = 0;
+    float timer;
     Vector3 savedPos;
     bool reseted = true;
     bool text = true;
     // Start is called before the first frame update
     void Start()
     {
+        max = transform.childCount-2;
         timer = time;
         transform.position = savedPos;
     }
@@ -64,9 +71,19 @@ public class opening : MonoBehaviour
     }
     void nexttext()
     {
+        
         text = false;
         transform.GetChild(ontext).gameObject.SetActive(false);
         ontext++;
+        if (ontext >= max)
+        {
+            Invoke("NextScene", 1);
+        }
         transform.GetChild(ontext).gameObject.SetActive(true);
+
+    }
+    void NextScene()
+    {
+        SceneManager.LoadScene(1);
     }
 }
