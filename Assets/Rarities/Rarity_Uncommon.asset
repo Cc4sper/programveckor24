@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a060d87713cf552438f2b929b025d555, type: 3}
   m_Name: Rarity_Uncommon
   m_EditorClassIdentifier: 
-  name: Rare
+  name: Uncommon
   rarity: {r: 0.01732521, g: 0.6886792, b: 0.052659657, a: 0}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Tarnished Clock
   sellPrice: 0
-  rarity: {fileID: 11400000, guid: 46ec9ef9113ad474e89a33a7ed52f96b, type: 2}
+  rarity: {fileID: 11400000, guid: e1b92338543958a43a6d66d5e784f118, type: 2}
   UseText: 'Use: Slows down time for 4 seconds.'
