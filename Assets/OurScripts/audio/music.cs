@@ -6,13 +6,14 @@ public class music : MonoBehaviour
 {
     // Start is called before the first frame update
     private AudioSource source;
+    [SerializeField] AudioClip Tempclip;
+    [SerializeField] AudioClip newclip;
 
     private void Start()
     {
         source = GetComponent<AudioSource>();
         source.volume = 0f;
-        StartCoroutine(Fade(true, source, 2f, 1f));
-        StartCoroutine(Fade(false, source, 2f, 0f));
+        StartCoroutine(FadeMusic(true, source, 2f, 1f));
     }
 
     private void Update()
@@ -20,17 +21,20 @@ public class music : MonoBehaviour
         if (!source.isPlaying)
         {
             source.Play();
-            StartCoroutine(Fade(true, source, 2f, 1f));
-            StartCoroutine(Fade(false, source, 2f, 0f));
+            StartCoroutine(FadeMusic(true, source, 2f, 1f));
+        }
+        if (Input.GetKey(KeyCode.M))
+        {
+            Repeat();
         }
     }
 
-    public IEnumerator Fade(bool fadeIn,AudioSource source,float duration,float targetVolume)
+    private IEnumerator FadeMusic(bool fadeIn,AudioSource source,float duration,float targetVolume)
     {
         if (!fadeIn)
         {
             double lenghtOfsource = (double)source.clip.samples / source.clip.frequency;
-            yield return new WaitForSecondsRealtime((float)(lenghtOfsource - duration));
+            yield return new WaitForSecondsRealtime((float)(duration));
         }
 
         float time = 0f;
@@ -43,7 +47,23 @@ public class music : MonoBehaviour
             source.volume = Mathf.Lerp(startVol, targetVolume, time / duration);
             yield return null;
         }
-
+        if (newclip != null)
+        {
+            source.clip = newclip;
+        }
         yield break;
+    }
+
+    public void Repeat()
+    {
+        source.volume = 0f;
+        source.Play();
+        StartCoroutine(FadeMusic(true, source, 2f, 1f));
+    }
+
+    public void SwitchMusic(AudioClip newClip)
+    {
+        StartCoroutine(FadeMusic(false, source, 0.2f, 0f));
+        newclip = newClip;
     }
 }

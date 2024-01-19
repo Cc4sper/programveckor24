@@ -100,8 +100,8 @@ PrefabInstance:
 
         Common
 
-        <color=green>M.S.
-        engraved on the back.</color>
+        <color=green>"M.S.
+        engraved on the back."</color>
 
         Sell Price: 1 Ryal'
       objectReference: {fileID: 0}

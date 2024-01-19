@@ -5,6 +5,8 @@ using UnityEngine;
 public class BigTeleprt : MonoBehaviour
 {
     [SerializeField] bool SideScrollarTransition;
+    [SerializeField] AudioClip newMusic;
+    [SerializeField] AudioSource source;
     Transform teleportPoint;
     Transform player;
     
@@ -21,7 +23,11 @@ public class BigTeleprt : MonoBehaviour
  
             player.GetComponent<PlayerHealth>().screen.GetComponent<DarkScreen>().ScreenFade();
             player.GetComponent<PlayerMove>().DisableMove(true);
-            Invoke("Teleport", 0.9f);
+            if (newMusic != null)
+            {
+                source.GetComponent<music>().SwitchMusic(newMusic);
+            }
+            Invoke("Teleport", 1f);
             if (SideScrollarTransition)
             {
                 player.GetComponent<PlayerCamera>().ActivateSideScrollar();

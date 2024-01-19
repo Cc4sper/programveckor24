@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     float maxHealth;
 
     [SerializeField] float respawnTime;
+    [SerializeField] AudioSource source;
     public GameObject screen;
 
     public int armor = 0;
@@ -33,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
         {
             
             DisablePlayer();
+            source.GetComponent<music>().Repeat();
             screen.GetComponent<DarkScreen>().ScreenFade();
             GetComponent<PlayerHotbarControl>().Hotbar.GetComponent<HotbarCollect>().Invoke("DropRandomItem", respawnTime * 0.9f);
             Invoke("Respawn", respawnTime);

@@ -5,6 +5,9 @@ using UnityEngine;
 public class Bosstrigger : MonoBehaviour
 {
      [SerializeField] GameObject border, madam;
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip BossMusic, Defeat;
+    
     Transform player; 
     Camera cam;
     float timer;
@@ -17,6 +20,7 @@ public class Bosstrigger : MonoBehaviour
         {
             triggered = true;
             border.SetActive(true);
+            source.GetComponent<music>().SwitchMusic(BossMusic);
             player = collision.transform.parent;
             cam = player.GetComponent<PlayerCamera>().cam;
             cam.GetComponent<Camerafollow>().target = madam.transform;
@@ -44,6 +48,7 @@ public class Bosstrigger : MonoBehaviour
         }
         else if (madam == null)
         {
+            source.GetComponent<music>().SwitchMusic(Defeat);
             Destroy(border);
             Destroy(gameObject);
         }

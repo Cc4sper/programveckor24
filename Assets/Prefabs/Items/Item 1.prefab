@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 9989553c2f42e7242bd2bbfc0925e6c4, type: 2}
-  toolTipPopUp: {fileID: 3329176197595654404, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
+  toolTipPopUp: {fileID: 0}
 --- !u!1001 &6931642415191074157
 PrefabInstance:
   m_ObjectHideFlags: 0
