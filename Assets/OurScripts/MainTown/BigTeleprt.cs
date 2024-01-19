@@ -22,7 +22,7 @@ public class BigTeleprt : MonoBehaviour
             //Instantiate(worldLoad, loadWorld.position - transform.position, Quaternion.identity);
  
             player.GetComponent<PlayerHealth>().screen.GetComponent<DarkScreen>().ScreenFade();
-            player.GetComponent<PlayerMove>().DisableMove(true);
+            //player.GetComponent<PlayerMove>().DisableMove(true);
             if (newMusic != null)
             {
                 source.GetComponent<music>().SwitchMusic(newMusic);
@@ -42,6 +42,6 @@ public class BigTeleprt : MonoBehaviour
     private void Teleport()
     {
         player.position = teleportPoint.transform.position;
-        player.GetComponent<PlayerMove>().DisableMove(false);
+        //player.GetComponent<PlayerMove>().DisableMove(false);
     }
 }

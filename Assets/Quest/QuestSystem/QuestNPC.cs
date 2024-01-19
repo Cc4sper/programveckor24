@@ -35,7 +35,6 @@ public class QuestNPC : MonoBehaviour
     private Item[] inv;
     bool playerInRange = false;
     int given;
-    public GameObject[] destroyObj;
 
     [SerializeField] private bool ee = false;
 
@@ -70,9 +69,9 @@ public class QuestNPC : MonoBehaviour
             }
             if (gatherQuest && answerText.text == talkquestBye)
             {
-                GiveItems();
+                ReceiveRewardAndCompleteQuest();
             }
-            if(gatherQuest && answerText.text == "Here you go!")
+            if (gatherQuest && answerText.text == "Here you go!")
             {
                 ReceiveRewardAndCompleteQuest();
             }
@@ -166,41 +165,8 @@ public class QuestNPC : MonoBehaviour
     }
     
 
-    
-    private void GiveItems()
-    {
-        if(player.GetComponent<PlayerHotbarControl>().TryGiveSelected(wantedItem))
-        {
-            GotWanted();
-
-        }
-    }
-
-    void GotWanted()
-    {
-        given++;
-        print("got wanted item " + given + "/" + wantedAmount);
-        if (given >= wantedAmount)
-        {
-            if (saticified == false)
-            {
-                ReceiveRewardAndCompleteQuest();
-                Saticified();
-            }
-        }
-    }
 
 
-
-    public virtual void Saticified()
-    {
-        saticified = true;
-        for (int i = 0; i < destroyObj.Length; i++)
-        {
-            Destroy(destroyObj[i]);
-        }
-
-    }
 
     private void CompletedObjective()
     {
