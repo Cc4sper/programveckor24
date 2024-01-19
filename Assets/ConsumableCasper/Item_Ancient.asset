@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1e01857be1df14a855c47181c7d914, type: 3}
   m_Name: Item_Ancient
   m_EditorClassIdentifier: 
-  name: Shiny
+  name: Derelict lamp.
   sellPrice: 0
   rarity: {fileID: 11400000, guid: e1b92338543958a43a6d66d5e784f118, type: 2}
   UseText: 'Use: Shoots 10 damage in opposite direction.'

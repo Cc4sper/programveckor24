@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Merf Toy
   sellPrice: 0
   rarity: {fileID: 11400000, guid: 5faf05b8526c53b4e8f15ae28714c240, type: 2}
-  UseText: 'Use: Shoots 2 damage from 6 ammo'
+  UseText: 'Use: Deals 2 damage. 6 Bullets.'

@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Soggy Biscuit
   sellPrice: 0
   rarity: {fileID: 11400000, guid: 9e5842606d7f31341bb9fba2645ad54a, type: 2}
-  UseText: 'Use: Heals the user 25hp.'
+  UseText: 'Use: Heals the user 25 health.'
