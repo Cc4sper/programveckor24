@@ -39,6 +39,8 @@ public class RandomMovement : MonoBehaviour
 
     void SetNewDestination()
     {
+        animator.SetFloat("x", waypoint.x);
+        animator.SetFloat("y", waypoint.y);
         waypoint = new Vector2(OgPos.x + Random.Range(-maxDistance, maxDistance), OgPos.y + Random.Range(-maxDistance, maxDistance));
     }
 }
