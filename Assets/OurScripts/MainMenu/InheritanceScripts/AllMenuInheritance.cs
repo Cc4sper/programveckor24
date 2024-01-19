@@ -9,7 +9,7 @@ public class AllMenuInheritance : MonoBehaviour
     [HideInInspector] public bool Active;
     public void PlayGame()
     {
-        SceneManager.LoadScene("TestSpel");
+        SceneManager.LoadScene("OpenWorldTest");
     }
     public void MainMenu()
     {

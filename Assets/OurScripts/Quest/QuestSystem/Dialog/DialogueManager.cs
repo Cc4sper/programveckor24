@@ -4,17 +4,20 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
-using Ink.UnityIntegration;
+
 
 public class DialogueManager : MonoBehaviour
 {
+    // variable for the load_globals.ink JSON
+    [Header("Load Globals JSON")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
+
     [SerializeField] private GameObject player;
 
     [Header("Params")]
     [SerializeField] private float typingSpeed = 0.04f;
 
     [Header("Global Ink File")]
-    [SerializeField] private InkFile globalsInkFile;
 
     [Header("Dialogue UI")]
 
@@ -46,6 +49,8 @@ public class DialogueManager : MonoBehaviour
     private const string LAYOUT_TAG = "layout";
     private DialogueVariables dialogueVariables;
 
+   
+    
 
     private void Awake()
     {
@@ -54,7 +59,8 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Mulitple DialogManager");
         }
         instance = this;
-        dialogueVariables = new DialogueVariables(globalsInkFile.filePath);
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+
     }
     public static DialogueManager GetInstance()
     {
