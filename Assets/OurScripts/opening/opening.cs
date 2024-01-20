@@ -11,7 +11,7 @@ public class opening : MonoBehaviour
     
     [SerializeField] float speed;
 
-    public int max;
+    int max;
     SceneManager manager;
     public int ontext = 0;
     float timer;
@@ -67,7 +67,7 @@ public class opening : MonoBehaviour
     void resetSan()
     {
         reseted = false;
-        sand.transform.position -= new Vector3(2800, 0);
+        sand.transform.position -= new Vector3(speed, 0);
     }
     void nexttext()
     {
