@@ -400,8 +400,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The war abrupted with the promise for peace and freedom, in the fusion
-    of the nations, Irag.
+  m_text: The emergence of Irag, a fusion of the two nations, initially hinted at
+    the promise of a haven for freedom.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
