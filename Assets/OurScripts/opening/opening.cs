@@ -54,7 +54,7 @@ public class opening : MonoBehaviour
         {
             nexttext();
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0)&& text && timer > 2.1f)
         {
             timer = 2.1f;
             //text = true;
