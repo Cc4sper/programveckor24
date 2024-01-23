@@ -1,4 +1,5 @@
 using Ink.Runtime;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,9 +10,9 @@ public class UIController : MonoBehaviour
 { 
     public Slider musicSlider, sfxSlider;
 
+
     public void Update()
     {
-        Debug.Log(PlayerPrefs.GetFloat("MusicVolume"));
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);   
         sfxSlider.value= PlayerPrefs.GetFloat("SfxVolume", 1);
     }
