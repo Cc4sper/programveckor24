@@ -34,7 +34,7 @@ public class QuestNPC : MonoBehaviour
     private Item[] inv;
     bool playerInRange = false;
     int given;
-
+    [SerializeField] private GameObject visualCue;
     [SerializeField] private bool ee = false;
 
 
@@ -122,6 +122,7 @@ public class QuestNPC : MonoBehaviour
     }
     private void AcceptedQuest()
     {
+        visualCue.SetActive(false);
         //currentActiveQuest = quests[activeQuestIndex]; // 0 at start
         //currentTrackedQuest = quests[activeQuestIndex]; // 0 at start
         QuestManager.instance.AddActiveQuest(currentActiveQuest);

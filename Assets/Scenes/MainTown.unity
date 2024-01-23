@@ -6674,6 +6674,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781717741}
   m_CullTransparentMesh: 1
+--- !u!1 &829836225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6048513061271035392, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
+  m_PrefabInstance: {fileID: 1443703070}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &841932660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3534960681326239115, guid: c1fd536697f1135458f136064f216517, type: 3}
@@ -8141,7 +8146,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3329176197595654404, guid: 57ec8ca1baa82d042bbfff25e707e421, type: 3}
   m_PrefabInstance: {fileID: 1443703070}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 829836225}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be8aa9142af6a074b9538a820b8611ac, type: 3}
@@ -8475,6 +8480,7 @@ GameObject:
   - component: {fileID: 1666797020}
   - component: {fileID: 1666797019}
   - component: {fileID: 1666797023}
+  - component: {fileID: 1666797024}
   m_Layer: 5
   m_Name: Hotbar
   m_TagString: Untagged
@@ -8598,6 +8604,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697ced708babbb640b0cfb86a027ef13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1666797024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666797016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 829836225}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1721814772
 GameObject:
   m_ObjectHideFlags: 0
@@ -9012,20 +9047,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a165109c550cea34ba8e1cfd64f321d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadGlobalsJSON: {fileID: 0}
   player: {fileID: 0}
   typingSpeed: 0.025
-  globalsInkFile:
-    inkAsset: {fileID: 102900000, guid: 3148c8dfd3e97d9448fdeb325b15266b, type: 3}
-    jsonAssetDirectory: {fileID: 0}
-    jsonAsset: {fileID: 0}
-    unhandledCompileErrors: []
-    recursiveIncludeErrorPaths: []
-    errors: []
-    warnings: []
-    todos: []
-    masterInkAssets: []
-    localIncludePaths: []
-    includes: []
   dialoguePanel: {fileID: 1531745273}
   continueIcon: {fileID: 1846002461}
   dialogueText: {fileID: 597340014}
