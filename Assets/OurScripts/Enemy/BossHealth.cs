@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossHealth : EnemyHealth
 {
     public bool phase;
+    [SerializeField] Healthmanagermadam health;
     public override void Update()
     {
         base.Update();
@@ -21,4 +22,12 @@ public class BossHealth : EnemyHealth
         GetComponent<EnemyHealth>().enabled = true;
         GetComponent<StraightChase>().nextPhase();
     }
+
+    public override void TakeDamage(int dmg, bool hit)
+    {
+        base.TakeDamage(dmg, hit);
+        health.TakeDamage(dmg);
+
+    }
+
 }

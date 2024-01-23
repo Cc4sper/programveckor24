@@ -29,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
    
-    public void TakeDamage(int dmg, bool hit)
+    public virtual void TakeDamage(int dmg, bool hit)
     {
         vulnerable = false;
         print("hit enemy " + dmg);
