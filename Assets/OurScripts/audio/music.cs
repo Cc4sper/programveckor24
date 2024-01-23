@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class music : MonoBehaviour
@@ -8,12 +9,27 @@ public class music : MonoBehaviour
     private AudioSource source;
     [SerializeField] AudioClip Tempclip;
     [SerializeField] AudioClip newclip;
+    public static music Instance;
+
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
         source = GetComponent<AudioSource>();
         source.volume = 0f;
-        StartCoroutine(FadeMusic(true, source, 2f, 1f));
+        StartCoroutine(FadeMusic(true, source, 2f, PlayerPrefs.GetFloat("MusicVolume", 1)));
     }
 
     private void Update()
@@ -21,7 +37,7 @@ public class music : MonoBehaviour
         if (!source.isPlaying)
         {
             source.Play();
-            StartCoroutine(FadeMusic(true, source, 2f, 1f));
+            StartCoroutine(FadeMusic(true, source, 2f, PlayerPrefs.GetFloat("MusicVolume",1)));
         }
         if (Input.GetKey(KeyCode.M))
         {
@@ -58,12 +74,16 @@ public class music : MonoBehaviour
     {
         source.volume = 0f;
         source.Play();
-        StartCoroutine(FadeMusic(true, source, 2f, 1f));
+        StartCoroutine(FadeMusic(true, source, 2f, PlayerPrefs.GetFloat("MusicVolume",1)));
     }
 
     public void SwitchMusic(AudioClip newClip)
     {
         StartCoroutine(FadeMusic(false, source, 0.2f, 0f));
         newclip = newClip;
+    }
+    public void MusicVolume(float value)
+    {
+      source.volume = value;
     }
 }
