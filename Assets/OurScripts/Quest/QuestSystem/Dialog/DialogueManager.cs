@@ -96,10 +96,23 @@ public class DialogueManager : MonoBehaviour
         {
             ContinueStory();
         }
+        if (canContinueToNextLine
+            && Input.GetKeyDown(KeyCode.Mouse0)
+            && currentStory.currentChoices.Count == 0)
+        {
+            ContinueStory();
+        }
+        if (canContinueToNextLine
+            && Input.GetKeyDown(KeyCode.E)
+            && currentStory.currentChoices.Count == 0)
+        {
+            ContinueStory();
+        }
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+        
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
@@ -122,6 +135,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
         player.GetComponent<PlayerMove>().enabled = true;
+        
 
     }
 
@@ -239,9 +253,11 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator SelectFirstChoice()
     {
+        
         EventSystem.current.SetSelectedGameObject(null);
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
+        
     }
     public void MakeChoice(int choiceIndex)
     {
