@@ -26,6 +26,7 @@ public class graphicSettings : MonoBehaviour
         if (selectedRes > 0)
         {
             selectedRes--;
+            Debug.Log(selectedRes);
         }
         resText.text = resolutions[selectedRes].width + "x" + resolutions[selectedRes].height;
     }
@@ -34,6 +35,7 @@ public class graphicSettings : MonoBehaviour
         if (selectedRes < resolutions.Length-1)
         {
             selectedRes++;
+            Debug.Log(selectedRes);
         }
         resText.text = resolutions[selectedRes].width + "x" + resolutions[selectedRes].height;
         SetResolution();

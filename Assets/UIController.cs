@@ -3,6 +3,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,13 +22,14 @@ public class UIController : MonoBehaviour
     {
         music.Instance.MusicVolume(musicSlider.value);
         MusicPrefs();
-        
     }
+
 
     public void SFXVolume()
     {
         AudioManager.Instance.SFXVolume(sfxSlider.value);
         SfxPrefs();
+
     }
     public void MusicPrefs()
     {
