@@ -5,10 +5,13 @@ using UnityEngine;
 public class BigTeleprt : MonoBehaviour
 {
     [SerializeField] bool SideScrollarTransition;
+    [SerializeField] bool Cold;
     [SerializeField] AudioClip newMusic;
     [SerializeField] AudioSource source;
     Transform teleportPoint;
     Transform player;
+    Camera cam;
+    PostProcessEdit post;
     
     private void Start()
     {
@@ -36,6 +39,26 @@ public class BigTeleprt : MonoBehaviour
             {
                 player.GetComponent<PlayerCamera>().InactivateSideScrollar();
             }
+            getPostProcess();
+            if (Cold)
+            {
+                post.ChangeTemprature(-5);
+                post.ChangeBloom(5);
+                
+            }
+            else
+            {
+                post.ChangeTemprature(5);
+                post.ChangeBloom(25);
+            }
+        }
+    }
+    private void getPostProcess()
+    {
+        if (cam == null)
+        {
+            cam = player.GetComponent<PlayerCamera>().cam;
+            post = cam.GetComponent<PostProcessEdit>();
         }
     }
 
