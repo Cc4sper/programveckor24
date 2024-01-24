@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Bosstrigger : MonoBehaviour
 {
-     [SerializeField] GameObject border, madam;
+     [SerializeField] GameObject border, madam, bar;
+    [SerializeField] GameObject[] healthbar;
     [SerializeField] AudioSource source;
     [SerializeField] AudioClip BossMusic, Defeat;
     
@@ -24,6 +25,7 @@ public class Bosstrigger : MonoBehaviour
             player = collision.transform.parent;
             cam = player.GetComponent<PlayerCamera>().cam;
             cam.GetComponent<Camerafollow>().target = madam.transform;
+            bar.SetActive(true);
             timer = 5;
         }
     }
@@ -50,7 +52,12 @@ public class Bosstrigger : MonoBehaviour
         {
             source.GetComponent<music>().SwitchMusic(Defeat);
             Destroy(border);
+            
             Destroy(gameObject);
+            for (int i = 0; i < healthbar.Length; i++)
+            {
+                healthbar[i].GetComponent<Fadeoutimage>().enabled = true;
+            }
         }
        
     }
