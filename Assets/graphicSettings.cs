@@ -12,14 +12,7 @@ public class graphicSettings : MonoBehaviour
     public TextMeshProUGUI resText;
     public void ApplyFullcreen()
     {
-        if (fullscreenToggle.isOn)
-        {
-            Screen.fullScreen = true;
-        }
-        else
-        {
-            Screen.fullScreen = false;
-        }
+        fullscreenToggle.isOn = !fullscreenToggle.isOn;
     }
     public void ResolutionLeft()
     {
@@ -38,11 +31,12 @@ public class graphicSettings : MonoBehaviour
             Debug.Log(selectedRes);
         }
         resText.text = resolutions[selectedRes].width + "x" + resolutions[selectedRes].height;
-        SetResolution();
+        
     }
     public void SetResolution()
     {
         Screen.SetResolution(resolutions[selectedRes].width, resolutions[selectedRes].height, fullscreenToggle.isOn);
+        print(resolutions[selectedRes].width);
     }
     public void ApplyRes()
     {
