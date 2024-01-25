@@ -49,7 +49,11 @@ public class StraightChase : MonoBehaviour
         if (first)
         {
             rando = 1;
-            first = false;
+            if (rando == 1)
+            {
+                rando = 2;
+                first = false;
+            }
         }
         if (x == 0)
         {
