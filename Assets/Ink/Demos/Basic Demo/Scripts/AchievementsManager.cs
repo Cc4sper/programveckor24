@@ -13,11 +13,12 @@ public class AchievementsGet {
     [Header("Name/desc")]
     public string achName;
     public string description;
+    public string showDescription;
     public TextMeshProUGUI achText;
     [Header("Image/gameObj")]
     public Sprite sprite;
     public GameObject achObject;
-    [Header("Achieved")]
+    [Header("Achieved/Condition")]
     public bool Achieved;
     public Func<bool> condition;
 }
@@ -59,7 +60,7 @@ public class AchievementsManager : MonoBehaviour
     public void UnlockAchievement(AchievementsGet achievement)
     {
         achievement.Achieved = true;
-        Debug.Log("Achievement unlocked: " + achievement.achName);
+        Debug.Log("Achievement unlocked: " + achievement.achName + "\nDescription: " + achievement.showDescription);
     }
     void UpdateConditions()
     {
@@ -75,7 +76,7 @@ public class AchievementsManager : MonoBehaviour
             if (achievement.achText != null)
             {
                 if (achievement.Achieved)
-                    achievement.achText.text = "Has been unlocked: " + achievement.achName + "\nDescription: " + achievement.description;
+                    achievement.achText.text = "Has been unlocked: " + achievement.achName + "\nDescription: " + achievement.showDescription;
                 else
                     achievement.achText.text = "Hasn't been unlocked: " + achievement.achName + "\nDescription: " + achievement.description;
             }
