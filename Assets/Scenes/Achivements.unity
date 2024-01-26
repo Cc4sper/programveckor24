@@ -427,9 +427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3687460bd7f53fc40a9247674ccce2af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AchievementsElement:
+  achievements:
   - achName: Press W
-    description: Press W to get
+    description: Press W to achieve
     achText: {fileID: 1495125087}
     sprite: {fileID: 0}
     achObject: {fileID: 819919423}
@@ -629,8 +629,8 @@ MonoBehaviour:
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 5
+  m_fontSizeMax: 30
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
