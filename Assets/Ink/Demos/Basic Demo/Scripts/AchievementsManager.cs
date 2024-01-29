@@ -10,16 +10,18 @@ using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 [System.Serializable]
 public class AchievementsGet {
-    [Header("Name/desc")]
+    [Header("Name/Desc/LVL")]
     public string achName;
     public string description;
     public string showDescription;
+    public int Level;
     public TextMeshProUGUI achText;
-    [Header("Image/gameObj")]
+    [Header("Sprite/AchIm")]
     public Sprite sprite;
-    public GameObject achObject;
-    [Header("Achieved/Condition")]
+    public Image achImage;
+    [Header("Achieved/Upgrade")]
     public bool Achieved;
+    public bool isUpgradeable;  
     public Func<bool> condition;
 }
 
@@ -53,20 +55,35 @@ public class AchievementsManager : MonoBehaviour
                     UnlockAchievement(achievement);
                     Debug.Log("Achievement unlocked: " + achievement.achName);
                 }
+                if (achievement.isUpgradeable)
+                {
+                    
+                }
             }
         }
     }
+
+    
 
     public void UnlockAchievement(AchievementsGet achievement)
     {
         achievement.Achieved = true;
         Debug.Log("Achievement unlocked: " + achievement.achName + "\nDescription: " + achievement.showDescription);
+        if (achievement.achImage != null)   
+        {
+            achievement.achImage.color = Color.yellow;
+        }
+    }
+
+    void IncrementUpgradeableAchievement(AchievementsGet achievement)
+    {
+        
     }
     void UpdateConditions()
     {
-        // Update conditions here if needed
-        // Example:
+        //W clicks:
         achievements[0].condition = () => Input.GetKeyDown(KeyCode.W);
+        //S clicks:
         achievements[1].condition = () => Input.GetKeyDown(KeyCode.S);
     }
     public void UpdateAchivementUI()

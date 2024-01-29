@@ -1489,12 +1489,14 @@ MonoBehaviour:
   achievements:
   - achName: To Heaven
     description: ???
+    showDescription: Press W
     achText: {fileID: 1495125087}
     sprite: {fileID: 0}
     achObject: {fileID: 819919423}
     Achieved: 0
   - achName: To Hell
     description: ???
+    showDescription: Press S
     achText: {fileID: 10132315}
     sprite: {fileID: 0}
     achObject: {fileID: 819919423}
