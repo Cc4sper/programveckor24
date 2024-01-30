@@ -76,7 +76,7 @@ public class QuestNPC : MonoBehaviour
             }
 
         });
-        inv = GetComponent<HotbarCollect>().itemslots;
+        //inv = GetComponent<HotbarCollect>().itemslots;
 
     }
 
@@ -144,8 +144,8 @@ public class QuestNPC : MonoBehaviour
 
     private void ReceiveRewardAndCompleteQuest()
     {
-        endConversation.SetActive(false);
         nextQuest.SetActive(true);
+        endConversation.SetActive(false);
         if (haveReward)
         {
             print("dropping loot");
