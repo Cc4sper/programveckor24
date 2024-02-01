@@ -13,7 +13,7 @@ public class EnemyChase : MonoBehaviour
 
     public void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = transform.parent.GetComponent<Animator>();
         enemy = transform.parent.transform;
     }
 
@@ -42,6 +42,8 @@ public class EnemyChase : MonoBehaviour
         {
             transform.parent.GetComponent<RandomMovement>().enabled = false;
             target = collision.transform;
+            animator.SetFloat("x", collision.transform.position.x - transform.position.x);
+            animator.SetFloat("y", collision.transform.position.y - transform.position.y);
 
             print("chasing player");
             

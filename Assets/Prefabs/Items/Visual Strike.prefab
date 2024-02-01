@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4683555395236960902}
   - component: {fileID: 534551099511352733}
+  - component: {fileID: 1048398401773526677}
   m_Layer: 0
   m_Name: Visual Strike
   m_TagString: Untagged
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1048398401773526677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139983801402742509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a821ae3ddf9a44eb9f0244965fba53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rot: 0

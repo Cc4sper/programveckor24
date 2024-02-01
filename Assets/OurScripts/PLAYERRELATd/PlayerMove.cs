@@ -116,7 +116,7 @@ public class PlayerMove : MonoBehaviour
         rb.AddForce(new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed));
         Vector2 aimDirection = mousePosistion - rb.position;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = aimAngle;
+        rb.transform.eulerAngles = new Vector3(0,0,aimAngle);
     }
 
 
