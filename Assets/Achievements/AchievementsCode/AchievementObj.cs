@@ -13,10 +13,6 @@ public class AchievementObj : ScriptableObject
     public string description;
     public string showDescription;
     public int Level;
-    public TextMeshProUGUI achText;
-    [Header("Sprite/AchIm")]
-    public Sprite sprite;
-    public Image achImage;
     [Header("Achieved/Upgrade")]
     public bool Achieved;
     public bool isUpgradeable;

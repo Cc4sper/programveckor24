@@ -29,8 +29,7 @@ public class AchievementsGet {
 
 public class AchievementsManager : MonoBehaviour
 {
-    public List<AchievementsGet> achievements;
-    public List<AchievementObj> test;
+    public List<AchievementObj> achievements;
 
     void Start()
     {
@@ -39,35 +38,7 @@ public class AchievementsManager : MonoBehaviour
     public void Update()
     {
         UpdateConditions();
-        CheckAchievements();
-        UpdateAchivementUI();
     }
-    void CheckAchievements()
-    {
-        for (int i = 0; i < achievements.Count; i++)
-        {
-            AchievementsGet achievement = achievements[i];
-
-            // Check if the achievement is not achieved and the condition is not null
-            if (!achievement.Achieved && achievement.condition != null)
-            {
-                // Check the condition
-                if (achievement.condition.Invoke())
-                {
-                    // Unlock the achievement
-                    UnlockAchievement(achievement);
-                    Debug.Log("Achievement unlocked: " + achievement.achName);
-                }
-                if (achievement.isUpgradeable)
-                {
-                    
-                }
-            }
-        }
-    }
-
-    
-
     public void UnlockAchievement(AchievementsGet achievement)
     {
         achievement.Achieved = true;
@@ -79,23 +50,9 @@ public class AchievementsManager : MonoBehaviour
     }
     void UpdateConditions()
     {
-        for (int i = 0; i < test.Count; i++)
+        for (int i = 0; i < achievements.Count; i++)
         {
-            test[i].Check();
+            achievements[i].Check();
         }
     }
-    public void UpdateAchivementUI()
-    {
-        foreach (AchievementsGet achievement in achievements)
-        {
-            if (achievement.achText != null)
-            {
-                if (achievement.Achieved)
-                    achievement.achText.text = "Has been unlocked: " + achievement.achName + "\nDescription: " + achievement.showDescription;
-                else
-                    achievement.achText.text = "Hasn't been unlocked: " + achievement.achName + "\nDescription: " + achievement.description;
-            }
-        }
-    }
-
 }

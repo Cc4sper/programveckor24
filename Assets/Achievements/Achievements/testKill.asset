@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: testKill
+  m_Name: TestKill
   m_EditorClassIdentifier: Assembly-CSharp::KillAchievement
-  achName: Kill Count
-  description: 'Kills: 0'
+  achName: 
+  description: 
   showDescription: 
   Level: 0
   achText: {fileID: 0}
@@ -21,7 +21,7 @@ MonoBehaviour:
   achImage: {fileID: 0}
   Achieved: 0
   isUpgradeable: 0
-  level1Goal: 1
-  level2Goal: 5
-  level3Goal: 10
+  level1Goal: 0
+  level2Goal: 0
+  level3Goal: 0
   currentKill: 0
