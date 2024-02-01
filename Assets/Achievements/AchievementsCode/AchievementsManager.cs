@@ -8,6 +8,8 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+
+
 [System.Serializable]
 public class AchievementsGet {
     [Header("Name/Desc/LVL")]
@@ -28,6 +30,7 @@ public class AchievementsGet {
 public class AchievementsManager : MonoBehaviour
 {
     public List<AchievementsGet> achievements;
+    public List<AchievementObj> test;
 
     void Start()
     {
@@ -74,17 +77,12 @@ public class AchievementsManager : MonoBehaviour
             achievement.achImage.color = Color.yellow;
         }
     }
-
-    void IncrementUpgradeableAchievement(AchievementsGet achievement)
-    {
-        
-    }
     void UpdateConditions()
     {
-        //W clicks:
-        achievements[0].condition = () => Input.GetKeyDown(KeyCode.W);
-        //S clicks:
-        achievements[1].condition = () => Input.GetKeyDown(KeyCode.S);
+        for (int i = 0; i < test.Count; i++)
+        {
+            test[i].Check();
+        }
     }
     public void UpdateAchivementUI()
     {
