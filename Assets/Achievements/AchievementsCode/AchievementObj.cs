@@ -17,8 +17,13 @@ public class AchievementObj : ScriptableObject
     public bool Achieved;
     public bool isUpgradeable;
     public Func<bool> condition;
+    [Header("Kills")]
+    public Color levelColour;
+    public int currentKill;
 
-   public virtual void Check()
+
+
+    public virtual void Check()
     {
 
     }
@@ -28,22 +33,27 @@ public class AchievementObj : ScriptableObject
 [CreateAssetMenu]
 public class KillAchievement : AchievementObj
 {
+
     [SerializeField]
-    int level1Goal,level2Goal, level3Goal, currentKill;
+    int level1Goal, level2Goal, level3Goal;
 
     public override void Check()
     {
         showDescription = "Kill" + currentKill;
-        if (currentKill > level1Goal)
+        if (currentKill >= level1Goal)
         {
             Achieved = true;
             Level = 1;
-            if (currentKill > level2Goal)
+            levelColour = Color.green;
+
+            if (currentKill >= level2Goal)
             {
                 Level = 2;
-                if (currentKill > level3Goal)
+                levelColour = Color.red;
+                if (currentKill >= level3Goal)
                 {
                     Level = 3;
+                    levelColour = Color.yellow;
                 }
             }
         }

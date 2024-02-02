@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: TestKill
+  m_Name: KillCountAch
   m_EditorClassIdentifier: Assembly-CSharp::KillAchievement
-  achName: 
-  description: 
-  showDescription: 
-  Level: 0
-  achText: {fileID: 0}
-  sprite: {fileID: 0}
-  achImage: {fileID: 0}
-  Achieved: 0
-  isUpgradeable: 0
-  level1Goal: 0
-  level2Goal: 0
-  level3Goal: 0
-  currentKill: 0
+  achName: Murder
+  description: Kill bots
+  showDescription: Kill1
+  Level: 1
+  Achieved: 1
+  isUpgradeable: 1
+  levelColour: {r: 0, g: 1, b: 0, a: 1}
+  currentKill: 1
+  level1Goal: 1
+  level2Goal: 5
+  level3Goal: 10
