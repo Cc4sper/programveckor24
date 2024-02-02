@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KillAchievement
   achName: Murder
   description: Kill bots
-  showDescription: Kill1
-  Level: 1
+  showDescription: Kill10
+  progressBardDescription: Kill Count
+  Level: 0
   Achieved: 1
   isUpgradeable: 1
-  levelColour: {r: 0, g: 1, b: 0, a: 1}
-  currentKill: 1
-  level1Goal: 1
-  level2Goal: 5
+  achGoal: 0
+  level1Goal: 5
+  level2Goal: 9
   level3Goal: 10

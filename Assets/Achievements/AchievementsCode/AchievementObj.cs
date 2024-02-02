@@ -12,50 +12,46 @@ public class AchievementObj : ScriptableObject
     public string achName;
     public string description;
     public string showDescription;
+    public string progressBardDescription;
     public int Level;
     [Header("Achieved/Upgrade")]
     public bool Achieved;
     public bool isUpgradeable;
     public Func<bool> condition;
     [Header("Kills")]
-    public Color levelColour;
-    public int currentKill;
-
-
+    public int achGoal;
+    public int level1Goal, level2Goal, level3Goal;
 
     public virtual void Check()
     {
 
     }
-
 }
 
 [CreateAssetMenu]
 public class KillAchievement : AchievementObj
 {
-
-    [SerializeField]
-    int level1Goal, level2Goal, level3Goal;
-
     public override void Check()
     {
-        showDescription = "Kill" + currentKill;
-        if (currentKill >= level1Goal)
+        if (achGoal >= level1Goal)
         {
             Achieved = true;
             Level = 1;
-            levelColour = Color.green;
 
-            if (currentKill >= level2Goal)
+            if (achGoal >= level2Goal)
             {
                 Level = 2;
-                levelColour = Color.red;
-                if (currentKill >= level3Goal)
+                
+                if (achGoal >= level3Goal)
                 {
                     Level = 3;
-                    levelColour = Color.yellow;
+                    
                 }
             }
+        }
+        else
+        {
+            Level = 0;
         }
     }
 }

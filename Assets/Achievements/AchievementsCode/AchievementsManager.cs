@@ -31,22 +31,9 @@ public class AchievementsManager : MonoBehaviour
 {
     public List<AchievementObj> achievements;
 
-    void Start()
-    {
-        
-    }
     public void Update()
     {
         UpdateConditions();
-    }
-    public void UnlockAchievement(AchievementsGet achievement)
-    {
-        achievement.Achieved = true;
-        Debug.Log("Achievement unlocked: " + achievement.achName + "\nDescription: " + achievement.showDescription);
-        if (achievement.achImage != null)   
-        {
-            achievement.achImage.color = Color.yellow;
-        }
     }
     void UpdateConditions()
     {
