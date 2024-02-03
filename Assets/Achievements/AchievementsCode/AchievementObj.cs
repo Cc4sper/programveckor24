@@ -1,9 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenu]
 public class AchievementObj : ScriptableObject
@@ -15,43 +11,67 @@ public class AchievementObj : ScriptableObject
     public string progressBardDescription;
     public int Level;
     [Header("Achieved/Upgrade")]
-    public bool Achieved;
+    public bool achievedLVL1;
+    public bool achievedLVL2;
+    public bool achievedLVL3;
     public bool isUpgradeable;
     public Func<bool> condition;
-    [Header("Kills")]
+    [Header("Int Goal")]
     public int achGoal;
     public int level1Goal, level2Goal, level3Goal;
 
     public virtual void Check()
     {
+        if (achGoal >= level1Goal)
+        {
+            achievedLVL1 = true;
+            Level = 1;
+        }
+        else
+        {
+            Level = 0;
+            achievedLVL1 = false;
+            achievedLVL2 = false;
+            achievedLVL3 = false;
+        }
+            if (isUpgradeable == true)
+            {
 
+                if (achGoal >= level2Goal)
+                {
+                    achievedLVL2 = true;
+                    Level = 2;
+
+                    if (achGoal >= level3Goal)
+                    {
+                        achievedLVL3 = true;
+                        Level = 3;
+
+                    }
+                }
+            }
+        }
     }
-}
+
 
 [CreateAssetMenu]
 public class KillAchievement : AchievementObj
 {
     public override void Check()
     {
-        if (achGoal >= level1Goal)
-        {
-            Achieved = true;
-            Level = 1;
+        base.Check();
+    }
+}
+[CreateAssetMenu]
+public class JustFKNPressW : AchievementObj
+{
+    public override void Check()
+    {
+        base.Check();
 
-            if (achGoal >= level2Goal)
-            {
-                Level = 2;
-                
-                if (achGoal >= level3Goal)
-                {
-                    Level = 3;
-                    
-                }
-            }
-        }
-        else
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            Level = 0;
+            achGoal += 1;
         }
     }
 }

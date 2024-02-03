@@ -122,7 +122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 3.786003, y: 0}
+  m_AnchoredPosition: {x: 3.7860107, y: 0}
   m_SizeDelta: {x: 17.572, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5932873313789503304
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 4803917053316643356}
   - component: {fileID: 6897767464246010899}
   m_Layer: 5
-  m_Name: Kill Achievement
+  m_Name: Achievement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,11 +437,13 @@ MonoBehaviour:
   achProgress: {fileID: 1407748272925598865}
   count: {fileID: 766101674799495165}
   fillArea: {fileID: 1716850412337849432}
-  achIcon1: {fileID: 0}
-  achIcon2: {fileID: 0}
-  achIcon3: {fileID: 0}
-  achObj: {fileID: 11400000, guid: e8eb1cd65f5982c4492249db2661ef43, type: 2}
+  achIcon1: {fileID: 21300000, guid: 2d04b6c1faf63cc40941c88a5a0330b0, type: 3}
+  achIcon2: {fileID: 21300000, guid: 5392c0b3f70aa2d4c8a421a3d468e494, type: 3}
+  achIcon3: {fileID: 21300000, guid: f5d20a773be9aa84fbf103a911b5b0e6, type: 3}
+  maxIcon: {fileID: 21300000, guid: 9f310b725936fb548bfb789da2a29b39, type: 3}
+  achObj: {fileID: 0}
   achievementsManager: {fileID: 0}
+  maxLevel: Max level
 --- !u!1 &4356312113382333258
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +580,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 5
   m_fontSizeMax: 20
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -796,12 +798,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 6
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 5
-  m_fontSizeMax: 20
+  m_fontSizeMax: 6
   m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256

@@ -1,12 +1,5 @@
-﻿using JetBrains.Annotations;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class AchVisualUpdater : MonoBehaviour
@@ -23,6 +16,7 @@ public class AchVisualUpdater : MonoBehaviour
     public Sprite achIcon1;
     public Sprite achIcon2;
     public Sprite achIcon3;
+    public Sprite maxIcon;
     [Header("Achievement & Manager")]
     public AchievementObj achObj;
     public AchievementsManager achievementsManager;
@@ -33,23 +27,25 @@ public class AchVisualUpdater : MonoBehaviour
      public void Update()
     {
         AchLevelDsiplay();
-        KCAchUTextUpdater();  
+        AchUTextUpdater();  
         AchProgresBarsDisplay();
     }
 
-    public void KCAchUTextUpdater()
+    public void AchUTextUpdater()
     {
         // Check if achievement is not null
         if (achObj != null)
         {
-            // Update the achText with the generalized achievement details
-            achText.text = $"";
-
-            // If the achievement has additional specific information (e.g., kill count), include it
-            if (achObj is KillAchievement killAchievement)
+            achText.text = $"Achievement: {achObj.achName}     Level: {achObj.Level}                       Description: {achObj.description}";
+            if (achObj.isUpgradeable == true)
             {
-                achText.text += $"Achievement: {achObj.achName}     Level: {achObj.Level}                       Description: {achObj.description}";
-                if (achObj.Level == 3)
+                if (achObj.achGoal > achObj.level3Goal)
+                {
+                    achText.text = $"Achievement: {achObj.achName}     Level: {maxLevel}                      Description: {achObj.description}";
+                }
+            } else
+            {
+                if (achObj.achGoal > achObj.level1Goal)
                 {
                     achText.text = $"Achievement: {achObj.achName}     Level: {maxLevel}                      Description: {achObj.description}";
                 }
@@ -59,25 +55,39 @@ public class AchVisualUpdater : MonoBehaviour
 
     public void AchLevelDsiplay()
     {
-        if (achObj.Level == 1)
+        if (achObj.Level <= 1)
         {
             achIconShows.sprite = achIcon1;
-        } else if (achObj.Level == 2)
+        }
+        if (achObj.isUpgradeable == true)
         {
-            achIconShows.sprite = achIcon2;
+            if (achObj.Level == 2)
+            {
+                achIconShows.sprite = achIcon2;
+            }
+            else if (achObj.achGoal <= achObj.level3Goal && achObj.Level == 3)
+            {
+                achIconShows.sprite = achIcon3;
+            }
+            else if (achObj.achGoal > achObj.level3Goal)
+            {
+                achIconShows.sprite = maxIcon;
+            }
         }
         else
         {
-            achIconShows.sprite = achIcon3;
-        }  
+            if (achObj.achGoal > achObj.level1Goal)
+            {
+                achIconShows.sprite = maxIcon;
+            }
+        }
     }
 
     public void AchProgresBarsDisplay()
     {
         if (achObj != null)
         {
-
-            if (achObj.Level < 1)
+            if (achObj.Level == 0)
             {
                 float percenetage = (float)achObj.achGoal / (float)achObj.level1Goal;
                 achProgress.value = percenetage;
@@ -86,23 +96,54 @@ public class AchVisualUpdater : MonoBehaviour
 
                 fillArea.color = Color.Lerp(Color.white, Color.green, percenetage);
             }
-            else if (achObj.Level >=1 && achObj.Level <3)
+            else if (achObj.isUpgradeable == false) 
             {
-                float percenetage = (float)achObj.achGoal / (float)achObj.level2Goal;
+                float percenetage = (float)achObj.achGoal / (float)achObj.level1Goal;
                 achProgress.value = percenetage;
 
-                count.text = $"{achObj.progressBardDescription} {achObj.achGoal}/{achObj.level2Goal} ";
-
-                fillArea.color = Color.Lerp(Color.white, Color.red, percenetage);
-            }
-            else if(achObj.Level == 3)
-            {
-                float percenetage = (float)achObj.achGoal / (float)achObj.level3Goal;
-                achProgress.value = percenetage;
-
-                count.text = $"{achObj.progressBardDescription} {achObj.achGoal}/∞ ";
+                count.text = $"{achObj.progressBardDescription} {achObj.achGoal}/{achObj.level1Goal} ";
 
                 fillArea.color = Color.Lerp(Color.white, Color.yellow, percenetage);
+            }
+            if (achObj.isUpgradeable == true)
+            {
+                if (achObj.Level ==1)
+                {
+                    float percenetage = (float)achObj.achGoal / (float)achObj.level2Goal;
+                    achProgress.value = percenetage;
+
+                    count.text = $"{achObj.progressBardDescription} {achObj.achGoal}/{achObj.level2Goal} ";
+
+                    fillArea.color = Color.Lerp(Color.white, Color.red, percenetage);
+                }
+                else if (achObj.achGoal>= achObj.level2Goal && achObj.achGoal <= achObj.level3Goal)
+                {
+                    float percenetage = (float)achObj.achGoal / (float)achObj.level3Goal;
+                    achProgress.value = percenetage;
+
+                    count.text = $"{achObj.progressBardDescription} {achObj.achGoal}/{achObj.level3Goal} ";
+
+                    fillArea.color = Color.Lerp(Color.white, Color.yellow, percenetage);
+                }
+                else if (achObj.achGoal > achObj.level3Goal){
+                    float percenetage = (float)achObj.achGoal / (float)achObj.level3Goal;
+                    achProgress.value = percenetage;
+
+                    count.text = $"{achObj.progressBardDescription} {achObj.achGoal}/∞ ";
+
+                    fillArea.color = Color.Lerp(Color.white, Color.yellow, percenetage);
+                }
+            } else
+            {
+                if (achObj.achGoal > achObj.level1Goal)
+                {
+                    float percenetage = (float)achObj.achGoal / (float)achObj.level3Goal;
+                    achProgress.value = percenetage;
+
+                    count.text = $"{achObj.progressBardDescription} {achObj.achGoal}/∞ ";
+
+                    fillArea.color = Color.Lerp(Color.white, Color.yellow, percenetage);
+                }
             }
         }
     }
