@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: New Just FKN Press W
-  m_EditorClassIdentifier: Assembly-CSharp::JustFKNPressW
+  m_Name: Kill Achievement
+  m_EditorClassIdentifier: Assembly-CSharp::KillAchievement
   achName: w
   description: w
   showDescription: w
@@ -20,8 +20,8 @@ MonoBehaviour:
   achievedLVL1: 0
   achievedLVL2: 0
   achievedLVL3: 0
-  isUpgradeable: 0
+  isUpgradeable: 1
   achGoal: 0
   level1Goal: 2
-  level2Goal: 0
-  level3Goal: 0
+  level2Goal: 5
+  level3Goal: 10

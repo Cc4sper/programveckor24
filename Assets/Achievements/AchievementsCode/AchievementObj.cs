@@ -15,24 +15,21 @@ public class AchievementObj : ScriptableObject
     public bool achievedLVL2;
     public bool achievedLVL3;
     public bool isUpgradeable;
-    public Func<bool> condition;
     [Header("Int Goal")]
     public int achGoal;
     public int level1Goal, level2Goal, level3Goal;
 
     public virtual void Check()
     {
+        Level = 0;
+        achievedLVL1 = false;
+        achievedLVL2 = false;
+        achievedLVL3 = false;
+
         if (achGoal >= level1Goal)
         {
             achievedLVL1 = true;
             Level = 1;
-        }
-        else
-        {
-            Level = 0;
-            achievedLVL1 = false;
-            achievedLVL2 = false;
-            achievedLVL3 = false;
         }
             if (isUpgradeable == true)
             {
@@ -59,14 +56,17 @@ public class KillAchievement : AchievementObj
 {
     public override void Check()
     {
+        isUpgradeable = true;
         base.Check();
     }
 }
 [CreateAssetMenu]
-public class JustFKNPressW : AchievementObj
+public class JustPressW : AchievementObj
 {
+
     public override void Check()
     {
+        isUpgradeable = false;
         base.Check();
 
         if (Input.GetKeyDown(KeyCode.W))

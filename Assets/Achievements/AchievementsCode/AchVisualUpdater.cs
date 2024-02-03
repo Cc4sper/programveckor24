@@ -36,18 +36,18 @@ public class AchVisualUpdater : MonoBehaviour
         // Check if achievement is not null
         if (achObj != null)
         {
-            achText.text = $"Achievement: {achObj.achName}     Level: {achObj.Level}                       Description: {achObj.description}";
+            achText.text = $"Achievement: {achObj.achName}     level: {achObj.Level}                          Description: {achObj.description}";
             if (achObj.isUpgradeable == true)
             {
                 if (achObj.achGoal > achObj.level3Goal)
                 {
-                    achText.text = $"Achievement: {achObj.achName}     Level: {maxLevel}                      Description: {achObj.description}";
+                    achText.text = $"Achievement: {achObj.achName}     level: {maxLevel}                      Description: {achObj.description}";
                 }
             } else
             {
                 if (achObj.achGoal > achObj.level1Goal)
                 {
-                    achText.text = $"Achievement: {achObj.achName}     Level: {maxLevel}                      Description: {achObj.description}";
+                    achText.text = $"Achievement: {achObj.achName}     level: {maxLevel}                      Description: {achObj.description}";
                 }
             }
         }
@@ -140,7 +140,7 @@ public class AchVisualUpdater : MonoBehaviour
                     float percenetage = (float)achObj.achGoal / (float)achObj.level3Goal;
                     achProgress.value = percenetage;
 
-                    count.text = $"{achObj.progressBardDescription} {achObj.achGoal}/∞ ";
+                    count.text = $"{maxLevel}";
 
                     fillArea.color = Color.Lerp(Color.white, Color.yellow, percenetage);
                 }
