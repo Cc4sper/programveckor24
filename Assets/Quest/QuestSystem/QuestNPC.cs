@@ -6,11 +6,11 @@ using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-
+// The worst script in the universe 
+// 
 public class QuestNPC : MonoBehaviour
 {
     public bool saticified = false;
-    bool interactGive;
     [SerializeField] Item wantedItem;
     [SerializeField] int wantedAmount;
     [SerializeField] Transform player;
@@ -27,13 +27,10 @@ public class QuestNPC : MonoBehaviour
     [SerializeField] bool talkQuest;
     [SerializeField] bool gatherQuest;
     [SerializeField] string talkquestBye;
-    private Quest currentTrackedQuest = null;
     public Button activateButton;    
     public int activeQuestIndex = 0;
     public int trackedQuestIndex = 0;
-    private Item[] inv;
     bool playerInRange = false;
-    int given;
     [SerializeField] private GameObject visualCue;
     [SerializeField] private bool ee = false;
 
