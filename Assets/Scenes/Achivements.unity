@@ -667,7 +667,7 @@ PrefabInstance:
     - target: {fileID: 6897767464246010899, guid: a4265ca2100fe554ba4d847f18a41dbb, type: 3}
       propertyPath: achObj
       value: 
-      objectReference: {fileID: 11400000, guid: 5e3f7b2573ea4a54ea345e5ef7219fc5, type: 2}
+      objectReference: {fileID: 11400000, guid: 1c5fb50a519bec94cac7fd8ead2ded56, type: 2}
     - target: {fileID: 6897767464246010899, guid: a4265ca2100fe554ba4d847f18a41dbb, type: 3}
       propertyPath: achievementsManager
       value: 
@@ -707,8 +707,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   achievements:
-  - {fileID: 11400000, guid: 5e3f7b2573ea4a54ea345e5ef7219fc5, type: 2}
   - {fileID: 11400000, guid: 9fad2bd197620824da390c02b765d55c, type: 2}
+  - {fileID: 11400000, guid: 1c5fb50a519bec94cac7fd8ead2ded56, type: 2}
 --- !u!4 &1132731662
 Transform:
   m_ObjectHideFlags: 0

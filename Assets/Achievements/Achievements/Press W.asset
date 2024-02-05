@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Just Press W
-  m_EditorClassIdentifier: Assembly-CSharp::JustPressW
+  m_Script: {fileID: 11500000, guid: 082e9f42cf9b39b4d90b52c608ab5d2e, type: 3}
+  m_Name: Press W
+  m_EditorClassIdentifier: 
   achName: w
   description: w
   showDescription: w
@@ -21,7 +21,7 @@ MonoBehaviour:
   achievedLVL2: 0
   achievedLVL3: 0
   isUpgradeable: 0
-  achGoal: 2
+  achGoal: 3
   level1Goal: 2
   level2Goal: 0
   level3Goal: 0

@@ -47,31 +47,5 @@ public class AchievementObj : ScriptableObject
                     }
                 }
             }
-        }
-    }
-
-
-[CreateAssetMenu]
-public class KillAchievement : AchievementObj
-{
-    public override void Check()
-    {
-        isUpgradeable = true;
-        base.Check();
-    }
-}
-[CreateAssetMenu]
-public class JustPressW : AchievementObj
-{
-
-    public override void Check()
-    {
-        isUpgradeable = false;
-        base.Check();
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            achGoal += 1;
-        }
     }
 }
