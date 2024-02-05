@@ -33,13 +33,11 @@ public class RandomMovement : MonoBehaviour
         if (Vector2.Distance(transform.position, waypoint) < range)
         {
             SetNewDestination();
-
         }
     }
 
     void SetNewDestination()
     {
-       
         float newPosX = Random.Range(-maxDistance, maxDistance);
         float newPosY = Random.Range(-maxDistance, maxDistance);
         animator.SetFloat("x", newPosX);
