@@ -27,6 +27,8 @@ public class EnemyChase : MonoBehaviour
         {
             float step = speed * Time.deltaTime;
             enemy.position = Vector2.MoveTowards(transform.position, target.position, step);
+            animator.SetFloat("x", target.position.x - transform.position.x);
+            animator.SetFloat("y", target.position.y - transform.position.y);
 
         }
 
@@ -42,9 +44,7 @@ public class EnemyChase : MonoBehaviour
         {
             transform.parent.GetComponent<RandomMovement>().enabled = false;
             target = collision.transform;
-            animator.SetFloat("x", collision.transform.position.x - transform.position.x);
-            animator.SetFloat("y", collision.transform.position.y - transform.position.y);
-
+           
             print("chasing player");
             
 
