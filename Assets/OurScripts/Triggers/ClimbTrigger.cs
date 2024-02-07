@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlowPlayer : MonoBehaviour
+public class ClimbTrigger : MonoBehaviour
 {
     [SerializeField] float slowScalar;
+    [SerializeField] bool steepClimb;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            print("slowing");
             collision.transform.parent.GetComponent<PlayerMove>().moveSpeed /= slowScalar;
+            if (steepClimb)
+            {
+                collision.transform.parent.GetComponent<PlayerMove>().animator.SetBool("climbing", true);
+            }
         }
     }
 
@@ -18,8 +22,11 @@ public class SlowPlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            print("stop slowing");
             collision.transform.parent.GetComponent<PlayerMove>().moveSpeed *= slowScalar;
+            if (steepClimb)
+            {
+                collision.transform.parent.GetComponent<PlayerMove>().animator.SetBool("climbing", false);
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour
 
     public float moveSpeed = 1.6f;
     float savedSpeed;
-    public bool slowed;
+    public bool climb;
     public bool sideScrollar;
 
     public Animator animator;
@@ -69,7 +69,6 @@ public class PlayerMove : MonoBehaviour
             moveY = -1;
         }
         if (moveX != 0 || moveY != 0)
-
         {
             animator.SetFloat("x", moveX);
             animator.SetFloat("y", moveY);
