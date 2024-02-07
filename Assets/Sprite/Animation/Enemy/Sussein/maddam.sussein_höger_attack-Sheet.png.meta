@@ -108,7 +108,210 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "maddam.sussein_h\xF6ger_attack-Sheet_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 36
+        height: 34
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      physicsShape:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea52a6ff73b7ab9429755286e3c2da9e
+      internalID: -17950003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "maddam.sussein_h\xF6ger_attack-Sheet_1"
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 36
+        height: 34
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      physicsShape:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a41f42b021307846baf002dd3817da6
+      internalID: 2107675694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "maddam.sussein_h\xF6ger_attack-Sheet_2"
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 36
+        height: 34
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      physicsShape:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48352d3fa2e74a438c1760c867142f3
+      internalID: 790077606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "maddam.sussein_h\xF6ger_attack-Sheet_3"
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 36
+        height: 34
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      physicsShape:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281528b2ddaa6c0418b0f7a6ac8850b0
+      internalID: 1182839576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "maddam.sussein_h\xF6ger_attack-Sheet_4"
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 36
+        height: 34
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      physicsShape:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4337ccdb6dee142b2077b06d1a455e
+      internalID: 117654171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "maddam.sussein_h\xF6ger_attack-Sheet_5"
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 36
+        height: 34
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      physicsShape:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d45017ed3b782b04b85e7cfe03279f71
+      internalID: -1466581131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "maddam.sussein_h\xF6ger_attack-Sheet_6"
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 36
+        height: 34
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      physicsShape:
+      - - {x: 0, y: -17}
+        - {x: 18, y: 0}
+        - {x: 0, y: 17}
+        - {x: -18, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef090155e3486ca4691becd900f20b92
+      internalID: 244402070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +322,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "maddam.sussein_h\xF6ger_attack-Sheet_0": -17950003
+      "maddam.sussein_h\xF6ger_attack-Sheet_1": 2107675694
+      "maddam.sussein_h\xF6ger_attack-Sheet_2": 790077606
+      "maddam.sussein_h\xF6ger_attack-Sheet_3": 1182839576
+      "maddam.sussein_h\xF6ger_attack-Sheet_4": 117654171
+      "maddam.sussein_h\xF6ger_attack-Sheet_5": -1466581131
+      "maddam.sussein_h\xF6ger_attack-Sheet_6": 244402070
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

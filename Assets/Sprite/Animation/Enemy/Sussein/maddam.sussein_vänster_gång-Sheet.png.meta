@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "maddam.sussein_v\xE4nster_g\xE5ng-Sheet_0"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb55f33a0b5308642a3ab14aeff9f7a1
+      internalID: -723018456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "maddam.sussein_v\xE4nster_g\xE5ng-Sheet_1"
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a565079ae0253e47812a456a35eed25
+      internalID: -1717858515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "maddam.sussein_v\xE4nster_g\xE5ng-Sheet_2"
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 0
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daba91827e3c4ae409bf78cb7b9d46c7
+      internalID: 2079976249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "maddam.sussein_v\xE4nster_g\xE5ng-Sheet_3"
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ba5ca232519ec4896ed2e2fb22be9c
+      internalID: -660500803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "maddam.sussein_v\xE4nster_g\xE5ng-Sheet_0": -723018456
+      "maddam.sussein_v\xE4nster_g\xE5ng-Sheet_1": -1717858515
+      "maddam.sussein_v\xE4nster_g\xE5ng-Sheet_2": 2079976249
+      "maddam.sussein_v\xE4nster_g\xE5ng-Sheet_3": -660500803
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

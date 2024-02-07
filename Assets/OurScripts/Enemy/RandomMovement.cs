@@ -17,6 +17,10 @@ public class RandomMovement : MonoBehaviour
 
 
     // Start is called before the first frame update
+    private void OnEnable() //re-enabled when it is not chasing, works as a reset for it's movement & animation
+    {
+        SetNewDestination();
+    }
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -33,13 +37,11 @@ public class RandomMovement : MonoBehaviour
         if (Vector2.Distance(transform.position, waypoint) < range)
         {
             SetNewDestination();
-
         }
     }
 
     void SetNewDestination()
     {
-       
         float newPosX = Random.Range(-maxDistance, maxDistance);
         float newPosY = Random.Range(-maxDistance, maxDistance);
         animator.SetFloat("x", newPosX);
