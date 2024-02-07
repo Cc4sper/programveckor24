@@ -108,7 +108,210 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: maddam.sussein_fram_attack-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 52
+        height: 32
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafb4a3dfa2c5d44f8961809b8fd28f6
+      internalID: -62699588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maddam.sussein_fram_attack-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 52
+        height: 32
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aaa2d61a5ec6634984142677c32b077
+      internalID: 12236869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maddam.sussein_fram_attack-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 52
+        height: 32
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39307845ebc18f45a983b179012241f
+      internalID: -747495114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maddam.sussein_fram_attack-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 52
+        height: 32
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ac1d901f1094246ab7d7d62bdd2568
+      internalID: 100897069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maddam.sussein_fram_attack-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 52
+        height: 32
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe4bcd4520e5ad54cb7170e3648f7911
+      internalID: 1959927835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maddam.sussein_fram_attack-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 52
+        height: 32
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9123fdbd9066c01458cea2f0e92a9f01
+      internalID: 2025614363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maddam.sussein_fram_attack-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 52
+        height: 32
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 26, y: 0}
+        - {x: 0, y: 16}
+        - {x: -26, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4283f4e101208844d8aa68a05f12f99a
+      internalID: -322821040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +322,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      maddam.sussein_fram_attack-Sheet_0: -62699588
+      maddam.sussein_fram_attack-Sheet_1: 12236869
+      maddam.sussein_fram_attack-Sheet_2: -747495114
+      maddam.sussein_fram_attack-Sheet_3: 100897069
+      maddam.sussein_fram_attack-Sheet_4: 1959927835
+      maddam.sussein_fram_attack-Sheet_5: 2025614363
+      maddam.sussein_fram_attack-Sheet_6: -322821040
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
