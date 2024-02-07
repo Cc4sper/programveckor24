@@ -16,12 +16,12 @@ MonoBehaviour:
   description: w
   showDescription: w
   progressBardDescription: w
-  Level: 1
-  achievedLVL1: 1
+  Level: 0
+  achievedLVL1: 0
   achievedLVL2: 0
   achievedLVL3: 0
   isUpgradeable: 0
-  achGoal: 3
+  achGoal: 0
   level1Goal: 2
   level2Goal: 0
   level3Goal: 0

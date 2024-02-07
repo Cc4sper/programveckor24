@@ -16,12 +16,12 @@ MonoBehaviour:
   description: k
   showDescription: k
   progressBardDescription: 
-  Level: 3
-  achievedLVL1: 1
-  achievedLVL2: 1
-  achievedLVL3: 1
+  Level: 0
+  achievedLVL1: 0
+  achievedLVL2: 0
+  achievedLVL3: 0
   isUpgradeable: 1
-  achGoal: 11
+  achGoal: 0
   level1Goal: 2
   level2Goal: 5
   level3Goal: 10
