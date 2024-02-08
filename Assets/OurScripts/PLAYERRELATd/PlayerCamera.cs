@@ -6,7 +6,7 @@ public class PlayerCamera : MonoBehaviour
 {
     public Camera cam;
     [SerializeField] float focusScalar;
-    bool sideScrollar;
+    public bool sideScrollar;
     public float defSize = 7;
 
     private void Start()
@@ -48,6 +48,7 @@ public class PlayerCamera : MonoBehaviour
     }
     public void InactivateSideScrollar()
     {
+
         sideScrollar = false;
         cam.GetComponent<Camerafollow>().height = 0;
         defSize = 7;
