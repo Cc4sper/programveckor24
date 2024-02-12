@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -38,13 +39,11 @@ public class AchievementObj : ScriptableObject
                 {
                     achievedLVL2 = true;
                     Level = 2;
-
-                    if (achGoal >= level3Goal)
+                if (achGoal >= level3Goal)
                     {
                         achievedLVL3 = true;
                         Level = 3;
-
-                    }
+                }
                 }
             }
     }
