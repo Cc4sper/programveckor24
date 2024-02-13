@@ -6,8 +6,8 @@ using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// The worst script in the universe 
-// 
+// I present to you...... The worst script in the universe 
+
 public class QuestNPC : MonoBehaviour
 {
     public bool saticified = false;
@@ -73,7 +73,6 @@ public class QuestNPC : MonoBehaviour
             }
 
         });
-        //inv = GetComponent<HotbarCollect>().itemslots;
 
     }
 
@@ -120,8 +119,8 @@ public class QuestNPC : MonoBehaviour
     private void AcceptedQuest()
     {
         visualCue.SetActive(false);
-        //currentActiveQuest = quests[activeQuestIndex]; // 0 at start
-        //currentTrackedQuest = quests[activeQuestIndex]; // 0 at start
+        //currentActiveQuest = quests[activeQuestIndex]; 
+        //currentTrackedQuest = quests[activeQuestIndex]; 
         QuestManager.instance.AddActiveQuest(currentActiveQuest);
         currentActiveQuest.accepted = true;
         firstConversation.SetActive(false);
@@ -142,6 +141,7 @@ public class QuestNPC : MonoBehaviour
     private void ReceiveRewardAndCompleteQuest()
     {
         nextQuest.SetActive(true);
+        currentActiveQuest.isCompleted = true;
         endConversation.SetActive(false);
         if (haveReward)
         {

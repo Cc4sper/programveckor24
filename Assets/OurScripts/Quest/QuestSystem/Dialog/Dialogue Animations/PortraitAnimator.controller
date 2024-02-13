@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-2800835246217448318
+--- !u!1102 &-3634924383476718214
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: casper_funny
+  m_Name: Npc2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,7 +20,33 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 561c970d5916fce4c880d7941f9dbeaa, type: 2}
+  m_Motion: {fileID: 7400000, guid: c44371e7612982d4389ec410a6fa7a3f, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-1085898464345292224
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Npc1
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 1d2ec9eb9f0c8a644acfbb148dbbd67c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -48,14 +74,14 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &2207687029448639658
+--- !u!1102 &805877530375273717
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: casper_neutral
+  m_Name: Npc3
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -68,7 +94,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c44371e7612982d4389ec410a6fa7a3f, type: 2}
+  m_Motion: {fileID: 7400000, guid: 561c970d5916fce4c880d7941f9dbeaa, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -100,32 +126,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &4807187465998461067
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: casper_angry
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1d2ec9eb9f0c8a644acfbb148dbbd67c, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1107 &6789611598797768558
 AnimatorStateMachine:
   serializedVersion: 6
@@ -139,17 +139,17 @@ AnimatorStateMachine:
     m_State: {fileID: 4611158299374343825}
     m_Position: {x: 357.6667, y: 120, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 4807187465998461067}
-    m_Position: {x: 99.66667, y: 189, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -2800835246217448318}
-    m_Position: {x: 123.66667, y: 250, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 2207687029448639658}
-    m_Position: {x: 150, y: 310, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 7198605464578031694}
     m_Position: {x: 457.65237, y: 286.04468, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -1085898464345292224}
+    m_Position: {x: 140, y: 330, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 805877530375273717}
+    m_Position: {x: 130, y: 280, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -3634924383476718214}
+    m_Position: {x: 110, y: 230, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

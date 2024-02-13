@@ -1,5 +1,5 @@
-Thanks for coming back for us. #speaker: Rebel
-+[No problem!]
+Thanks for coming back for us. #speaker: Rebel #portrait: Npc2
++[No problem!] 
 Where should we go now? They have the safehouse location.
 +[We need to get out of here.]
 Where are we going to go? They have the safehouse location.

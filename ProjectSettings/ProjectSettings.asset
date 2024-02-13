@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Programmveckor24
-  defaultCursor: {fileID: 2800000, guid: a8fc45634c8cc8d4296fbb5416a7ea09, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 7485abc32c66b4f4aa14daf4e118be31, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

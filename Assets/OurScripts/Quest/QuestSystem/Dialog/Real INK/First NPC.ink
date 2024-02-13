@@ -1,11 +1,11 @@
-Oh, you're finally awake!
+Oh, you're finally awake! #portrait: Npc3
 You tried to cross the border?
 + [Yes]
-I found you next to the wall. I thought you were dead!
+I found you next to the wall. I thought you were dead! 
 Luckily, Yjamar was here to save you! #speaker: Yjamar
 + [Who are you?]
-My name is Yjamar #speaker: Yjamar
-
+My name is Yjamar #speaker: Yjamar 
+ 
 - Are you part of that rebel group?
 + [Yes]
 I figured that.
