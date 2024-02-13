@@ -1,4 +1,5 @@
 ﻿using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +30,7 @@ public class AchVisualUpdater : MonoBehaviour
         AchLevelDsiplay();
         AchUTextUpdater();  
         AchProgresBarsDisplay();
+        AchPopUp();
     }
 
     public void AchUTextUpdater()
@@ -50,6 +52,26 @@ public class AchVisualUpdater : MonoBehaviour
                     achText.text = $"Achievement: {achObj.achName}     level: {maxLevel}                      Description: {achObj.description}";
                 }
             }
+        }
+    }
+
+    public void AchPopUp()
+    {
+        if (achObj.achievedLVL1 == true)
+        {
+            achievementsManager.popUp.SetActive(true);
+        }
+        else if (achObj.achievedLVL2 == true)
+        {
+            achievementsManager.popUp.SetActive(true);
+        }
+        else if (achObj.achievedLVL3==true)
+        {
+            achievementsManager.popUp.SetActive(true);
+        }
+        else
+        {
+            achievementsManager.popUp.SetActive(false);
         }
     }
 
