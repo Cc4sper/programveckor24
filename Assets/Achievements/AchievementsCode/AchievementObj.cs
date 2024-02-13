@@ -20,31 +20,46 @@ public class AchievementObj : ScriptableObject
     public int achGoal;
     public int level1Goal, level2Goal, level3Goal;
 
-    public virtual void Check()
+    public virtual bool Check()
     {
+        bool value = false;
         Level = 0;
-        achievedLVL1 = false;
+       /* achievedLVL1 = false;
         achievedLVL2 = false;
-        achievedLVL3 = false;
+        achievedLVL3 = false;*/
 
         if (achGoal >= level1Goal)
         {
+            if (achievedLVL1 == false)
+            {
+                value = true;
+            }
             achievedLVL1 = true;
             Level = 1;
+            
         }
             if (isUpgradeable == true)
             {
 
                 if (achGoal >= level2Goal)
                 {
+                if(achievedLVL2 == false)
+                {
+                    value = true;
+                }
                     achievedLVL2 = true;
                     Level = 2;
                 if (achGoal >= level3Goal)
                     {
+                    if (achievedLVL3 == false)
+                    {
+                        value = true;
+                    }
                         achievedLVL3 = true;
                         Level = 3;
                 }
                 }
             }
+        return value;
     }
 }

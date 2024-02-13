@@ -55,24 +55,9 @@ public class AchVisualUpdater : MonoBehaviour
         }
     }
 
-    public void AchPopUp()
+    public void AchPopUp(string achName)
     {
-        if (achObj.achievedLVL1 == true)
-        {
-            achievementsManager.popUp.SetActive(true);
-        }
-        else if (achObj.achievedLVL2 == true)
-        {
-            achievementsManager.popUp.SetActive(true);
-        }
-        else if (achObj.achievedLVL3==true)
-        {
-            achievementsManager.popUp.SetActive(true);
-        }
-        else
-        {
-            achievementsManager.popUp.SetActive(false);
-        }
+        achName = achName + " has leveled up!";
     }
 
     public void AchLevelDsiplay()
