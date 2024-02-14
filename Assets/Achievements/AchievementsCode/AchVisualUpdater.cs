@@ -30,7 +30,6 @@ public class AchVisualUpdater : MonoBehaviour
         AchLevelDsiplay();
         AchUTextUpdater();  
         AchProgresBarsDisplay();
-        AchPopUp();
     }
 
     public void AchUTextUpdater()
@@ -53,11 +52,6 @@ public class AchVisualUpdater : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void AchPopUp(string achName)
-    {
-        achName = achName + " has leveled up!";
     }
 
     public void AchLevelDsiplay()
