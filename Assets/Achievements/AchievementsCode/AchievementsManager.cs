@@ -16,7 +16,16 @@ public class AchievementsManager : MonoBehaviour
     {
         for (int i = 0; i < achievements.Count; i++)
         {
-            achievements[i].Check();
+            if (achievements[i].Check())
+            {
+                AchPopUp(achievements[i].achName, achievements[i].Level);
+            } 
         }
+    }
+
+    public void AchPopUp(string achName, int level)
+    {
+        //visa popup
+        //använd parametrar för relevant info
     }
 }

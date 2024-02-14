@@ -6,14 +6,16 @@ using UnityEngine;
 public class JustPressW : AchievementObj
 {
 
-    public override void Check()
+    public override bool Check()
     {
         isUpgradeable = false;
-        base.Check();
+        
 
         if (Input.GetKeyDown(KeyCode.W))
         {
             achGoal += 1;
         }
+
+       return base.Check();
     }
 }

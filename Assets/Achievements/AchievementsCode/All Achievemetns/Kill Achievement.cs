@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class KillAchievement : AchievementObj
 {
-    public override void Check()
+    public override bool Check()
     {
         isUpgradeable = true;
-        base.Check();
+       return base.Check();
     }
 }
