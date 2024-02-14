@@ -20,10 +20,9 @@ public class HotbarCollect : MonoBehaviour
 
     public Transform playerPos;
 
-
-    void Start()
+    void Start() //Creates and sets up arrays for storing items in slots 
     {
-        slotAmount = gameObject.transform.childCount;
+        slotAmount = gameObject.transform.childCount; 
         filledSlot = new bool[slotAmount];
         slotObj = new GameObject[slotAmount];
         itemslots = new Item[slotAmount];
@@ -32,12 +31,6 @@ public class HotbarCollect : MonoBehaviour
         {
             slotObj[i] = transform.GetChild(i).gameObject;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void TryAddItem(Item add) //called by player when it picks up item
@@ -67,26 +60,21 @@ public class HotbarCollect : MonoBehaviour
             AddItemHotbar(add);
         }
     }
-    private void AddItemHotbar(Item add)
+    private void AddItemHotbar(Item add) //Tries to add item to hotbar 
     {
         slotIndex = GetEmptySlot();
-        if (slotIndex == slotAmount)
+        if (slotIndex == slotAmount) //if full hotbar: dropps item of selected slots and then replaces it with the item being picked up
         {
-            print("full off items, switching selected"); //dropps item of selected slots and then replaces it with the item being picked up
+            print("full off items, switching selected"); 
             if (TryDropItem(GetComponent<HotbarUse>().selectedSlot))
             {
                 AddItemHotbar(add);
             }
-            else
-            {
-                print("couldn't switch items");
-            }
-
         }
-        else
+        else //visualy shows item and stores it in hotbar 
         {
             filledSlot[slotIndex] = true;
-            slotImage = slotObj[slotIndex].transform.GetChild(0).gameObject; 
+            slotImage = slotObj[slotIndex].transform.GetChild(1).gameObject; 
             slotImage.GetComponent<Image>().color = Color.white; //Makes item sprite display visual
             slotImage.GetComponent<Image>().sprite = add.GetComponent<SpriteRenderer>().sprite; //adds item sprite into hotbar
             add.transform.parent = slotObj[slotIndex].transform; //puts item as child of corrosponding item slot
@@ -94,8 +82,8 @@ public class HotbarCollect : MonoBehaviour
             add.TryPickup(); //Pickup is called for the Item-object
         }
     }
-
-    int GetSameItemSlot(Item itm)
+    //gives index value of the first item slot which shares the inserted items ID, if all slots filled gives index +1 above total slots
+    int GetSameItemSlot(Item itm) 
     {
         int result = slotAmount;
         for (int i = 0; i < filledSlot.Length; i++)
@@ -109,7 +97,7 @@ public class HotbarCollect : MonoBehaviour
         return result;
     }
 
-    int GetEmptySlot()
+    int GetEmptySlot() //gives index value of the first empty slot, if all slots filled gives index +1 above total slots
     {
         int result = slotAmount;
         for (int i = 0; i < filledSlot.Length; i++)
@@ -123,50 +111,50 @@ public class HotbarCollect : MonoBehaviour
         return result;
     }
 
-    public void CalledDestroyItem() // is called from item when being destroyed
+    public void CalledDestroyItem() // Item tells hotbar it is removed and that it's need to update it not exsisting
     {
         Invoke("UpdateEmptySlots", 0.1f); 
     }
 
-    private void UpdateEmptySlots()
+    private void UpdateEmptySlots() //Checks if any slot is removed, if so it properly removes it visualy 
     {
-        for (int i = 0; i < slotAmount; i++)
+        for (int i = 0; i < slotAmount; i++) 
         {
-            if (itemslots[i] == null) //if not in item array = properly remove it
+            if (itemslots[i] == null) 
             {
                 filledSlot[i] = false;
-                itemslots[i] = null; //if it was missing it's now not exsisting
-                slotObj[i].transform.GetChild(0).GetComponent<Image>().color = Color.clear;
-                slotObj[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+                itemslots[i] = null; //Is not shown as being "missing"
+                slotObj[i].transform.GetChild(1).GetComponent<Image>().color = Color.clear;
+                slotObj[i].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "";
             }
         }
     }
 
-    public bool TryDropItem(int slotIndex)
+    public bool TryDropItem(int slotIndex) //tries to drop item by slot index, and returns true/false if it succeseds 
     {
-        if (itemslots[slotIndex] == true)//if it exsist
+        if (itemslots[slotIndex] == true)
         {
-            itemslots[slotIndex].PlayerDrop();
-            itemslots[slotIndex] = null; //removes item from array
-            while (slotObj[slotIndex].transform.childCount > 2)
+            itemslots[slotIndex].PlayerDrop(); //the item itself is called as no longer being held 
+            itemslots[slotIndex] = null; 
+            while (slotObj[slotIndex].transform.childCount > 3) //if dropping a slot with multiple items it only effects the item child
             {
-                slotObj[slotIndex].transform.GetChild(2).transform.position = playerPos.position; //teleports all items in dropped slot to player
-                slotObj[slotIndex].transform.GetChild(2).transform.parent = null; //detaches all item as child of hotbar slot
+                slotObj[slotIndex].transform.GetChild(3).transform.position = playerPos.position; 
+                slotObj[slotIndex].transform.GetChild(3).transform.parent = null; 
             }
             UpdateEmptySlots();
             return true;
         }
-        else
+        else //nothing happens if it can't drop item
         {
             print("couldn't drop item");
             return false;
         }
     }
 
-    public bool HasWantedSelected(Item wanted)
+    public bool HasWantedSelected(Item wanted) //used by NPC/gates to tell if a player has a specific item returns true/false
     {
-        int x = GetComponent<HotbarUse>().selectedSlot;
-        if (filledSlot[x] && itemslots[x].ID == wanted.ID)
+        int x = GetComponent<HotbarUse>().selectedSlot; // X is the index of selected slot
+        if (filledSlot[x] && itemslots[x].ID == wanted.ID) 
         {
             if (itemslots[x] is DepleteItem) //depletable items are removed one at a time whiles others are completely removed
             {
