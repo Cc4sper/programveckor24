@@ -39,14 +39,14 @@ public class HotbarUse : MonoBehaviour
     public void SelectItem(int index)
     {
         print("selected slot "+index);
-        GetComponent<HotbarCollect>().slotObj[selectedSlot].GetComponent<Image>().color = Color.gray; //resets color of last selected
+        GetComponent<HotbarCollect>().slotObj[selectedSlot].transform.GetChild(0).GetComponent<Image>().color = new Color(0.9f, 0.9f, 0.9f, 0.5f); //resets color of last selected
         if (GetComponent<HotbarCollect>().filledSlot[selectedSlot] == true)
         {
             GetComponent<HotbarCollect>().itemslots[selectedSlot].DeselectItem();
         }
         
         selectedSlot = index;
-        GetComponent<HotbarCollect>().slotObj[selectedSlot].GetComponent<Image>().color = new Color(0.3f,0.3f,0.3f,1);
+        GetComponent<HotbarCollect>().slotObj[selectedSlot].transform.GetChild(0).GetComponent<Image>().color = new Color(0.5f,0.5f,0.5f,0.5f);
         if (GetComponent<HotbarCollect>().filledSlot[selectedSlot] == true)
         {
             GetComponent<HotbarCollect>().itemslots[selectedSlot].SelectItem();
