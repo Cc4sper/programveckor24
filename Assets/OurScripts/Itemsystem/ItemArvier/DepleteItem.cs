@@ -39,7 +39,7 @@ public class DepleteItem : UsableItem
         if (amount > 1)
         {
             amount--;
-            Destroy(transform.parent.GetChild(3).gameObject); //destroys previous stacked item in hotbar
+            Destroy(transform.parent.GetChild(4).gameObject); //destroys previous stacked item in hotbar
             UpdateDisplayAmount();
         }
         else
@@ -50,7 +50,7 @@ public class DepleteItem : UsableItem
 
     public void UpdateDisplayAmount()
     {
-        transform.parent.GetChild(1).GetComponent<TextMeshProUGUI>().text = "" + amount; //shows amount of item in hotbar
+        transform.parent.GetChild(2).GetComponent<TextMeshProUGUI>().text = "" + amount; //shows amount of item in hotbar
     }
 
     public override void PlayerDrop() // reset amount because stacked items always drop invidually
