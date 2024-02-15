@@ -12,6 +12,7 @@ public class opening : MonoBehaviour
     [SerializeField] float speed;
 
     int max;
+    float skip = 0;
     SceneManager manager;
     public int ontext = 0;
     float timer;
@@ -58,6 +59,14 @@ public class opening : MonoBehaviour
         {
             timer = 2.1f;
             //text = true;
+        }
+        else if (Input.GetKey(KeyCode.Escape))
+        {
+            skip += Time.deltaTime;
+            if (skip > 2)
+            {
+                NextScene();
+            }
         }
     }
     void sandMove()
