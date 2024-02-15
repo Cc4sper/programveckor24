@@ -21,7 +21,7 @@ public class Bosstrigger : MonoBehaviour
         {
             triggered = true;
             border.SetActive(true);
-            source.GetComponent<music>().SwitchMusic(BossMusic);
+            source.GetComponent<music>().SwitchMusic(BossMusic, 0);
             player = collision.transform.parent;
             cam = player.GetComponent<PlayerCamera>().cam;
             cam.GetComponent<Camerafollow>().target = madam.transform;
@@ -50,7 +50,7 @@ public class Bosstrigger : MonoBehaviour
         }
         else if (madam == null)
         {
-            source.GetComponent<music>().SwitchMusic(Defeat);
+            source.GetComponent<music>().SwitchMusic(Defeat, 10);
             Destroy(border);
             
             Destroy(gameObject);

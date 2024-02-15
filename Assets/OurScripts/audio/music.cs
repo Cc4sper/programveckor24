@@ -77,9 +77,9 @@ public class music : MonoBehaviour
         StartCoroutine(FadeMusic(true, source, 2f, PlayerPrefs.GetFloat("MusicVolume",1)));
     }
 
-    public void SwitchMusic(AudioClip newClip)
+    public void SwitchMusic(AudioClip newClip, float duration)
     {
-        StartCoroutine(FadeMusic(false, source, 0.2f, 0f));
+        StartCoroutine(FadeMusic(false, source, duration + 0.2f, 0f));
         newclip = newClip;
     }
     public void MusicVolume(float value)
