@@ -15,20 +15,16 @@ public class RandomMovement : MonoBehaviour
 
     Vector3 lastPos;
 
-
-    // Start is called before the first frame update
     private void OnEnable() //re-enabled when it is not chasing, works as a reset for it's movement & animation
     {
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+            OgPos = transform.position;
+        }
         SetNewDestination();
     }
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-        OgPos = transform.position;
-        SetNewDestination();
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
     

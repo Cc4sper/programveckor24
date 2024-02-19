@@ -21,7 +21,7 @@ public class Bosstrigger : MonoBehaviour
         {
             triggered = true;
             border.SetActive(true);
-            source.GetComponent<music>().SwitchMusic(BossMusic, 0);
+            source.GetComponent<music>().SwitchMusic(BossMusic, 2);
             player = collision.transform.parent;
             cam = player.GetComponent<PlayerCamera>().cam;
             cam.GetComponent<Camerafollow>().target = madam.transform;
@@ -50,14 +50,15 @@ public class Bosstrigger : MonoBehaviour
         }
         else if (madam == null)
         {
-            source.GetComponent<music>().SwitchMusic(Defeat, 10);
+            source.GetComponent<music>().SwitchMusic(Defeat, 45);
+            source.GetComponent<music>().canSwitch = false;
             Destroy(border);
-            
-            Destroy(gameObject);
-            for (int i = 0; i < healthbar.Length; i++)
+            for (int i = 0; i < bar.transform.childCount; i++)
             {
-                healthbar[i].GetComponent<Fadeoutimage>().enabled = true;
+                bar.transform.GetChild(i).GetComponent<Fadeoutimage>().enabled = true;
             }
+            Destroy(gameObject);
+            
         }
        
     }

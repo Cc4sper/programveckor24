@@ -28,7 +28,7 @@ public class BigTeleprt : MonoBehaviour
             //player.GetComponent<PlayerMove>().DisableMove(true);
             if (newMusic != null)
             {
-                music.Instance.SwitchMusic(newMusic, 0);
+                music.Instance.SwitchMusic(newMusic, 2);
             }
             Invoke("Teleport", 1f);
             if (SideScrollarTransition)

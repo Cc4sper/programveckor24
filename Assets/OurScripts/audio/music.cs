@@ -10,6 +10,8 @@ public class music : MonoBehaviour
     [SerializeField] AudioClip Tempclip;
     [SerializeField] AudioClip newclip;
     public static music Instance;
+    float fadeSec = 2;
+    public bool canSwitch = true; 
 
 
     public void Awake()
@@ -29,7 +31,7 @@ public class music : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
         source.volume = 0f;
-        StartCoroutine(FadeMusic(true, source, 2f, PlayerPrefs.GetFloat("MusicVolume", 1)));
+        StartCoroutine(FadeMusic(true, source, fadeSec, PlayerPrefs.GetFloat("MusicVolume", 1)));
     }
 
     private void Update()
@@ -37,7 +39,7 @@ public class music : MonoBehaviour
         if (!source.isPlaying)
         {
             source.Play();
-            StartCoroutine(FadeMusic(true, source, 2f, PlayerPrefs.GetFloat("MusicVolume",1)));
+            StartCoroutine(FadeMusic(true, source, fadeSec, PlayerPrefs.GetFloat("MusicVolume",1)));
         }
         if (Input.GetKey(KeyCode.M))
         {
@@ -79,8 +81,12 @@ public class music : MonoBehaviour
 
     public void SwitchMusic(AudioClip newClip, float duration)
     {
-        StartCoroutine(FadeMusic(false, source, duration + 0.2f, 0f));
-        newclip = newClip;
+        if (canSwitch == true)
+        {
+            StartCoroutine(FadeMusic(true, source, 1f, 0f));
+            fadeSec = duration;
+            newclip = newClip;
+        }
     }
     public void MusicVolume(float value)
     {
