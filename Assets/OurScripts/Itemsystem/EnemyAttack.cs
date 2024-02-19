@@ -10,6 +10,7 @@ public class EnemyAttack : MonoBehaviour
     public float cooldown;
     public bool canAttack;
     public float timer;
+    public float late;
    Animator animator;
 
     private void Start()
@@ -36,10 +37,15 @@ public class EnemyAttack : MonoBehaviour
     {
         timer = cooldown;
         animator.SetTrigger("attack");
-        GameObject newStrike = Instantiate(attackPrefab, transform.position,Quaternion.identity);
+        Invoke("CreateAttack", late);
+        
+    }
+
+    public void CreateAttack()
+    {
+        GameObject newStrike = Instantiate(attackPrefab, transform.position, Quaternion.identity);
         newStrike.tag = "Danger"; //marks it as not a enemy attack
         newStrike.GetComponent<GenericAttack>().damage = enemyDamage;
-        
     }
     private void Update()
     {

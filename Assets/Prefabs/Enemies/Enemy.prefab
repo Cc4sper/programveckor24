@@ -275,6 +275,7 @@ MonoBehaviour:
   cooldown: 1
   canAttack: 0
   timer: 0
+  late: 0.5
 --- !u!58 &3098569977893715810
 CircleCollider2D:
   m_ObjectHideFlags: 0

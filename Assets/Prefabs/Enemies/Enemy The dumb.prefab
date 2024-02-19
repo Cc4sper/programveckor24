@@ -220,6 +220,7 @@ MonoBehaviour:
   cooldown: 2
   canAttack: 1
   timer: 0
+  late: 0.5
 --- !u!95 &-4367376922660725780
 Animator:
   serializedVersion: 5
