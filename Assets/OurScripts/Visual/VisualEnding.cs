@@ -32,8 +32,8 @@ public class VisualEnding : MonoBehaviour
             for (int i = 0; i < disable.Length; i++)
             {
                 disable[i].SetActive(false);
-                //Destroy(gameObject);
             }
+            GetComponent<opening>().enabled = true;
         }
     }
 }
