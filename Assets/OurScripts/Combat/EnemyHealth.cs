@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
     public float ogSpeed;
     
 
-    public void Start()
+    public void Start() // ifall de är en chaser så hämtar den orginella hastigheten.
     {
         if (chaser)
         {
@@ -30,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
     }
    
     public virtual void TakeDamage(int dmg, bool hit)
+    // Fienden tar skada och ändrar färg, blir odödlig enligt recover time och ifall den jagar blir den stilla stående
     {
         vulnerable = false;
         print("hit enemy " + dmg);
@@ -55,7 +56,7 @@ public class EnemyHealth : MonoBehaviour
             Recover();
         }
     }
-    public void Recover()
+    public void Recover() // Återställer fiendens fär och hastighet, plus gör att den kan ta skada igen.
     {
         vulnerable = true;
         sprite.color = Color.white;
@@ -64,7 +65,7 @@ public class EnemyHealth : MonoBehaviour
             transform.GetChild(1).GetComponent<EnemyChase>().speed = ogSpeed;
         }
     }
-    public void checkkdeath()
+    public void checkkdeath() // Ifall fienden inte har hp så försvinner den och droppar loot.
     {
         if (enemyhp < 1)
         {
