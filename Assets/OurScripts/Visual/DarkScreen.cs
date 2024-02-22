@@ -6,16 +6,16 @@ using UnityEngine.UI;
 public class DarkScreen : MonoBehaviour
 {
     Image sprite;
-    [SerializeField] float speed;
+    public float speed;
     [SerializeField] float alpha = 0;
     [SerializeField] float stayDark;
+    [SerializeField] bool clear;
     float stayTimer;
     bool fadeIn;
     
     private void Start()
     {
-        sprite = GetComponent<Image>();
-        
+        sprite = GetComponent<Image>(); 
     }
     void Update()
     {
@@ -48,8 +48,9 @@ public class DarkScreen : MonoBehaviour
         alpha += Time.deltaTime * x;
     }
 
-    public void ScreenFade()
+    public void ScreenFade(bool fadeOut)
     {
+        clear = fadeOut;
         fadeIn = true;
     }
 }

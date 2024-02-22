@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bosstrigger : MonoBehaviour
 {
-     [SerializeField] GameObject border, madam, bar;
+    [SerializeField] GameObject border, madam, bar, ending;
     [SerializeField] GameObject[] healthbar;
     [SerializeField] AudioSource source;
     [SerializeField] AudioClip BossMusic, Defeat;
@@ -57,6 +57,7 @@ public class Bosstrigger : MonoBehaviour
             {
                 bar.transform.GetChild(i).GetComponent<Fadeoutimage>().enabled = true;
             }
+            ending.SetActive(true);
             Destroy(gameObject);
             
         }

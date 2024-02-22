@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
             
             DisablePlayer();
             source.GetComponent<music>().Repeat();
-            screen.GetComponent<DarkScreen>().ScreenFade();
+            screen.GetComponent<DarkScreen>().ScreenFade(true);
             GetComponent<PlayerHotbarControl>().Hotbar.GetComponent<HotbarCollect>().Invoke("DropRandomItem", respawnTime * 0.9f);
             respawnTimer = respawnTime;
             //GetComponent<PlayerCamera>().cameraDeath();

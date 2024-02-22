@@ -24,7 +24,7 @@ public class BigTeleprt : MonoBehaviour
             player = collision.transform.parent;
             //Instantiate(worldLoad, loadWorld.position - transform.position, Quaternion.identity);
  
-            player.GetComponent<PlayerHealth>().screen.GetComponent<DarkScreen>().ScreenFade();
+            player.GetComponent<PlayerHealth>().screen.GetComponent<DarkScreen>().ScreenFade(true);
             //player.GetComponent<PlayerMove>().DisableMove(true);
             if (newMusic != null)
             {
