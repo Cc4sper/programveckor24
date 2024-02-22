@@ -50,7 +50,7 @@ public class QuestNPC : MonoBehaviour
             talkNPC.SetActive(false);
 
         }
-
+        // Activate quest if answer text is a specific one. And talkquest bye answer.
         activateButton.onClick.AddListener(() =>
         {
             if (answerText.text == "Accept" || answerText.text == "Bye" && playerInRange)
@@ -79,7 +79,7 @@ public class QuestNPC : MonoBehaviour
     void Update()
     {
 
-       
+       // Set talkNPC if quest is active
         if (questActive == true)
         {
             talkNPC.SetActive(true); 
@@ -92,14 +92,11 @@ public class QuestNPC : MonoBehaviour
 
         }
         */
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            CompletedObjective();
-        }
+
 
         
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
@@ -118,6 +115,8 @@ public class QuestNPC : MonoBehaviour
     }
     private void AcceptedQuest()
     {
+        // Accept quest and checki if it has requirements.
+
         visualCue.SetActive(false);
         //currentActiveQuest = quests[activeQuestIndex]; 
         //currentTrackedQuest = quests[activeQuestIndex]; 
@@ -129,7 +128,7 @@ public class QuestNPC : MonoBehaviour
         {
             ReceiveRewardAndCompleteQuest(); 
         }
-        else
+        else // if talksquest set talkNPC on.
         {
             if (talkQuest)
             {
@@ -137,7 +136,7 @@ public class QuestNPC : MonoBehaviour
             }
         }
     }
-
+    // This does not really work...
     private void ReceiveRewardAndCompleteQuest()
     {
         nextQuest.SetActive(true);

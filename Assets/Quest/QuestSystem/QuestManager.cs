@@ -43,12 +43,13 @@ public class QuestManager : MonoBehaviour
     public GameObject trackerRowPrefab;
     public List<Quest> allTrackedQuest;
 
+    // If trackquest refresh tracklist
     public void TrackQuest(Quest quest)
     {
         allTrackedQuest.Add(quest);
         RefreshTrackerList();
     }
-    public void UnTrackQuest(Quest quest)
+    public void UnTrackQuest(Quest quest)     // If untrackquest refresh tracklist
     {
         allTrackedQuest.Remove(quest);
         RefreshTrackerList();
@@ -61,7 +62,7 @@ public class QuestManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        foreach (Quest trackedQuest in allTrackedQuest)
+        foreach (Quest trackedQuest in allTrackedQuest) // Instansiate trackerrowprefab in trackerquest list and set all info.
         {
             GameObject trackerPrefab = Instantiate(trackerRowPrefab);
             trackerPrefab.transform.SetParent(questTrackerContent);
@@ -90,6 +91,7 @@ public class QuestManager : MonoBehaviour
             isQuestMenuOpen = false;
         }
     }
+    // If active quest refresh questlist
     public void AddActiveQuest(Quest quest)
     {
         allActiveQuests.Add(quest);
@@ -109,7 +111,7 @@ public class QuestManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        foreach (Quest activeQuest in allActiveQuests)
+        foreach (Quest activeQuest in allActiveQuests) // Instansiate questrowprefab in questlist list and set all info.
         {
             GameObject questPrefab = Instantiate(activeQuestPrefab);
             questPrefab.transform.SetParent(questMenuContent);

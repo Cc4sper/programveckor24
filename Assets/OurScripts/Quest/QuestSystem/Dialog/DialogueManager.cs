@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Ink.Runtime;
+using Ink.Runtime; // Ink is a addon that makes it easier to make dialogue.
 using UnityEngine.EventSystems;
 
 
 public class DialogueManager : MonoBehaviour
 {
-    // variable for the load_globals.ink JSON
     [Header("Load Globals JSON")]
     [SerializeField] private TextAsset loadGlobalsJSON;
 
@@ -51,7 +50,7 @@ public class DialogueManager : MonoBehaviour
 
    
     
-
+    
     private void Awake()
     {
         if (instance != null)
@@ -62,20 +61,24 @@ public class DialogueManager : MonoBehaviour
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
 
     }
+    
     public static DialogueManager GetInstance()
     {
         return instance;
     }
-
+    
     private void Start()
     {
-        dialogueIsPlaying = false;
+        // Closes dielog panel so it is not open on start.
+        dialogueIsPlaying = false; 
         dialoguePanel.SetActive(false);
-
+        
         layoutAnimator = dialoguePanel.GetComponent<Animator>();
 
+        // Gets choices(Buttons)
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
+
         foreach (GameObject choice in choices)
         {
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
@@ -85,11 +88,12 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        // Return if dialogue isn't playing
         if (!dialogueIsPlaying)
         {
             return;
         }
-
+        // Continue to next line if button pressed.
         if (canContinueToNextLine 
             && Input.GetKeyDown(KeyCode.Space) 
             && currentStory.currentChoices.Count == 0)
@@ -110,7 +114,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON)
+    public void EnterDialogueMode(TextAsset inkJSON) // Gets the new "story" and enables the dialoguepanel.
     {
         
         currentStory = new Story(inkJSON.text);
@@ -127,7 +131,9 @@ public class DialogueManager : MonoBehaviour
 
 
     }
-    private IEnumerator ExitDialogueMode()
+
+    
+    private IEnumerator ExitDialogueMode() // Disables dialoguepanel and resets text(story).
     {
         yield return new WaitForSeconds(0.2f);
         dialogueVariables.StopListening(currentStory);
@@ -139,7 +145,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    private void ContinueStory()
+    private void ContinueStory() // Checks if story can continue. Continue if possible else exit dialogue mode.
     {
         if (currentStory.canContinue)
         {
@@ -155,8 +161,9 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(ExitDialogueMode());
         }
     }
-    private IEnumerator DisplayLine(string line)
+    private IEnumerator DisplayLine(string line) 
     {
+        // Resets text and hides choices and continue icon. 
         dialogueText.text = "";
 
         continueIcon.SetActive(false);
@@ -165,7 +172,7 @@ public class DialogueManager : MonoBehaviour
         canContinueToNextLine = false;
 
         bool isAddingRichTextTag = false;
-
+        // Makes the text look like it's writing itself.
         foreach (char letter in line.ToCharArray())
         {
             if (letter == '<' || isAddingRichTextTag)
@@ -190,17 +197,20 @@ public class DialogueManager : MonoBehaviour
         canContinueToNextLine = true;
     }
 
-    private void HideChoices()
+    private void HideChoices() 
     {
         foreach (GameObject choiceButton in choices)
         {
             choiceButton.SetActive(false);
         }
     }
+
     private void HandleTags(List<string> currentTags)
     {
+        // Loop and handle every tag.
         foreach (string tag in currentTags)
         {
+            // Pars tag
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)
             {
@@ -208,6 +218,7 @@ public class DialogueManager : MonoBehaviour
             }
             string tagKey = splitTag[0].Trim();
             string tagValue = splitTag[1].Trim();
+            // Handle tag.
             switch (tagKey)
             {
                 case SPEAKER_TAG:
@@ -229,20 +240,21 @@ public class DialogueManager : MonoBehaviour
     private void DisplayChoices()
     {
         List<Choice> currentChoices = currentStory.currentChoices;
-
+        // Checks so theres enough choices for the "story".
         if (currentChoices.Count > choices.Length)
         {
             Debug.LogError("Too little choice woppsie");
         }
 
         int index = 0;
-
+        // Enables enough choices for the "story"
         foreach (Choice choice in currentChoices)
         {
             choices[index].gameObject.SetActive(true);
             choicesText[index].text = choice.text;
             index++;
         }
+        // Hide the choices that are not necessary.
         for (int i = index; i < choices.Length; i++)
         {
             choices[i].gameObject.SetActive(false);
@@ -253,7 +265,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator SelectFirstChoice()
     {
-        
+        // Waite for a frame so thatc can set the current selected object.
         EventSystem.current.SetSelectedGameObject(null);
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
@@ -261,6 +273,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void MakeChoice(int choiceIndex)
     {
+        // Continue story
         if (canContinueToNextLine)
         {
             currentStory.ChooseChoiceIndex(choiceIndex);
