@@ -85,9 +85,9 @@ public class PlayerMove : MonoBehaviour
         mousePosistion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
     }
-    public void DisableMove(bool state) //kan göras bättre (exploit)
+    public void DisableMove(bool state) 
     {
-        if (state)
+        if (state && moveSpeed != 0) //makes sure we dont accidently save a disabled speed
         {
             savedSpeed = moveSpeed;
             moveSpeed = 0;

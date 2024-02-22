@@ -74,7 +74,10 @@ public class Camerafollow : MonoBehaviour
     }
     public void SetCamera(float size)
     {
-        cam.orthographicSize = size;
+        if (cam != null)
+        {
+            cam.orthographicSize = size;
+        }
     }
 
     public void camerafollowing()

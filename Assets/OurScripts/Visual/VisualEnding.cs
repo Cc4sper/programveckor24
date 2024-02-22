@@ -6,6 +6,7 @@ public class VisualEnding : MonoBehaviour
 {
     [SerializeField] GameObject[] disable;
     [SerializeField] DarkScreen screen;
+    [SerializeField] GameObject player;
     [SerializeField] float wait;
     [SerializeField] float waitFade;
     float timer;
@@ -34,6 +35,7 @@ public class VisualEnding : MonoBehaviour
                 disable[i].SetActive(false);
             }
             GetComponent<opening>().enabled = true;
+            player.GetComponent<PlayerHealth>().DisablePlayer();
         }
     }
 }

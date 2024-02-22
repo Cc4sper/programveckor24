@@ -7,7 +7,6 @@ public class BigTeleprt : MonoBehaviour
     [SerializeField] bool SideScrollarTransition;
     [SerializeField] bool Cold;
     [SerializeField] AudioClip newMusic;
-    [SerializeField] AudioSource source;
     Transform teleportPoint;
     Transform player;
     Camera cam;
@@ -22,10 +21,8 @@ public class BigTeleprt : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             player = collision.transform.parent;
-            //Instantiate(worldLoad, loadWorld.position - transform.position, Quaternion.identity);
- 
+            
             player.GetComponent<PlayerHealth>().screen.GetComponent<DarkScreen>().ScreenFade(true);
-            //player.GetComponent<PlayerMove>().DisableMove(true);
             if (newMusic != null)
             {
                 music.Instance.SwitchMusic(newMusic, 2);

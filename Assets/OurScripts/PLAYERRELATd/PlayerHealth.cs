@@ -9,7 +9,6 @@ public class PlayerHealth : MonoBehaviour
     float maxHealth;
 
     [SerializeField] float respawnTime;
-    [SerializeField] AudioSource source;
     public GameObject screen;
 
     public int armor = 0;
@@ -33,9 +32,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health < 1)
         {
-            
             DisablePlayer();
-            source.GetComponent<music>().Repeat();
+            music.Instance.Repeat();
             screen.GetComponent<DarkScreen>().ScreenFade(true);
             GetComponent<PlayerHotbarControl>().Hotbar.GetComponent<HotbarCollect>().Invoke("DropRandomItem", respawnTime * 0.9f);
             respawnTimer = respawnTime;
@@ -74,9 +72,9 @@ public class PlayerHealth : MonoBehaviour
         {
             respawnTimer -= Time.deltaTime;
         }
-        else if (respawnTimer != 0)
+        else if (respawnTimer < 0 && respawnTimer > -1)
         {
-            respawnTimer = 0;
+            respawnTimer = -2;
             Respawn();
         }
     }
@@ -105,21 +103,26 @@ public class PlayerHealth : MonoBehaviour
         healthBar.fillAmount = health / 100;
     }
 
-    private void DisablePlayer()
+    public void DisablePlayer()
     {
         GetComponent<PlayerMove>().DisableMove(true);
         GetComponent<PlayerPickup>().enabled = false;
+        GetComponent<PlayerHotbarControl>().enabled = false;
+        safe = true;
     }
 
     private void EnablePlayer()
     {
         GetComponent<PlayerMove>().DisableMove(false);
         GetComponent<PlayerPickup>().enabled = true;
+        GetComponent<PlayerHotbarControl>().enabled = true;
+        safe = false;
     }
     private void Respawn()
     {
+        print("respawned");
         EnablePlayer(); 
         transform.position = GetComponent<PlayerRespawn>().savedPos; //respawns at respawnpoint
-        HealHealth(maxHealth);
+        HealHealth(maxHealth*0.8f); //recover 80% health
     }
 }

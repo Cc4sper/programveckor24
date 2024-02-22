@@ -6,7 +6,6 @@ public class Bosstrigger : MonoBehaviour
 {
     [SerializeField] GameObject border, madam, bar, ending;
     [SerializeField] GameObject[] healthbar;
-    [SerializeField] AudioSource source;
     [SerializeField] AudioClip BossMusic, Defeat;
     
     Transform player; 
@@ -21,7 +20,7 @@ public class Bosstrigger : MonoBehaviour
         {
             triggered = true;
             border.SetActive(true);
-            source.GetComponent<music>().SwitchMusic(BossMusic, 2);
+            music.Instance.SwitchMusic(BossMusic, 2);
             player = collision.transform.parent;
             cam = player.GetComponent<PlayerCamera>().cam;
             cam.GetComponent<Camerafollow>().target = madam.transform;
@@ -50,8 +49,8 @@ public class Bosstrigger : MonoBehaviour
         }
         else if (madam == null)
         {
-            source.GetComponent<music>().SwitchMusic(Defeat, 45);
-            source.GetComponent<music>().canSwitch = false;
+            music.Instance.SwitchMusic(Defeat, 45);
+            music.Instance.canSwitch = false;
             Destroy(border);
             for (int i = 0; i < bar.transform.childCount; i++)
             {
