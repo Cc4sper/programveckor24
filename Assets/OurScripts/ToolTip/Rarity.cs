@@ -8,7 +8,7 @@ public class Rarity : ScriptableObject
     [SerializeField] private Color rarity;
 
 
-    public string Name { get { return name; } }
+    public string Name { get { return name; } } // Hjälper till att skapa namn för rarity.
 
-    public Color TextColor { get { return rarity; } }
+    public Color TextColor { get { return rarity; } } // Skapar färgen för rarity.
 }

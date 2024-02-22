@@ -26,7 +26,7 @@ public class HotBarTT : ToolTipPopUp, IPointerEnterHandler, IPointerExitHandler
   /*  private void OnMouseEnter()
     {
         print("hotbarentr");
-        item = transform.GetChild(1).GetChild(0).GetChild(2).GetComponent<ItemButton>();
+        item = transform.GetChild(1).GetChild(0).GetChild(2).GetComponent<ItemButton>(); 
         item.toolTipPopUp.DisplayInfo(item.item);
     }
 

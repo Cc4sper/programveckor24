@@ -25,23 +25,23 @@ public class ToolTipPopUp : MonoBehaviour
         FollowCursor();
     }
 
-    private void FollowCursor()
+    private void FollowCursor() // Kod som gör så att tooltipen följer musen när den är över itemet.
     {
         if (!popupCanvasObject.activeSelf) { return; }
 
         Vector3 newPos = Input.mousePosition + offset;
         newPos.z = 0f;
-        float rightEdgeToScreenEdgeDistance = Screen.width - (newPos.x + popupObject.rect.width * popupCanvas.scaleFactor / 2) - padding;
+        float rightEdgeToScreenEdgeDistance = Screen.width - (newPos.x + popupObject.rect.width * popupCanvas.scaleFactor / 2) - padding; // Den räknar ut avstånd mellan kanten av skärmen till musen så att tooltipen befinner sig där istället för att den skulle fastna vid någon kant.
         if (rightEdgeToScreenEdgeDistance < 0)
         {
             newPos.x += rightEdgeToScreenEdgeDistance;
         }
-        float leftEdgeToScreenEdgeDistance = 0 - (newPos.x - popupObject.rect.width * popupCanvas.scaleFactor / 2) + padding;
+        float leftEdgeToScreenEdgeDistance = 0 - (newPos.x - popupObject.rect.width * popupCanvas.scaleFactor / 2) + padding; // - || -
         if (leftEdgeToScreenEdgeDistance > 0)
         {
             newPos.x += leftEdgeToScreenEdgeDistance;
         }
-        float topEdgeToScreenEdgeDistance = Screen.height - (newPos.y + popupObject.rect.height * popupCanvas.scaleFactor) - padding;
+        float topEdgeToScreenEdgeDistance = Screen.height - (newPos.y + popupObject.rect.height * popupCanvas.scaleFactor) - padding; // - || -
         if (topEdgeToScreenEdgeDistance < 0)
         {
             newPos.y += topEdgeToScreenEdgeDistance;
@@ -49,7 +49,7 @@ public class ToolTipPopUp : MonoBehaviour
         popupObject.transform.position = newPos;
     }
 
-    public void DisplayInfo (ItemTT item)
+    public void DisplayInfo (ItemTT item) // Visar tooltipen när den är över item på marken.
     {
        StringBuilder builder = new StringBuilder();
 
@@ -63,7 +63,7 @@ public class ToolTipPopUp : MonoBehaviour
         print("hoverover");
     }
 
-    public void HideInfo()
+    public void HideInfo() // Tar bort informationen när den inte är över item.
     {
         popupCanvasObject.SetActive(false);
         print("exits");

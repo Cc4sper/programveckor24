@@ -8,8 +8,8 @@ public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     [SerializeField] public ItemTT item;
     [SerializeField] public ToolTipPopUp toolTipPopUp;
 
-
-    private void OnMouseEnter()
+    
+    private void OnMouseEnter()  
     {
         print("enter");
         toolTipPopUp.DisplayInfo(item);

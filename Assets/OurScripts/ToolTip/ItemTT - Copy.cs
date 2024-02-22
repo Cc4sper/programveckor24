@@ -17,7 +17,7 @@ public class Consumable : ItemTT
     {
         get
         {
-            string hexColour = ColorUtility.ToHtmlStringRGB(rarity.TextColor);
+            string hexColour = ColorUtility.ToHtmlStringRGB(rarity.TextColor); // gör så att namn färg ändras beroende på rarity man get den.
             return $"<color=#{hexColour}>{Name}</color>";
         }
     }
@@ -26,9 +26,9 @@ public class Consumable : ItemTT
         StringBuilder builder = new StringBuilder();
 
         builder.Append(Rarity.Name).AppendLine();
-        builder.Append("<color=green>").Append(UseText).Append("</color>").AppendLine();
+        builder.Append("<color=green>").Append(UseText).Append("</color>").AppendLine(); // Use/ equip texten är alltid grön.
         //builder.Append("Sell Price: ").Append(SellPrice).Append(" Ryal"); sellprice men vi hade inte tid att få det att funka.
-        builder.Append("<color=yellow>").Append(flavorText).Append("</color>").AppendLine();
+        builder.Append("<color=yellow>").Append(flavorText).Append("</color>").AppendLine();// sellprice är gul.
         return builder.ToString();
             
     }
