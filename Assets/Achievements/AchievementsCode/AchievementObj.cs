@@ -24,9 +24,6 @@ public class AchievementObj : ScriptableObject
     {
         bool value = false;
         Level = 0;
-       /* achievedLVL1 = false;
-        achievedLVL2 = false;
-        achievedLVL3 = false;*/
 
         if (achGoal >= level1Goal)
         {
