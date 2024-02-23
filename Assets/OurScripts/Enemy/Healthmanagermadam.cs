@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Healthmanagermadam : MonoBehaviour
 {
     public Image healthBar;
-    public float healthAmount = 120f;
+    public float healthAmount = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,14 +27,14 @@ public class Healthmanagermadam : MonoBehaviour
     public void TakeDamage(float damage)
     {
         healthAmount -= damage;
-        healthBar.fillAmount = healthAmount / 120f;
+        healthBar.fillAmount = healthAmount / 100f;
     }
 
     public void heal(float healingAmount)
     {
         healthAmount += healingAmount;
-        healingAmount = Mathf.Clamp(healthAmount, 0, 120);
+        healingAmount = Mathf.Clamp(healthAmount, 0, 100);
 
-        healthBar.fillAmount = healingAmount / 120f;
+        healthBar.fillAmount = healingAmount / 100f;
     }
 }

@@ -9,7 +9,7 @@ public class BossHealth : EnemyHealth
     public override void Update()
     {
         base.Update();
-        if (enemyhp <= 60 && phase == false)
+        if (enemyhp <= 50 && phase == false)
         {
             phase = true;
             GetComponent<DefensiveSummon>().Summon(3);
