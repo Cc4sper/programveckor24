@@ -42,7 +42,7 @@ public class HotbarCollect : MonoBehaviour
             print("depletable item");
             slotIndex = GetSameItemSlot(add);
             
-            if (slotIndex != slotAmount) //if there was a free spot
+            if (slotIndex != slotAmount) //if there was a free spot 
             {
                 add.transform.parent = slotObj[slotIndex].transform;
                 itemslots[slotIndex].TryPickup();

@@ -48,11 +48,6 @@ public class Camerafollow : MonoBehaviour
             focusing = false;
             cam.orthographicSize += Time.deltaTime * zoomSpeed;
         }
-       
-        
-        
-       
- 
     }
     public void Focus(bool active, float newSize)
     {
