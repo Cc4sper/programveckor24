@@ -7264,7 +7264,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1530813614}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1907156049}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1530813614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9654,6 +9666,8 @@ MonoBehaviour:
   buttonChangers:
   - {fileID: 1864169169}
   - {fileID: 1632364699}
+  - {fileID: 360078979}
+  - {fileID: 871472083}
 --- !u!1 &1938609003
 GameObject:
   m_ObjectHideFlags: 0
